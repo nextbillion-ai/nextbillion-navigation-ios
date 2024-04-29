@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/nextbillion-ai/nextbillion-navigation-ios.git" }
 
   spec.vendored_frameworks = '*.xcframework'
-  spec.platform     = :ios, '11.0'
+  spec.platform     = :ios, '12.0'
   spec.dependency 'NextBillionMap', '~> 1.1.0'
   spec.dependency 'NextBillionTurf', '~> 1.0.0'
   spec.dependency 'NextBillionDirection', '~> 1.2.0'
