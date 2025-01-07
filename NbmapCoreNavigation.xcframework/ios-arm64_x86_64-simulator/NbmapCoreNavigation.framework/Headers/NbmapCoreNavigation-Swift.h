@@ -1077,7 +1077,7 @@ SWIFT_CLASS_NAMED("Route")
 ///
 /// \param options The <code>RouteOptions</code> used to create the request.
 ///
-- (nonnull instancetype)initWithJson:(NSString * _Nullable)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithJson:(NSDictionary<NSString *, id> * _Nonnull)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
 /// Initializes a new route object with the given JSON dictionary representation and waypoints.
 /// This initializer is intended for use in conjunction with the <code>Directions.url(forCalculating:)</code> method.
 /// \param json A JSON dictionary representation of the route as returned by the Nbmap Directions API.
@@ -1086,7 +1086,7 @@ SWIFT_CLASS_NAMED("Route")
 ///
 /// \param routeOptions The <code>RouteOptions</code> used to create the request.
 ///
-- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints routeOptions:(NBDirectionsOptions * _Nonnull)options countryCode:(NSString * _Nullable)countryCode OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints routeOptions:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2900,7 +2900,7 @@ SWIFT_CLASS_NAMED("Route")
 ///
 /// \param options The <code>RouteOptions</code> used to create the request.
 ///
-- (nonnull instancetype)initWithJson:(NSString * _Nullable)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithJson:(NSDictionary<NSString *, id> * _Nonnull)json legs:(NSArray<NBNavRouteLeg *> * _Nonnull)legs distance:(CLLocationDistance)distance expectedTravelTime:(NSTimeInterval)expectedTravelTime coordinates:(NSArray<NSValue *> * _Nullable)coordinates speechLocale:(NSLocale * _Nullable)speechLocale options:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
 /// Initializes a new route object with the given JSON dictionary representation and waypoints.
 /// This initializer is intended for use in conjunction with the <code>Directions.url(forCalculating:)</code> method.
 /// \param json A JSON dictionary representation of the route as returned by the Nbmap Directions API.
@@ -2909,7 +2909,7 @@ SWIFT_CLASS_NAMED("Route")
 ///
 /// \param routeOptions The <code>RouteOptions</code> used to create the request.
 ///
-- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints routeOptions:(NBDirectionsOptions * _Nonnull)options countryCode:(NSString * _Nullable)countryCode OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints routeOptions:(NBDirectionsOptions * _Nonnull)options OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 @end
 

@@ -124,6 +124,11 @@ public protocol Setter {
 public protocol Getter {
   func get(carrier: [Swift.String : Swift.String], key: Swift.String) -> [Swift.String]?
 }
+@_hasMissingDesignatedInitializers public class RouteAlongUtils {
+  public static func splitRouteAlong(previousLocation: CoreLocation.CLLocationCoordinate2D, currentLocation: CoreLocation.CLLocationCoordinate2D, routePoints: [CoreLocation.CLLocationCoordinate2D]) -> Turf.LineString?
+  public static func splitLocationAlongRoutes(previousLocation: CoreLocation.CLLocation, currentLocation: CoreLocation.CLLocation, routePoints: [CoreLocation.CLLocationCoordinate2D]) -> [CoreLocation.CLLocationCoordinate2D]?
+  @objc deinit
+}
 @objc(NBVisualInstructionBanner) open class VisualInstructionBanner : ObjectiveC.NSObject, Foundation.NSSecureCoding {
   @objc final public let distanceAlongStep: CoreLocation.CLLocationDistance
   @objc final public let primaryInstruction: NbmapCoreNavigation.VisualInstruction
@@ -1550,10 +1555,8 @@ public protocol IDeviceDataSource {
 }
 public enum OffRouteStatus {
   case OFF_ROUTE
-  case OFF_ROUTE_INTERMEDIATE_LOCATION
-  case OFF_ROUTE_INTERMEDIATE_BEARING
   case ON_TRACK
-  case OFF_ROUTE_OUT_OF_RADIOUS
+  case GUIDANCE
   public static func == (a: NbmapCoreNavigation.OffRouteStatus, b: NbmapCoreNavigation.OffRouteStatus) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -2319,7 +2322,6 @@ public protocol OffRouteDetectorDelegate : ObjectiveC.NSObjectProtocol {
   func offRouteDetactor(_ detactor: any NbmapCoreNavigation.OffRouteDetector, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
   func offRouteDetactor(_ detactor: any NbmapCoreNavigation.OffRouteDetector, shouldAdvanceStepIndex to: Swift.Array<NbmapCoreNavigation.RouteStep>.Index?)
   func offRouteDetactor(_ detactor: any NbmapCoreNavigation.OffRouteDetector, shouldForwardStepIndex to: Swift.Array<NbmapCoreNavigation.RouteStep>.Index?)
-  func offRouteDetactorEnableStationaryDetector() -> Swift.Bool
   func offRouteDetactorIsMoving() -> Swift.Bool
 }
 public protocol OffRouteDetector {
@@ -2330,19 +2332,11 @@ public protocol OffRouteDetector {
 }
 public class NBOffRouteDetector : NbmapCoreNavigation.OffRouteDetector {
   weak public var delegate: (any NbmapCoreNavigation.OffRouteDetectorDelegate)?
-  public var snapDistanceTracker: NbmapCoreNavigation.SnapDistanceTracker? {
-    get
-    set
-  }
   public var validOffRouteCheckOfTrip: Swift.Bool {
     get
   }
-  public init(navigationEngConfig: NbmapCoreNavigation.NavigationEngineConfig, snapDistanceTracker: NbmapCoreNavigation.SnapDistanceTracker? = nil, delegate: (any NbmapCoreNavigation.OffRouteDetectorDelegate)? = nil)
+  public init(navigationEngConfig: NbmapCoreNavigation.NavigationEngineConfig, snapDistanceTracker: NbmapCoreNavigation.SnapDistanceTracker? = nil, delegate: (any NbmapCoreNavigation.OffRouteDetectorDelegate)? = nil, toleranceCalculator: (any NbmapCoreNavigation.ThresholdCalculator)? = nil, movingAwayHelper: NbmapCoreNavigation.MovingAwayHelper? = nil)
   public func userOffRouteStatus(_ location: CoreLocation.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress) -> NbmapCoreNavigation.OffRouteStatus
-  public var moveAwayCount: Swift.Int {
-    get
-  }
-  public func reroutingTolerance(location: CoreLocation.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress) -> CoreLocation.CLLocationDistance
   public func updateLastReroutePoint(location: CoreLocation.CLLocation)
   public func newRouteHasBeenSet()
   @objc deinit
@@ -2562,6 +2556,7 @@ public struct NavigationEngineConfig : Swift.Equatable {
   public var minimumDistanceBeforeRerouting: CoreLocation.CLLocationDistance
   public var minimumDistanceTravelAway: CoreLocation.CLLocationDistance
   public var maximumDistanceBeforeRerouting: CoreLocation.CLLocationDistance
+  public var maximumDistanceOfIntersectionArea: CoreLocation.CLLocationDistance
   public var minimumDurationBeforeRerouting: Swift.Int
   public var isDebugLoggingEnabled: Swift.Bool
   public var dynamicReroutingTolerance: Swift.Bool
@@ -2570,7 +2565,6 @@ public struct NavigationEngineConfig : Swift.Equatable {
   public var minNavigationCameraZoom: Swift.Double
   public var maxNavigationCameraZoom: Swift.Double
   public var defaultNavigationCameraPitch: Swift.Double
-  public var enableSnapDistanceTracker: Swift.Bool
   public var enableRoadNetworkDetector: Swift.Bool
   public var enableStationaryDetector: Swift.Bool
   public static func == (a: NbmapCoreNavigation.NavigationEngineConfig, b: NbmapCoreNavigation.NavigationEngineConfig) -> Swift.Bool
@@ -4282,8 +4276,8 @@ extension NbmapCoreNavigation.Google_Protobuf_GeneratedCodeInfo.Annotation.Seman
   public static let _protobuf_nameMap: NbmapCoreNavigation._NameMap
 }
 @_inheritsConvenienceInitializers @objc(NBNavRoute) open class Route : NbmapCoreNavigation.DirectionsResult {
-  @objc(initWithJson:legs:distance:expectedTravelTime:coordinates:speechLocale:options:) public init(json: Swift.String?, legs: [NbmapCoreNavigation.RouteLeg], distance: CoreLocation.CLLocationDistance, expectedTravelTime: Foundation.TimeInterval, coordinates: [CoreLocation.CLLocationCoordinate2D]?, speechLocale: Foundation.Locale?, options: NbmapCoreNavigation.DirectionsOptions)
-  @objc(initWithJSON:waypoints:routeOptions:countryCode:) public init(json: [Swift.String : Any], waypoints: [NbmapCoreNavigation.Waypoint], options: NbmapCoreNavigation.DirectionsOptions, countryCode: Swift.String?)
+  @objc(initWithJson:legs:distance:expectedTravelTime:coordinates:speechLocale:options:) public init(json: [Swift.String : Any], legs: [NbmapCoreNavigation.RouteLeg], distance: CoreLocation.CLLocationDistance, expectedTravelTime: Foundation.TimeInterval, coordinates: [CoreLocation.CLLocationCoordinate2D]?, speechLocale: Foundation.Locale?, options: NbmapCoreNavigation.DirectionsOptions)
+  @objc(initWithJSON:waypoints:routeOptions:) public init(json: [Swift.String : Any], waypoints: [NbmapCoreNavigation.Waypoint], options: NbmapCoreNavigation.DirectionsOptions)
   public var routeOptions: NbmapCoreNavigation.RouteOptions {
     get
   }
@@ -5117,6 +5111,20 @@ open class RoundaboutCalibrator {
 public protocol BaggageManagerProvider {
   func create() -> any NbmapCoreNavigation.BaggageManager
 }
+public class MovingAwayHelper {
+  public var currentPointIsMovingAway: Swift.Bool {
+    get
+  }
+  public var moveAwayCount: Swift.Int {
+    get
+  }
+  public init(config: NbmapCoreNavigation.NavigationEngineConfig, movingAwayFromManeuverCounter: NbmapCoreNavigation.RingBuffer<Swift.Int>? = nil, currentPointIsMovingAway: Swift.Bool = false)
+  public func movingAwayFromManeuver(location: CoreLocation.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress) -> Swift.Bool
+  public func userDistanceToManeuver(location: CoreLocation.CLLocation, routeProgress: NbmapCoreNavigation.RouteProgress) -> CoreLocation.CLLocationDistance?
+  public func size() -> Swift.Int
+  public func clear()
+  @objc deinit
+}
 public enum Severity : Swift.Int, Swift.Comparable, Swift.CustomStringConvertible {
   case trace, trace2, trace3, trace4, debug, debug2, debug3, debug4, info, info2, info3, info4, warn, warn2, warn3, warn4, error, error2, error3, error4, fatal, fatal2, fatal3, fatal4
   public var description: Swift.String {
@@ -5176,11 +5184,11 @@ extension NbmapCoreNavigation.Status : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 @objc(NBCongestionLevel) public enum CongestionLevel : Swift.Int, Swift.CustomStringConvertible {
-  case unknown
-  case low
-  case moderate
-  case heavy
-  case severe
+  case unknown = 0
+  case low = 1
+  case moderate = 2
+  case heavy = 3
+  case severe = 4
   public init?(description: Swift.String)
   public var description: Swift.String {
     get
@@ -6050,6 +6058,7 @@ public struct SpanContext : Swift.Equatable, Swift.CustomStringConvertible, Swif
   @objc open var json: Swift.String?
   @objc open var fetchStartDate: Foundation.Date?
   @objc open var responseEndDate: Foundation.Date?
+  final public let segmentCongestionLevels: [NbmapCoreNavigation.CongestionLevel]?
   @objc deinit
 }
 @objc(NBDirectionsOptions) open class DirectionsOptions : ObjectiveC.NSObject, Foundation.NSSecureCoding, Foundation.NSCopying {
@@ -7062,6 +7071,7 @@ public struct OpenTelemetryContextProvider {
   @objc deinit
 }
 public var RouteControllerMaximumDistanceBeforeRecalculating: Swift.Double
+public var RouteControllerMaximumDistanceOfIntersectionArea: Swift.Double
 public var RouteControllerMinimumDistanceBeforeRecalculating: Swift.Double
 public var RouteControllerMinimumDistanceTravelAway: Swift.Double
 public var RouteControllerArriveDistanceNotification: Swift.Double
@@ -7133,6 +7143,15 @@ public let NBEventTypeNavigationTrip: Swift.String
 public let NBDataTrackingKeyEvent: Swift.String
 public let NBDataTrackingKeyCreated: Swift.String
 public let BaseUrlKey: Swift.String
+public protocol ThresholdCalculator {
+  func createOffRouteRadius(location: CoreLocation.CLLocation, progress: NbmapCoreNavigation.RouteProgress, config: NbmapCoreNavigation.NavigationEngineConfig, trueDistanceToStep: Swift.Double, angularDiff: CoreLocation.CLLocationDegrees) -> CoreLocation.CLLocationDistance
+}
+@_hasMissingDesignatedInitializers public class OffRouteThresholdCalculator : NbmapCoreNavigation.ThresholdCalculator {
+  public func createOffRouteRadius(location: CoreLocation.CLLocation, progress: NbmapCoreNavigation.RouteProgress, config: NbmapCoreNavigation.NavigationEngineConfig, trueDistanceToStep: Swift.Double, angularDiff: CoreLocation.CLLocationDegrees) -> CoreLocation.CLLocationDistance
+  public func isNearingIntersection(location: CoreLocation.CLLocation, progress: NbmapCoreNavigation.RouteProgress, config: NbmapCoreNavigation.NavigationEngineConfig) -> Swift.Bool
+  public func calculateDynamicThreshold(location: CoreLocation.CLLocation, config: NbmapCoreNavigation.NavigationEngineConfig, trueDistanceToStep: Swift.Double, stepIndex: Swift.Int, angularDiff: CoreLocation.CLLocationDegrees) -> CoreLocation.CLLocationDistance
+  @objc deinit
+}
 public enum SimulationIntent : Swift.Int {
   case manual
   case poorGPS

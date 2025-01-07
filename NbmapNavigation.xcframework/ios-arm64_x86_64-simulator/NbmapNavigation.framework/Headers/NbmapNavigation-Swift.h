@@ -1442,6 +1442,12 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @property (nonatomic, strong) UIColor * _Nonnull maneuverArrowColor;
 @property (nonatomic, strong) UIColor * _Nonnull maneuverArrowStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull traversedRouteColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficUnknownColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficLowColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficModerateColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficHeavyColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficSevereColor;
+@property (nonatomic, strong) UIColor * _Nonnull routeRestrictedAreaColor;
 @property (nonatomic) BOOL showsUserLocation;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
@@ -3549,6 +3555,12 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @property (nonatomic, strong) UIColor * _Nonnull maneuverArrowColor;
 @property (nonatomic, strong) UIColor * _Nonnull maneuverArrowStrokeColor;
 @property (nonatomic, strong) UIColor * _Nonnull traversedRouteColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficUnknownColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficLowColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficModerateColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficHeavyColor;
+@property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficSevereColor;
+@property (nonatomic, strong) UIColor * _Nonnull routeRestrictedAreaColor;
 @property (nonatomic) BOOL showsUserLocation;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;

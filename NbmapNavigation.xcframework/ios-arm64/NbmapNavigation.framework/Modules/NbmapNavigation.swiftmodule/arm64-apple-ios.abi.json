@@ -16015,6 +16015,480 @@
           },
           {
             "kind": "Var",
+            "name": "alternativeTrafficUnknownColor",
+            "printedName": "alternativeTrafficUnknownColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)alternativeTrafficUnknownColor",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC30alternativeTrafficUnknownColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "Custom",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)alternativeTrafficUnknownColor",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC30alternativeTrafficUnknownColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setAlternativeTrafficUnknownColor:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC30alternativeTrafficUnknownColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alternativeTrafficLowColor",
+            "printedName": "alternativeTrafficLowColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)alternativeTrafficLowColor",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC26alternativeTrafficLowColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "Custom",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)alternativeTrafficLowColor",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC26alternativeTrafficLowColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setAlternativeTrafficLowColor:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC26alternativeTrafficLowColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alternativeTrafficModerateColor",
+            "printedName": "alternativeTrafficModerateColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)alternativeTrafficModerateColor",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC31alternativeTrafficModerateColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "Custom",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)alternativeTrafficModerateColor",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC31alternativeTrafficModerateColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setAlternativeTrafficModerateColor:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC31alternativeTrafficModerateColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alternativeTrafficHeavyColor",
+            "printedName": "alternativeTrafficHeavyColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)alternativeTrafficHeavyColor",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC28alternativeTrafficHeavyColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "Custom",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)alternativeTrafficHeavyColor",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC28alternativeTrafficHeavyColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setAlternativeTrafficHeavyColor:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC28alternativeTrafficHeavyColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alternativeTrafficSevereColor",
+            "printedName": "alternativeTrafficSevereColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)alternativeTrafficSevereColor",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC29alternativeTrafficSevereColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "Custom",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)alternativeTrafficSevereColor",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC29alternativeTrafficSevereColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setAlternativeTrafficSevereColor:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC29alternativeTrafficSevereColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "routeRestrictedAreaColor",
+            "printedName": "routeRestrictedAreaColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)routeRestrictedAreaColor",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC24routeRestrictedAreaColorSo7UIColorCvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "Custom",
+              "AccessControl",
+              "Dynamic",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)routeRestrictedAreaColor",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC24routeRestrictedAreaColorSo7UIColorCvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setRouteRestrictedAreaColor:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC24routeRestrictedAreaColorSo7UIColorCvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "userLocationStyle",
             "printedName": "userLocationStyle",
             "children": [
@@ -85661,6 +86135,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5444,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Feedback\/FeedbackCollectionViewCell.swift",
       "kind": "StringLiteral",
       "offset": 125,
@@ -86293,168 +86774,168 @@
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 6997,
+      "offset": 7578,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7193,
+      "offset": 7774,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 7287,
+      "offset": 7868,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 7522,
+      "offset": 8103,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 7563,
+      "offset": 8144,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 7596,
+      "offset": 8177,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 7636,
+      "offset": 8217,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 7675,
+      "offset": 8256,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 8848,
+      "offset": 9429,
       "length": 4,
       "value": "15.0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 8905,
+      "offset": 9486,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 16984,
+      "offset": 17565,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 17018,
+      "offset": 17599,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 18484,
+      "offset": 19065,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 18532,
+      "offset": 19113,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 20424,
+      "offset": 21005,
       "length": 4,
       "value": "50.0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 23854,
+      "offset": 24435,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 23864,
+      "offset": 24445,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 23876,
+      "offset": 24457,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 23887,
+      "offset": 24468,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 24021,
+      "offset": 24602,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 24526,
+      "offset": 25107,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 24604,
+      "offset": 25185,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 25130,
+      "offset": 25711,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 34056,
+      "offset": 34576,
       "length": 1,
       "value": "0"
     },
@@ -86559,35 +87040,35 @@
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10599,
+      "offset": 10826,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10658,
+      "offset": 10885,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10705,
+      "offset": 10932,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10817,
+      "offset": 11044,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12656,
+      "offset": 13032,
       "length": 5,
       "value": "false"
     },

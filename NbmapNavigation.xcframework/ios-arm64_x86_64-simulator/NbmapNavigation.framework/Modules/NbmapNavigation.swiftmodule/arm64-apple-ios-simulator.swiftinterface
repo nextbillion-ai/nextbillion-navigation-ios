@@ -461,6 +461,12 @@ open class NavigationOptions {
   @objc @_Concurrency.MainActor(unsafe) dynamic public var maneuverArrowColor: UIKit.UIColor
   @objc @_Concurrency.MainActor(unsafe) dynamic public var maneuverArrowStrokeColor: UIKit.UIColor
   @objc @_Concurrency.MainActor(unsafe) dynamic public var traversedRouteColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficUnknownColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficLowColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficModerateColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficHeavyColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficSevereColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor(unsafe) dynamic public var routeRestrictedAreaColor: UIKit.UIColor
   @_Concurrency.MainActor(unsafe) public var userLocationStyle: NbmapNavigation.UserLocationStyle? {
     get
     set
