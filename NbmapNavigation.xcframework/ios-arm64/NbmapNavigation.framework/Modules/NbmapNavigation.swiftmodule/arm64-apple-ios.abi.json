@@ -86137,7 +86137,7 @@
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 5444,
+      "offset": 5585,
       "length": 4,
       "value": "true"
     },
@@ -86935,7 +86935,7 @@
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 34576,
+      "offset": 34533,
       "length": 1,
       "value": "0"
     },
@@ -87040,35 +87040,35 @@
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10826,
+      "offset": 11216,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10885,
+      "offset": 11275,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10932,
+      "offset": 11322,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 11044,
+      "offset": 11434,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiuyu\/nb_project\/nb_workspace\/ios\/nb-navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 13032,
+      "offset": 13295,
       "length": 5,
       "value": "false"
     },
