@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NbmapNavigation
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AVFAudio
 import AVFoundation
 import CarPlay
@@ -21,11 +22,11 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 extension Nbmap.NGLMapView {
-  @_Concurrency.MainActor(unsafe) public var showsTraffic: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var showsTraffic: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var showsIncidents: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var showsIncidents: Swift.Bool {
     get
     set
   }
@@ -40,9 +41,9 @@ extension NbmapNavigation.BannerContainerViewDelegate {
   public func bannerContainerView(_ bannerContainerView: NbmapNavigation.BannerContainerView, stateDidChangeTo state: NbmapNavigation.BannerContainerView.State)
   public func bannerContainerView(_ bannerContainerView: NbmapNavigation.BannerContainerView, didExpandTo fraction: CoreFoundation.CGFloat)
 }
-@_inheritsConvenienceInitializers @objc(NBInstructionLabel) @_Concurrency.MainActor(unsafe) open class InstructionLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBInstructionLabel) @_Concurrency.MainActor @preconcurrency open class InstructionLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public protocol VisualInstructionDelegate : AnyObject, NbmapCoreNavigation.UnimplementedLogging {
@@ -105,55 +106,55 @@ public var LEVEL_4_ALERT_DURATION: Swift.Double
 public var LEVEL_5_ALERT_DURATION: Swift.Double
 public var LEVEL_6_ALERT_DURATION: Swift.Double
 extension NbmapNavigation.ArrivedViewController : UIKit.UIViewControllerTransitioningDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ArrivalTitleLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class ArrivalTitleLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ArrivalDestinationLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class ArrivalDestinationLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ArrivalAddressLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class ArrivalAddressLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class ArrivalBackgroundView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class ArrivalBackgroundView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class ArrivedViewController : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor(unsafe) open var destination: NbmapCoreNavigation.Waypoint? {
+@objc @_Concurrency.MainActor @preconcurrency public class ArrivedViewController : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency open var destination: NbmapCoreNavigation.Waypoint? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var dataTracking: NbmapCoreNavigation.DataTracking?
-  @objc @_Concurrency.MainActor(unsafe) public init(dataTracking: NbmapCoreNavigation.DataTracking?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func encode(with aCoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
-  @_Concurrency.MainActor(unsafe) @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var dataTracking: NbmapCoreNavigation.DataTracking?
+  @objc @_Concurrency.MainActor @preconcurrency public init(dataTracking: NbmapCoreNavigation.DataTracking?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func encode(with aCoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor @preconcurrency @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
   @objc deinit
 }
-@objc(NavigationPreviewController) @_Concurrency.MainActor(unsafe) open class NavigationPreviewController : UIKit.UIViewController, Nbmap.NGLMapViewDelegate {
-  @_Concurrency.MainActor(unsafe) public var navigationMapView: NbmapNavigation.NavigationMapView? {
+@objc(NavigationPreviewController) @_Concurrency.MainActor @preconcurrency open class NavigationPreviewController : UIKit.UIViewController, Nbmap.NGLMapViewDelegate {
+  @_Concurrency.MainActor @preconcurrency public var navigationMapView: NbmapNavigation.NavigationMapView? {
     get
     set
   }
-  @objc(initWithRoute:styles:) @_Concurrency.MainActor(unsafe) public init(route: NbmapCoreNavigation.Route, style: NbmapNavigation.Style = DayStyle())
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc public func mapViewDidFinishLoadingMap(_ mapView: Nbmap.NGLMapView)
+  @objc(initWithRoute:styles:) @_Concurrency.MainActor @preconcurrency public init(route: NbmapCoreNavigation.Route, style: NbmapNavigation.Style = DayStyle())
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc public func mapViewDidFinishLoadingMap(_ mapView: Nbmap.NGLMapView)
   @objc deinit
 }
 public enum SpeechFailureAction : Swift.String {
@@ -201,155 +202,155 @@ extension Swift.Dictionary where Key == Swift.Int, Value : Foundation.NSExpressi
   public func multiplied(by factor: Swift.Double) -> Swift.Dictionary<Key, Value>
 }
 public typealias ContainerViewController = UIKit.UIViewController & NbmapNavigation.NavigationComponent
-@objc(NBNavigationViewController) @_Concurrency.MainActor(unsafe) open class NavigationViewController : UIKit.UIViewController, NbmapNavigation.NavigationStatusPresenter {
-  @_Concurrency.MainActor(unsafe) public var navigationView: NbmapNavigation.NavigationView {
+@objc(NBNavigationViewController) @_Concurrency.MainActor @preconcurrency open class NavigationViewController : UIKit.UIViewController, NbmapNavigation.NavigationStatusPresenter {
+  @_Concurrency.MainActor @preconcurrency public var navigationView: NbmapNavigation.NavigationView {
     get
   }
-  @objc @_Concurrency.MainActor(unsafe) public var navigationMapView: NbmapNavigation.NavigationMapView? {
+  @objc @_Concurrency.MainActor @preconcurrency public var navigationMapView: NbmapNavigation.NavigationMapView? {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public var route: NbmapCoreNavigation.Route? {
+  @_Concurrency.MainActor @preconcurrency public var route: NbmapCoreNavigation.Route? {
     get
   }
-  @_Concurrency.MainActor(unsafe) public var routes: [NbmapCoreNavigation.Route] {
+  @_Concurrency.MainActor @preconcurrency public var routes: [NbmapCoreNavigation.Route] {
     get
   }
-  @_Concurrency.MainActor(unsafe) public var routeIndex: Swift.Int {
+  @_Concurrency.MainActor @preconcurrency public var routeIndex: Swift.Int {
     get
   }
-  @objc @_Concurrency.MainActor(unsafe) public var pendingCamera: Nbmap.NGLMapCamera?
-  @objc @_Concurrency.MainActor(unsafe) public var origin: (any Nbmap.NGLAnnotation)?
-  @_Concurrency.MainActor(unsafe) weak public var delegate: (any NbmapNavigation.NavigationViewControllerDelegate)?
-  @objc @_Concurrency.MainActor(unsafe) public var voiceController: NbmapNavigation.RouteVoiceController!
-  @_Concurrency.MainActor(unsafe) public var navigationService: (any NbmapCoreNavigation.NavigationService)! {
+  @objc @_Concurrency.MainActor @preconcurrency public var pendingCamera: Nbmap.NGLMapCamera?
+  @objc @_Concurrency.MainActor @preconcurrency public var origin: (any Nbmap.NGLAnnotation)?
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any NbmapNavigation.NavigationViewControllerDelegate)?
+  @objc @_Concurrency.MainActor @preconcurrency public var voiceController: NbmapNavigation.RouteVoiceController!
+  @_Concurrency.MainActor @preconcurrency public var navigationService: (any NbmapCoreNavigation.NavigationService)! {
     get
   }
-  @objc @_Concurrency.MainActor(unsafe) public var snapsUserLocationAnnotationToRoute: Swift.Bool
-  @objc @_Concurrency.MainActor(unsafe) public var sendsNotifications: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var navigationOptions: NbmapNavigation.NavigationOptions?
-  @_Concurrency.MainActor(unsafe) public var routeOptions: NbmapCoreNavigation.RouteOptions? {
+  @objc @_Concurrency.MainActor @preconcurrency public var snapsUserLocationAnnotationToRoute: Swift.Bool
+  @objc @_Concurrency.MainActor @preconcurrency public var sendsNotifications: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var navigationOptions: NbmapNavigation.NavigationOptions?
+  @_Concurrency.MainActor @preconcurrency public var routeOptions: NbmapCoreNavigation.RouteOptions? {
     get
   }
-  @_Concurrency.MainActor(unsafe) public func traversingTunnel() -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var usesNightStyleWhileInTunnel: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
-  @_Concurrency.MainActor(unsafe) public var routeLineTracksTraversal: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var showsArrivalWaypointSheet: Swift.Bool {
-    get
-    set
-  }
-  @_Concurrency.MainActor(unsafe) public var showsSpeed: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public func traversingTunnel() -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var usesNightStyleWhileInTunnel: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
+  @_Concurrency.MainActor @preconcurrency public var routeLineTracksTraversal: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var showsArrivalWaypointSheet: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var detailedFeedbackEnabled: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var showsSpeed: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) open var floatingButtons: [UIKit.UIButton]? {
+  @_Concurrency.MainActor @preconcurrency public var detailedFeedbackEnabled: Swift.Bool {
     get
     set
   }
-  @objc @_Concurrency.MainActor(unsafe) public var automaticallyAdjustsStyleForTimeOfDay: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency open var floatingButtons: [UIKit.UIButton]? {
+    get
+    set
+  }
+  @objc @_Concurrency.MainActor @preconcurrency public var automaticallyAdjustsStyleForTimeOfDay: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) public var shouldManageApplicationIdleTimer: Swift.Bool
-  @objc @_Concurrency.MainActor(unsafe) public var isUsedInConjunctionWithCarPlayWindow: Swift.Bool
-  @objc @_Concurrency.MainActor(unsafe) public var annotatesSpokenInstructions: Swift.Bool
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+  @objc @_Concurrency.MainActor @preconcurrency public var shouldManageApplicationIdleTimer: Swift.Bool
+  @objc @_Concurrency.MainActor @preconcurrency public var isUsedInConjunctionWithCarPlayWindow: Swift.Bool
+  @objc @_Concurrency.MainActor @preconcurrency public var annotatesSpokenInstructions: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) public func show(_ status: NbmapNavigation.StatusView.Status)
-  @_Concurrency.MainActor(unsafe) public func hide(_ status: NbmapNavigation.StatusView.Status)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) required public init(for routes: [NbmapCoreNavigation.Route]? = nil, routeIndex: Swift.Int? = 0, navigationOptions: NbmapNavigation.NavigationOptions? = nil, routeOptions: NbmapCoreNavigation.RouteOptions? = nil)
+  @_Concurrency.MainActor @preconcurrency public func show(_ status: NbmapNavigation.StatusView.Status)
+  @_Concurrency.MainActor @preconcurrency public func hide(_ status: NbmapNavigation.StatusView.Status)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency required public init(for routes: [NbmapCoreNavigation.Route]? = nil, routeIndex: Swift.Int? = 0, navigationOptions: NbmapNavigation.NavigationOptions? = nil, routeOptions: NbmapCoreNavigation.RouteOptions? = nil)
   @objc deinit
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func loadView()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func loadView()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLayoutSubviews()
   @available(iOS 13.0, *)
-  @_Concurrency.MainActor(unsafe) public class func carPlayManager(_ carPlayManager: NbmapNavigation.CarPlayManager, didBeginNavigationWith navigationService: any NbmapCoreNavigation.NavigationService, window: UIKit.UIWindow)
+  @_Concurrency.MainActor @preconcurrency public class func carPlayManager(_ carPlayManager: NbmapNavigation.CarPlayManager, didBeginNavigationWith navigationService: any NbmapCoreNavigation.NavigationService, window: UIKit.UIWindow)
   @available(iOS 13.0, *)
-  @_Concurrency.MainActor(unsafe) public class func carPlayManagerDidEndNavigation(_ carPlayManager: NbmapNavigation.CarPlayManager, window: UIKit.UIWindow)
+  @_Concurrency.MainActor @preconcurrency public class func carPlayManagerDidEndNavigation(_ carPlayManager: NbmapNavigation.CarPlayManager, window: UIKit.UIWindow)
 }
 extension NbmapNavigation.NavigationViewController : NbmapCoreNavigation.NavigationServiceDelegate {
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassSpokenInstructionPoint instruction: NbmapCoreNavigation.SpokenInstruction, routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willRerouteFrom location: CoreLocation.CLLocation)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willTakeAlternativeRoute route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didTakeAlternativeRouteAt location: CoreLocation.CLLocation?)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToTakeAlternativeRouteAt location: CoreLocation.CLLocation?)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldDiscard location: CoreLocation.CLLocation) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToRerouteWith error: any Swift.Error)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didArriveAt waypoint: NbmapCoreNavigation.Waypoint)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willBeginSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didBeginSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willEndSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didEndSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldPreventReroutesWhenArrivingAt waypoint: NbmapCoreNavigation.Waypoint) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public func navigationServiceShouldDisableBatteryMonitoring(_ service: any NbmapCoreNavigation.NavigationService) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassSpokenInstructionPoint instruction: NbmapCoreNavigation.SpokenInstruction, routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willRerouteFrom location: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willTakeAlternativeRoute route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didTakeAlternativeRouteAt location: CoreLocation.CLLocation?)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToTakeAlternativeRouteAt location: CoreLocation.CLLocation?)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldDiscard location: CoreLocation.CLLocation) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToRerouteWith error: any Swift.Error)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didArriveAt waypoint: NbmapCoreNavigation.Waypoint)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willBeginSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didBeginSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willEndSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didEndSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldPreventReroutesWhenArrivingAt waypoint: NbmapCoreNavigation.Waypoint) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func navigationServiceShouldDisableBatteryMonitoring(_ service: any NbmapCoreNavigation.NavigationService) -> Swift.Bool
 }
 extension NbmapNavigation.NavigationViewController : NbmapNavigation.StyleManagerDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func locationFor(styleManager: NbmapNavigation.StyleManager) -> CoreLocation.CLLocation?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func styleManager(_ styleManager: NbmapNavigation.StyleManager, didApply style: NbmapNavigation.Style)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func styleManagerDidRefreshAppearance(_ styleManager: NbmapNavigation.StyleManager)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func locationFor(styleManager: NbmapNavigation.StyleManager) -> CoreLocation.CLLocation?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func styleManager(_ styleManager: NbmapNavigation.StyleManager, didApply style: NbmapNavigation.Style)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func styleManagerDidRefreshAppearance(_ styleManager: NbmapNavigation.StyleManager)
 }
 extension NbmapNavigation.NavigationViewController : NbmapNavigation.TopBannerViewControllerDelegate {
-  @_Concurrency.MainActor(unsafe) public func preview(step: NbmapCoreNavigation.RouteStep, in banner: NbmapNavigation.TopBannerViewController, remaining: [NbmapCoreNavigation.RouteStep], route: NbmapCoreNavigation.Route, animated: Swift.Bool = true)
-  @_Concurrency.MainActor(unsafe) public func label(_ label: NbmapNavigation.InstructionLabel, willPresent instruction: NbmapCoreNavigation.VisualInstruction, as presented: Foundation.NSAttributedString) -> Foundation.NSAttributedString?
+  @_Concurrency.MainActor @preconcurrency public func preview(step: NbmapCoreNavigation.RouteStep, in banner: NbmapNavigation.TopBannerViewController, remaining: [NbmapCoreNavigation.RouteStep], route: NbmapCoreNavigation.Route, animated: Swift.Bool = true)
+  @_Concurrency.MainActor @preconcurrency public func label(_ label: NbmapNavigation.InstructionLabel, willPresent instruction: NbmapCoreNavigation.VisualInstruction, as presented: Foundation.NSAttributedString) -> Foundation.NSAttributedString?
 }
 extension NbmapNavigation.NavigationViewController : NbmapNavigation.BottomBannerViewControllerDelegate {
-  @_Concurrency.MainActor(unsafe) public func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didRemove legIndex: Swift.Int)
-  @_Concurrency.MainActor(unsafe) public func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didSelect legIndex: Swift.Int, stepIndex: Swift.Int, cell: NbmapNavigation.StepTableViewCell)
-  @_Concurrency.MainActor(unsafe) public func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didCancleRemoveWaypoint legIndex: Swift.Int)
-  @_Concurrency.MainActor(unsafe) public func didTapCancel(_ sender: Any)
-  @_Concurrency.MainActor(unsafe) public func didTapOverview(_ sender: Any)
+  @_Concurrency.MainActor @preconcurrency public func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didRemove legIndex: Swift.Int)
+  @_Concurrency.MainActor @preconcurrency public func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didSelect legIndex: Swift.Int, stepIndex: Swift.Int, cell: NbmapNavigation.StepTableViewCell)
+  @_Concurrency.MainActor @preconcurrency public func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didCancleRemoveWaypoint legIndex: Swift.Int)
+  @_Concurrency.MainActor @preconcurrency public func didTapCancel(_ sender: Any)
+  @_Concurrency.MainActor @preconcurrency public func didTapOverview(_ sender: Any)
 }
 extension NbmapNavigation.NavigationViewController : NbmapNavigation.CarPlayConnectionObserver {
-  @_Concurrency.MainActor(unsafe) public func didConnectToCarPlay()
-  @_Concurrency.MainActor(unsafe) public func didDisconnectFromCarPlay()
+  @_Concurrency.MainActor @preconcurrency public func didConnectToCarPlay()
+  @_Concurrency.MainActor @preconcurrency public func didDisconnectFromCarPlay()
 }
 extension NbmapNavigation.NavigationViewController : NbmapNavigation.NavigationMapViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, routeStyleLayerWithIdentifier identifier: Swift.String, source: Nbmap.NGLSource) -> Nbmap.NGLStyleLayer?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, routeCasingStyleLayerWithIdentifier identifier: Swift.String, source: Nbmap.NGLSource) -> Nbmap.NGLStyleLayer?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, waypointSymbolStyleLayerWithIdentifier identifier: Swift.String, waypoints: [NbmapCoreNavigation.Waypoint], source: Nbmap.NGLSource) -> Nbmap.NGLStyleLayer?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, shapeFor waypoints: [NbmapCoreNavigation.Waypoint], legIndex: Swift.Int) -> Nbmap.NGLShape?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, shapeFor routes: [NbmapCoreNavigation.Route]) -> Nbmap.NGLShape?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, didSelect route: NbmapCoreNavigation.Route)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, didSelect waypoint: NbmapCoreNavigation.Waypoint)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, simplifiedShapeFor route: NbmapCoreNavigation.Route) -> Nbmap.NGLShape?
-  @_Concurrency.MainActor(unsafe) public func navigationMapView(_ mapView: Nbmap.NGLMapView, imageFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationImage?
-  @_Concurrency.MainActor(unsafe) public func navigationMapView(_ mapView: Nbmap.NGLMapView, viewFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationView?
-  @_Concurrency.MainActor(unsafe) public func navigationMapViewUserAnchorPoint(_ mapView: NbmapNavigation.NavigationMapView) -> CoreFoundation.CGPoint
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, didFinishLoading style: Nbmap.NGLStyle)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, routeStyleLayerWithIdentifier identifier: Swift.String, source: Nbmap.NGLSource) -> Nbmap.NGLStyleLayer?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, routeCasingStyleLayerWithIdentifier identifier: Swift.String, source: Nbmap.NGLSource) -> Nbmap.NGLStyleLayer?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, waypointSymbolStyleLayerWithIdentifier identifier: Swift.String, waypoints: [NbmapCoreNavigation.Waypoint], source: Nbmap.NGLSource) -> Nbmap.NGLStyleLayer?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, shapeFor waypoints: [NbmapCoreNavigation.Waypoint], legIndex: Swift.Int) -> Nbmap.NGLShape?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, shapeFor routes: [NbmapCoreNavigation.Route]) -> Nbmap.NGLShape?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, didSelect route: NbmapCoreNavigation.Route)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, didSelect waypoint: NbmapCoreNavigation.Waypoint)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, simplifiedShapeFor route: NbmapCoreNavigation.Route) -> Nbmap.NGLShape?
+  @_Concurrency.MainActor @preconcurrency public func navigationMapView(_ mapView: Nbmap.NGLMapView, imageFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationImage?
+  @_Concurrency.MainActor @preconcurrency public func navigationMapView(_ mapView: Nbmap.NGLMapView, viewFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationView?
+  @_Concurrency.MainActor @preconcurrency public func navigationMapViewUserAnchorPoint(_ mapView: NbmapNavigation.NavigationMapView) -> CoreFoundation.CGPoint
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, didFinishLoading style: Nbmap.NGLStyle)
 }
 extension NbmapNavigation.NavigationViewController : Nbmap.NGLMapViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, imageFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationImage?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, viewFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationView?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, didSelect annotation: any Nbmap.NGLAnnotation)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, imageFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationImage?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, viewFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationView?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, didSelect annotation: any Nbmap.NGLAnnotation)
 }
 extension NbmapCoreNavigation.Route {
   public func isFarawayFrom(cordinate: CoreLocation.CLLocationCoordinate2D, minDistance: CoreLocation.CLLocationDistance = 1000) -> Swift.Bool
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(NBStepTableViewCell) @_Concurrency.MainActor(unsafe) open class StepTableViewCell : UIKit.UITableViewCell {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForReuse()
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(NBStepTableViewCell) @_Concurrency.MainActor @preconcurrency open class StepTableViewCell : UIKit.UITableViewCell {
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForReuse()
   @objc deinit
 }
 extension NbmapNavigation.NavigationMapView {
-  @_Concurrency.MainActor(unsafe) public func updateRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: CoreLocation.CLLocationCoordinate2D?, routes: [NbmapCoreNavigation.Route], shouldRedraw: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func updateTraveledRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func updateRoute(_ routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func updateRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: CoreLocation.CLLocationCoordinate2D?, routes: [NbmapCoreNavigation.Route], shouldRedraw: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func updateTraveledRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func updateRoute(_ routeProgress: NbmapCoreNavigation.RouteProgress)
 }
 public protocol InstructionsBannerViewDelegate : NbmapNavigation.VisualInstructionDelegate {
   func didTapInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView)
@@ -359,48 +360,48 @@ extension NbmapNavigation.InstructionsBannerViewDelegate {
   public func didTapInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView)
   public func didSwipeInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView, swipeDirection direction: UIKit.UISwipeGestureRecognizer.Direction)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SpeedView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var signBackColor: UIKit.UIColor {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class SpeedView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var signBackColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var textColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var textColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var regulatoryBorderColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var regulatoryBorderColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public var speedLimit: Foundation.Measurement<Foundation.UnitSpeed>? {
+  @_Concurrency.MainActor @preconcurrency public var speedLimit: Foundation.Measurement<Foundation.UnitSpeed>? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var currentSpeed: Foundation.Measurement<Foundation.UnitSpeed>? {
+  @_Concurrency.MainActor @preconcurrency public var currentSpeed: Foundation.Measurement<Foundation.UnitSpeed>? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var formatedUnit: Swift.String? {
+  @_Concurrency.MainActor @preconcurrency public var formatedUnit: Swift.String? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var signStandard: NbmapCoreNavigation.SignStandard? {
+  @_Concurrency.MainActor @preconcurrency public var signStandard: NbmapCoreNavigation.SignStandard? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var isAlwaysHidden: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var isAlwaysHidden: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var shouldShowUnknownSpeedLimit: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var shouldShowUnknownSpeedLimit: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var shouldShowUnknownSpeed: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var shouldShowUnknownSpeed: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc(NBStyleKitMarker) public class StyleKitMarker : ObjectiveC.NSObject {
@@ -413,10 +414,10 @@ extension Swift.String {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class WaypointArrivedCell : UIKit.UITableViewCell {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) open func reinstallConstraints()
-  @_Concurrency.MainActor(unsafe) open func updateSection(symbol: Swift.String, text: Swift.String, isArrived: Swift.Bool = false)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class WaypointArrivedCell : UIKit.UITableViewCell {
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency open func reinstallConstraints()
+  @_Concurrency.MainActor @preconcurrency open func updateSection(symbol: Swift.String, text: Swift.String, isArrived: Swift.Bool = false)
   @objc deinit
 }
 open class NavigationOptions {
@@ -432,14 +433,14 @@ open class NavigationOptions {
   public class func navigationOptions() -> Self
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBNavigationMapView) @_Concurrency.MainActor(unsafe) open class NavigationMapView : Nbmap.NGLMapView, UIKit.UIGestureRecognizerDelegate, Nbmap.NGLMapViewDelegate {
-  @objc @_Concurrency.MainActor(unsafe) public var defaultAltitude: Swift.Double
-  @objc @_Concurrency.MainActor(unsafe) public var zoomedOutMotorwayAltitude: Swift.Double
-  @objc @_Concurrency.MainActor(unsafe) public var longManeuverDistance: Swift.Double
-  @objc @_Concurrency.MainActor(unsafe) public var tapGestureDistanceThreshold: CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) weak public var navigationMapDelegate: (any NbmapNavigation.NavigationMapViewDelegate)?
-  @_Concurrency.MainActor(unsafe) public var routeLineTracksTraversal: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var dissolvedRouteLineStyle: NbmapNavigation.DissolvedRouteLineStyle
+@_inheritsConvenienceInitializers @objc(NBNavigationMapView) @_Concurrency.MainActor @preconcurrency open class NavigationMapView : Nbmap.NGLMapView, UIKit.UIGestureRecognizerDelegate, Nbmap.NGLMapViewDelegate {
+  @objc @_Concurrency.MainActor @preconcurrency public var defaultAltitude: Swift.Double
+  @objc @_Concurrency.MainActor @preconcurrency public var zoomedOutMotorwayAltitude: Swift.Double
+  @objc @_Concurrency.MainActor @preconcurrency public var longManeuverDistance: Swift.Double
+  @objc @_Concurrency.MainActor @preconcurrency public var tapGestureDistanceThreshold: CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency weak public var navigationMapDelegate: (any NbmapNavigation.NavigationMapViewDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var routeLineTracksTraversal: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var dissolvedRouteLineStyle: NbmapNavigation.DissolvedRouteLineStyle
   @objc public enum DurationSymbolType : Swift.Int {
     case ROUTE_DURATION = 0
     case ROUTE_DURATION_DIFF = 1
@@ -450,63 +451,63 @@ open class NavigationOptions {
       get
     }
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficUnknownColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficLowColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficModerateColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficHeavyColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficSevereColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var routeCasingColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var routeAlternateColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var routeAlternateCasingColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var maneuverArrowColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var maneuverArrowStrokeColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var traversedRouteColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficUnknownColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficLowColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficModerateColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficHeavyColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var alternativeTrafficSevereColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var routeRestrictedAreaColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) public var userLocationStyle: NbmapNavigation.UserLocationStyle? {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficUnknownColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficLowColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficModerateColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficHeavyColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficSevereColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var routeCasingColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var routeAlternateColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var routeAlternateCasingColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var maneuverArrowColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var maneuverArrowStrokeColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var traversedRouteColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var alternativeTrafficUnknownColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var alternativeTrafficLowColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var alternativeTrafficModerateColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var alternativeTrafficHeavyColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var alternativeTrafficSevereColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var routeRestrictedAreaColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency public var userLocationStyle: NbmapNavigation.UserLocationStyle? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var showsUserLocation: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var showsUserLocation: Swift.Bool {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public var navigationCamera: NbmapNavigation.NavigationCamera! {
+  @_Concurrency.MainActor @preconcurrency public var navigationCamera: NbmapNavigation.NavigationCamera! {
     get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, styleURL: Foundation.URL?)
-  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, navigationCameraType: NbmapNavigation.NavigationCameraType = .mobile)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func reloadStyle(_ sender: Any?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, styleURL: Foundation.URL?)
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, navigationCameraType: NbmapNavigation.NavigationCameraType = .mobile)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func reloadStyle(_ sender: Any?)
   @objc deinit
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func anchorPoint(forGesture gesture: UIKit.UIGestureRecognizer) -> CoreFoundation.CGPoint
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func mapViewDidFinishRenderingFrameFullyRendered(_ fullyRendered: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func updatePreferredFrameRate(for routeProgress: NbmapCoreNavigation.RouteProgress)
-  @objc @_Concurrency.MainActor(unsafe) public func movePuckToCurrentLocation(location: CoreLocation.CLLocation?, animated: Swift.Bool = false, updateWaynameLabel: Swift.Bool = false)
-  @objc @_Concurrency.MainActor(unsafe) public func getVisibleRoadFeatures(in coordinate: CoreLocation.CLLocationCoordinate2D, length: CoreLocation.CLLocationDistance = 50.0) -> [any Nbmap.NGLFeature]
-  @_Concurrency.MainActor(unsafe) public static let defaultPadding: UIKit.UIEdgeInsets
-  @objc @_Concurrency.MainActor(unsafe) public func showcase(_ routes: [NbmapCoreNavigation.Route], padding: UIKit.UIEdgeInsets = NavigationMapView.defaultPadding, animated: Swift.Bool = false)
-  @objc @_Concurrency.MainActor(unsafe) public func showRoutes(_ routes: [NbmapCoreNavigation.Route], legIndex: Swift.Int = 0)
-  @objc @_Concurrency.MainActor(unsafe) public func removeRoutes()
-  @objc @_Concurrency.MainActor(unsafe) public func showWaypoints(_ route: NbmapCoreNavigation.Route, legIndex: Swift.Int = 0)
-  @objc @_Concurrency.MainActor(unsafe) public func removeWaypoints()
-  @objc @_Concurrency.MainActor(unsafe) public func addArrow(route: NbmapCoreNavigation.Route, legIndex: Swift.Int, stepIndex: Swift.Int)
-  @objc @_Concurrency.MainActor(unsafe) public func removeArrow()
-  @objc @_Concurrency.MainActor(unsafe) public func showRouteDurationSymbol(_ routes: [NbmapCoreNavigation.Route], durationSymbolType: NbmapNavigation.NavigationMapView.DurationSymbolType = .ROUTE_DURATION)
-  @objc @_Concurrency.MainActor(unsafe) public func removeRouteDurationSymbol()
-  @objc @_Concurrency.MainActor(unsafe) public func appendWayNameLayer()
-  @objc @_Concurrency.MainActor(unsafe) public func localizeLabels()
-  @objc @_Concurrency.MainActor(unsafe) public func showVoiceInstructionsOnMap(route: NbmapCoreNavigation.Route)
-  @objc @_Concurrency.MainActor(unsafe) public func setOverheadCameraView(from userLocation: CoreLocation.CLLocationCoordinate2D, along coordinates: [CoreLocation.CLLocationCoordinate2D], for bounds: UIKit.UIEdgeInsets)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func anchorPoint(forGesture gesture: UIKit.UIGestureRecognizer) -> CoreFoundation.CGPoint
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func mapViewDidFinishRenderingFrameFullyRendered(_ fullyRendered: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func updatePreferredFrameRate(for routeProgress: NbmapCoreNavigation.RouteProgress)
+  @objc @_Concurrency.MainActor @preconcurrency public func movePuckToCurrentLocation(location: CoreLocation.CLLocation?, animated: Swift.Bool = false, updateWaynameLabel: Swift.Bool = false)
+  @objc @_Concurrency.MainActor @preconcurrency public func getVisibleRoadFeatures(in coordinate: CoreLocation.CLLocationCoordinate2D, length: CoreLocation.CLLocationDistance = 50.0) -> [any Nbmap.NGLFeature]
+  @_Concurrency.MainActor @preconcurrency public static let defaultPadding: UIKit.UIEdgeInsets
+  @objc @_Concurrency.MainActor @preconcurrency public func showcase(_ routes: [NbmapCoreNavigation.Route], padding: UIKit.UIEdgeInsets = NavigationMapView.defaultPadding, animated: Swift.Bool = false)
+  @objc @_Concurrency.MainActor @preconcurrency public func showRoutes(_ routes: [NbmapCoreNavigation.Route], legIndex: Swift.Int = 0)
+  @objc @_Concurrency.MainActor @preconcurrency public func removeRoutes()
+  @objc @_Concurrency.MainActor @preconcurrency public func showWaypoints(_ route: NbmapCoreNavigation.Route, legIndex: Swift.Int = 0)
+  @objc @_Concurrency.MainActor @preconcurrency public func removeWaypoints()
+  @objc @_Concurrency.MainActor @preconcurrency public func addArrow(route: NbmapCoreNavigation.Route, legIndex: Swift.Int, stepIndex: Swift.Int)
+  @objc @_Concurrency.MainActor @preconcurrency public func removeArrow()
+  @objc @_Concurrency.MainActor @preconcurrency public func showRouteDurationSymbol(_ routes: [NbmapCoreNavigation.Route], durationSymbolType: NbmapNavigation.NavigationMapView.DurationSymbolType = .ROUTE_DURATION)
+  @objc @_Concurrency.MainActor @preconcurrency public func removeRouteDurationSymbol()
+  @objc @_Concurrency.MainActor @preconcurrency public func appendWayNameLayer()
+  @objc @_Concurrency.MainActor @preconcurrency public func localizeLabels()
+  @objc @_Concurrency.MainActor @preconcurrency public func showVoiceInstructionsOnMap(route: NbmapCoreNavigation.Route)
+  @objc @_Concurrency.MainActor @preconcurrency public func setOverheadCameraView(from userLocation: CoreLocation.CLLocationCoordinate2D, along coordinates: [CoreLocation.CLLocationCoordinate2D], for bounds: UIKit.UIEdgeInsets)
 }
 extension NbmapNavigation.NavigationMapView : NbmapNavigation.NavigationCameraDelegate {
-  @_Concurrency.MainActor(unsafe) public func navigationCameraStateDidChange(state: NbmapNavigation.NavigationCameraState)
+  @_Concurrency.MainActor @preconcurrency public func navigationCameraStateDidChange(state: NbmapNavigation.NavigationCameraState)
 }
 @objc(NBNavigationMapViewDelegate) public protocol NavigationMapViewDelegate {
   @objc optional func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, routeStyleLayerWithIdentifier identifier: Swift.String, source: Nbmap.NGLSource) -> Nbmap.NGLStyleLayer?
@@ -520,18 +521,18 @@ extension NbmapNavigation.NavigationMapView : NbmapNavigation.NavigationCameraDe
   @objc(navigationMapView:simplifiedShapeForRoute:) optional func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, simplifiedShapeFor route: NbmapCoreNavigation.Route) -> Nbmap.NGLShape?
   @objc(navigationMapView:shapeForWaypoints:legIndex:) optional func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, shapeFor waypoints: [NbmapCoreNavigation.Waypoint], legIndex: Swift.Int) -> Nbmap.NGLShape?
 }
-@objc @_Concurrency.MainActor(unsafe) open class CPNavigationView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public var navigationMapView: NbmapNavigation.NavigationMapView {
+@objc @_Concurrency.MainActor @preconcurrency open class CPNavigationView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var navigationMapView: NbmapNavigation.NavigationMapView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var topBannerContainerView: NbmapNavigation.BannerContainerView {
+  @_Concurrency.MainActor @preconcurrency public var topBannerContainerView: NbmapNavigation.BannerContainerView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, navigationMapView: NbmapNavigation.NavigationMapView? = nil)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, navigationMapView: NbmapNavigation.NavigationMapView? = nil)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
   @objc deinit
 }
 public protocol NavigationComponent : NbmapCoreNavigation.NavigationServiceDelegate {
@@ -555,9 +556,9 @@ public protocol BottomBannerViewControllerDelegate : AnyObject {
   func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didRemove legIndex: Swift.Int)
   func bottomBanner(_ banner: NbmapNavigation.BottomBannerViewController, didCancleRemoveWaypoint legIndex: Swift.Int)
 }
-@_inheritsConvenienceInitializers @objc(NBStepsBackgroundView) @_Concurrency.MainActor(unsafe) open class StepsBackgroundView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBStepsBackgroundView) @_Concurrency.MainActor @preconcurrency open class StepsBackgroundView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public protocol StepsViewControllerDelegate : AnyObject {
@@ -565,30 +566,30 @@ public protocol StepsViewControllerDelegate : AnyObject {
   func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didRemove legIndex: Swift.Int, cell: NbmapNavigation.LegSummaryCell)
   func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didOnTapArrived legIndex: Swift.Int, cell: NbmapNavigation.WaypointArrivedCell)
 }
-@_inheritsConvenienceInitializers @objc(NBStepsViewController) @_Concurrency.MainActor(unsafe) public class StepsViewController : UIKit.UIViewController, NbmapNavigation.NavigationComponent {
-  @_Concurrency.MainActor(unsafe) weak public var delegate: (any NbmapNavigation.StepsViewControllerDelegate)?
-  @_Concurrency.MainActor(unsafe) weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
-  @_Concurrency.MainActor(unsafe) convenience public init(routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+@_inheritsConvenienceInitializers @objc(NBStepsViewController) @_Concurrency.MainActor @preconcurrency public class StepsViewController : UIKit.UIViewController, NbmapNavigation.NavigationComponent {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any NbmapNavigation.StepsViewControllerDelegate)?
+  @_Concurrency.MainActor @preconcurrency weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
+  @_Concurrency.MainActor @preconcurrency convenience public init(routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
   @objc deinit
-  @_Concurrency.MainActor(unsafe) public func dropDownAnimation()
-  @_Concurrency.MainActor(unsafe) public func slideUpAnimation(completion: NbmapNavigation.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func dismiss(completion: NbmapNavigation.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func tableViewHeight() -> CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency public func dropDownAnimation()
+  @_Concurrency.MainActor @preconcurrency public func slideUpAnimation(completion: NbmapNavigation.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func dismiss(completion: NbmapNavigation.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func tableViewHeight() -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension NbmapNavigation.StepsViewController : UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 extension NbmapNavigation.StepsViewController : UIKit.UITableViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
 }
 extension NbmapNavigation.StepsViewController : UIKit.UITableViewDataSource {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
 }
 @_inheritsConvenienceInitializers @objc(NBDayStyle) open class DayStyle : NbmapNavigation.Style {
   @objc required dynamic public init()
@@ -600,110 +601,110 @@ extension NbmapNavigation.StepsViewController : UIKit.UITableViewDataSource {
   @objc override open func apply()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class GenericRouteShield : NbmapNavigation.StylableView {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class GenericRouteShield : NbmapNavigation.StylableView {
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable @objc(NBLanesView) @_Concurrency.MainActor(unsafe) open class LanesView : UIKit.UIView, NbmapNavigation.NavigationComponent {
-  @_Concurrency.MainActor(unsafe) public var isCurrentlyVisible: Swift.Bool
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable @objc(NBLanesView) @_Concurrency.MainActor @preconcurrency open class LanesView : UIKit.UIView, NbmapNavigation.NavigationComponent {
+  @_Concurrency.MainActor @preconcurrency public var isCurrentlyVisible: Swift.Bool
   public typealias CompletionHandler = (_ completed: Swift.Bool) -> Swift.Void
-  @_Concurrency.MainActor(unsafe) public func update(for visualInstruction: NbmapCoreNavigation.VisualInstructionBanner?, animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.LanesView.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func show(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.LanesView.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func hide(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.LanesView.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency public func update(for visualInstruction: NbmapCoreNavigation.VisualInstructionBanner?, animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.LanesView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func show(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.LanesView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func hide(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.LanesView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
   @objc deinit
 }
-@IBDesignable @objc(NBNavigationView) @_Concurrency.MainActor(unsafe) open class NavigationView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public var navigationMapView: NbmapNavigation.NavigationMapView {
+@IBDesignable @objc(NBNavigationView) @_Concurrency.MainActor @preconcurrency open class NavigationView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public var navigationMapView: NbmapNavigation.NavigationMapView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var floatingStackView: UIKit.UIStackView {
+  @_Concurrency.MainActor @preconcurrency public var floatingStackView: UIKit.UIStackView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var floatingButtons: [UIKit.UIButton]? {
+  @_Concurrency.MainActor @preconcurrency public var floatingButtons: [UIKit.UIButton]? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var wayNameView: NbmapNavigation.WayNameView {
+  @_Concurrency.MainActor @preconcurrency public var wayNameView: NbmapNavigation.WayNameView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var speedView: NbmapNavigation.SpeedView {
+  @_Concurrency.MainActor @preconcurrency public var speedView: NbmapNavigation.SpeedView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var topBannerContainerView: NbmapNavigation.BannerContainerView {
+  @_Concurrency.MainActor @preconcurrency public var topBannerContainerView: NbmapNavigation.BannerContainerView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var bottomBannerContainerView: NbmapNavigation.BannerContainerView {
+  @_Concurrency.MainActor @preconcurrency public var bottomBannerContainerView: NbmapNavigation.BannerContainerView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, navigationMapView: NbmapNavigation.NavigationMapView? = nil)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, navigationMapView: NbmapNavigation.NavigationMapView? = nil)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
   @objc deinit
 }
 extension NbmapNavigation.CPNavigationView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 13.0, *)
-@_Concurrency.MainActor(unsafe) public class CarPlayNavigationViewController : UIKit.UIViewController, Nbmap.NGLMapViewDelegate {
-  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any NbmapNavigation.CarPlayNavigationDelegate)?
-  @objc @_Concurrency.MainActor(unsafe) public var navigationMapView: NbmapNavigation.NavigationMapView {
+@_Concurrency.MainActor @preconcurrency public class CarPlayNavigationViewController : UIKit.UIViewController, Nbmap.NGLMapViewDelegate {
+  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any NbmapNavigation.CarPlayNavigationDelegate)?
+  @objc @_Concurrency.MainActor @preconcurrency public var navigationMapView: NbmapNavigation.NavigationMapView {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public var usesNightStyleWhileInTunnel: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var carPlayManager: NbmapNavigation.CarPlayManager
-  @_Concurrency.MainActor(unsafe) public var styles: [NbmapNavigation.Style] {
+  @_Concurrency.MainActor @preconcurrency public var usesNightStyleWhileInTunnel: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var carPlayManager: NbmapNavigation.CarPlayManager
+  @_Concurrency.MainActor @preconcurrency public var styles: [NbmapNavigation.Style] {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var styleManager: NbmapNavigation.StyleManager! {
+  @_Concurrency.MainActor @preconcurrency public var styleManager: NbmapNavigation.StyleManager! {
     get
   }
-  @_Concurrency.MainActor(unsafe) public var navigationService: (any NbmapCoreNavigation.NavigationService)! {
+  @_Concurrency.MainActor @preconcurrency public var navigationService: (any NbmapCoreNavigation.NavigationService)! {
     get
   }
-  @_Concurrency.MainActor(unsafe) public init(for navigationService: any NbmapCoreNavigation.NavigationService, mapTemplate: CarPlay.CPMapTemplate, interfaceController: CarPlay.CPInterfaceController, manager: NbmapNavigation.CarPlayManager, styles: [NbmapNavigation.Style]? = nil)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+  @_Concurrency.MainActor @preconcurrency public init(for navigationService: any NbmapCoreNavigation.NavigationService, mapTemplate: CarPlay.CPMapTemplate, interfaceController: CarPlay.CPInterfaceController, manager: NbmapNavigation.CarPlayManager, styles: [NbmapNavigation.Style]? = nil)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLayoutSubviews()
   @objc deinit
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewSafeAreaInsetsDidChange()
-  @objc(startNavigationSessionForTrip:) @_Concurrency.MainActor(unsafe) public func startNavigationSession(for trip: CarPlay.CPTrip)
-  @objc(exitNavigationByCanceling:) @_Concurrency.MainActor(unsafe) public func exitNavigation(byCanceling canceled: Swift.Bool = false)
-  @objc @_Concurrency.MainActor(unsafe) public var tracksUserCourse: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewSafeAreaInsetsDidChange()
+  @objc(startNavigationSessionForTrip:) @_Concurrency.MainActor @preconcurrency public func startNavigationSession(for trip: CarPlay.CPTrip)
+  @objc(exitNavigationByCanceling:) @_Concurrency.MainActor @preconcurrency public func exitNavigation(byCanceling canceled: Swift.Bool = false)
+  @objc @_Concurrency.MainActor @preconcurrency public var tracksUserCourse: Swift.Bool {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public func beginPanGesture()
+  @_Concurrency.MainActor @preconcurrency public func beginPanGesture()
 }
 @available(iOS 13.0, *)
 extension NbmapNavigation.CarPlayNavigationViewController : NbmapNavigation.StyleManagerDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func locationFor(styleManager: NbmapNavigation.StyleManager) -> CoreLocation.CLLocation?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func styleManager(_ styleManager: NbmapNavigation.StyleManager, didApply style: NbmapNavigation.Style)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func styleManagerDidRefreshAppearance(_ styleManager: NbmapNavigation.StyleManager)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func locationFor(styleManager: NbmapNavigation.StyleManager) -> CoreLocation.CLLocation?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func styleManager(_ styleManager: NbmapNavigation.StyleManager, didApply style: NbmapNavigation.Style)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func styleManagerDidRefreshAppearance(_ styleManager: NbmapNavigation.StyleManager)
 }
 @available(iOS 13.0, *)
 extension NbmapNavigation.CarPlayNavigationViewController : NbmapCoreNavigation.NavigationServiceDelegate {
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didArriveAt waypoint: NbmapCoreNavigation.Waypoint)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willRerouteFrom location: CoreLocation.CLLocation)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didArriveAt waypoint: NbmapCoreNavigation.Waypoint)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, shouldRerouteFrom location: CoreLocation.CLLocation) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willRerouteFrom location: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
 }
 @available(iOS 13.0, *)
 @objc(NBNavigationCarPlayDelegate) public protocol CarPlayNavigationDelegate {
@@ -712,14 +713,14 @@ extension NbmapNavigation.CarPlayNavigationViewController : NbmapCoreNavigation.
 }
 @available(iOS 13.0, *)
 extension NbmapNavigation.CarPlayNavigationViewController : CarPlay.CPSessionConfigurationDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func sessionConfiguration(_ sessionConfiguration: CarPlay.CPSessionConfiguration, contentStyleChanged contentStyle: CarPlay.CPContentStyle)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func sessionConfiguration(_ sessionConfiguration: CarPlay.CPSessionConfiguration, contentStyleChanged contentStyle: CarPlay.CPContentStyle)
 }
 @available(iOS 13.0, *)
 extension NbmapNavigation.CarPlayNavigationViewController : NbmapNavigation.TopBannerViewControllerDelegate {
 }
 @available(iOS 13.0, *)
 extension NbmapNavigation.CarPlayNavigationViewController : NbmapNavigation.NavigationMapViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, didFinishLoading style: Nbmap.NGLStyle)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapView(_ mapView: Nbmap.NGLMapView, didFinishLoading style: Nbmap.NGLStyle)
 }
 @objc @_inheritsConvenienceInitializers public class SpeedLimitStyleKit : ObjectiveC.NSObject {
   @objc dynamic public class func drawMUTCD(frame targetFrame: CoreFoundation.CGRect = CGRect(x: 0, y: 0, width: 56, height: 66), resizing: NbmapNavigation.SpeedLimitStyleKit.ResizingBehavior = .aspectFit, signBackColor: UIKit.UIColor = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000), strokeColor: UIKit.UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), limit: Swift.String = "50", legend: Swift.String = "MAX")
@@ -755,43 +756,43 @@ public struct OverviewCameraOptions : Swift.Equatable {
 }
 public enum NavigationImages {
 }
-@_inheritsConvenienceInitializers @objc(NBStepInstructionsView) @_Concurrency.MainActor(unsafe) open class StepInstructionsView : NbmapNavigation.BaseInstructionsBannerView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBStepInstructionsView) @_Concurrency.MainActor @preconcurrency open class StepInstructionsView : NbmapNavigation.BaseInstructionsBannerView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) public class JunctionView : UIKit.UIImageView {
-  @_Concurrency.MainActor(unsafe) public func show(animated: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) public func update(for visualInstruction: NbmapCoreNavigation.VisualInstructionBanner?, service: any NbmapCoreNavigation.NavigationService)
-  @_Concurrency.MainActor(unsafe) public func hide(delay: Foundation.TimeInterval = 0, animated: Swift.Bool = true)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@objc @_Concurrency.MainActor @preconcurrency public class JunctionView : UIKit.UIImageView {
+  @_Concurrency.MainActor @preconcurrency public func show(animated: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency public func update(for visualInstruction: NbmapCoreNavigation.VisualInstructionBanner?, service: any NbmapCoreNavigation.NavigationService)
+  @_Concurrency.MainActor @preconcurrency public func hide(delay: Foundation.TimeInterval = 0, animated: Swift.Bool = true)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBEndOfRouteContentView) @_Concurrency.MainActor(unsafe) open class EndOfRouteContentView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBEndOfRouteContentView) @_Concurrency.MainActor @preconcurrency open class EndOfRouteContentView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBEndOfRouteTitleLabel) @_Concurrency.MainActor(unsafe) open class EndOfRouteTitleLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBEndOfRouteTitleLabel) @_Concurrency.MainActor @preconcurrency open class EndOfRouteTitleLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBEndOfRouteStaticLabel) @_Concurrency.MainActor(unsafe) open class EndOfRouteStaticLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBEndOfRouteStaticLabel) @_Concurrency.MainActor @preconcurrency open class EndOfRouteStaticLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBEndOfRouteCommentView) @_Concurrency.MainActor(unsafe) open class EndOfRouteCommentView : NbmapNavigation.StylableTextView {
+@_inheritsConvenienceInitializers @objc(NBEndOfRouteCommentView) @_Concurrency.MainActor @preconcurrency open class EndOfRouteCommentView : NbmapNavigation.StylableTextView {
   @available(iOS 7.0, *)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBEndOfRouteButton) @_Concurrency.MainActor(unsafe) open class EndOfRouteButton : NbmapNavigation.StylableButton {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBEndOfRouteButton) @_Concurrency.MainActor @preconcurrency open class EndOfRouteButton : NbmapNavigation.StylableButton {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension NbmapNavigation.NavMapCameraOption {
@@ -979,6 +980,7 @@ extension CoreLocation.CLLocation : Swift.Encodable {
     public init?(rawValue: Swift.String)
     public init?(stringValue: Swift.String)
     public init?(intValue: Swift.Int)
+    @available(iOS 2.0, *)
     public typealias RawValue = Swift.String
     public var intValue: Swift.Int? {
       get
@@ -992,34 +994,34 @@ extension CoreLocation.CLLocation : Swift.Encodable {
   }
   public func encode(to encoder: any Swift.Encoder) throws
 }
-@_inheritsConvenienceInitializers @IBDesignable @objc(NBManeuverView) @_Concurrency.MainActor(unsafe) open class ManeuverView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var primaryColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @IBDesignable @objc(NBManeuverView) @_Concurrency.MainActor @preconcurrency open class ManeuverView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var primaryColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var secondaryColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var secondaryColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) public var isStart: Swift.Bool {
+  @objc @_Concurrency.MainActor @preconcurrency public var isStart: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) public var isEnd: Swift.Bool {
+  @objc @_Concurrency.MainActor @preconcurrency public var isEnd: Swift.Bool {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) public var visualInstruction: NbmapCoreNavigation.VisualInstruction? {
+  @objc @_Concurrency.MainActor @preconcurrency public var visualInstruction: NbmapCoreNavigation.VisualInstruction? {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) public var drivingSide: NbmapCoreNavigation.DrivingSide {
+  @objc @_Concurrency.MainActor @preconcurrency public var drivingSide: NbmapCoreNavigation.DrivingSide {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func draw(_ rect: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public protocol CourseUpdatable : UIKit.UIView {
@@ -1027,59 +1029,59 @@ public protocol CourseUpdatable : UIKit.UIView {
   func update(from degress: CoreLocation.CLLocationDegrees, to direction: CoreLocation.CLLocationDegrees, pitch: CoreFoundation.CGFloat, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
   func updateWayNameLabel(wayNameFeatures: [any Nbmap.NGLFeature], cameraState: NbmapNavigation.NavigationCameraState)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class UserPuckCourseView : UIKit.UIView, NbmapNavigation.CourseUpdatable {
-  @_Concurrency.MainActor(unsafe) public func update(from direction: CoreLocation.CLLocationDegrees, to degress: CoreLocation.CLLocationDegrees, pitch: CoreFoundation.CGFloat, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
-  @_Concurrency.MainActor(unsafe) public var minimizesInOverview: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var puckImage: UIKit.UIImage?
-  @_Concurrency.MainActor(unsafe) public func update(location: CoreLocation.CLLocation, pitch: CoreFoundation.CGFloat, direction: CoreLocation.CLLocationDegrees, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
-  @_Concurrency.MainActor(unsafe) public func updateWayNameLabel(wayNameFeatures: [any Nbmap.NGLFeature], cameraState: NbmapNavigation.NavigationCameraState)
-  @_Concurrency.MainActor(unsafe) public var puckView: UIKit.UIImageView! {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class UserPuckCourseView : UIKit.UIView, NbmapNavigation.CourseUpdatable {
+  @_Concurrency.MainActor @preconcurrency public func update(from direction: CoreLocation.CLLocationDegrees, to degress: CoreLocation.CLLocationDegrees, pitch: CoreFoundation.CGFloat, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
+  @_Concurrency.MainActor @preconcurrency public var minimizesInOverview: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var puckImage: UIKit.UIImage?
+  @_Concurrency.MainActor @preconcurrency public func update(location: CoreLocation.CLLocation, pitch: CoreFoundation.CGFloat, direction: CoreLocation.CLLocationDegrees, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
+  @_Concurrency.MainActor @preconcurrency public func updateWayNameLabel(wayNameFeatures: [any Nbmap.NGLFeature], cameraState: NbmapNavigation.NavigationCameraState)
+  @_Concurrency.MainActor @preconcurrency public var puckView: UIKit.UIImageView! {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) required public init?(puckImage: UIKit.UIImage, frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency required public init?(puckImage: UIKit.UIImage, frame: CoreFoundation.CGRect)
   @objc deinit
 }
 extension NbmapNavigation.NavigationView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
 }
-@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class InstructionsBannerView : NbmapNavigation.BaseInstructionsBannerView, NbmapNavigation.NavigationComponent {
-  @_Concurrency.MainActor(unsafe) weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor @preconcurrency open class InstructionsBannerView : NbmapNavigation.BaseInstructionsBannerView, NbmapNavigation.NavigationComponent {
+  @_Concurrency.MainActor @preconcurrency weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseInstructionsBannerView : UIKit.UIControl {
-  @_Concurrency.MainActor(unsafe) weak public var maneuverView: NbmapNavigation.ManeuverView!
-  @_Concurrency.MainActor(unsafe) weak public var primaryLabel: NbmapNavigation.PrimaryLabel!
-  @_Concurrency.MainActor(unsafe) weak public var secondaryLabel: NbmapNavigation.SecondaryLabel!
-  @_Concurrency.MainActor(unsafe) weak public var distanceLabel: NbmapNavigation.DistanceLabel!
-  @_Concurrency.MainActor(unsafe) weak public var dividerView: UIKit.UIView!
-  @_Concurrency.MainActor(unsafe) weak public var stepListIndicatorView: NbmapNavigation.StepListIndicatorView!
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var swipeable: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var isTopBannerView: Swift.Bool {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BaseInstructionsBannerView : UIKit.UIControl {
+  @_Concurrency.MainActor @preconcurrency weak public var maneuverView: NbmapNavigation.ManeuverView!
+  @_Concurrency.MainActor @preconcurrency weak public var primaryLabel: NbmapNavigation.PrimaryLabel!
+  @_Concurrency.MainActor @preconcurrency weak public var secondaryLabel: NbmapNavigation.SecondaryLabel!
+  @_Concurrency.MainActor @preconcurrency weak public var distanceLabel: NbmapNavigation.DistanceLabel!
+  @_Concurrency.MainActor @preconcurrency weak public var dividerView: UIKit.UIView!
+  @_Concurrency.MainActor @preconcurrency weak public var stepListIndicatorView: NbmapNavigation.StepListIndicatorView!
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var swipeable: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var isTopBannerView: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) weak public var delegate: (any NbmapNavigation.InstructionsBannerViewDelegate)? {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any NbmapNavigation.InstructionsBannerViewDelegate)? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public var distance: CoreLocation.CLLocationDistance? {
+  @_Concurrency.MainActor @preconcurrency public var distance: CoreLocation.CLLocationDistance? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) public func update(for instruction: NbmapCoreNavigation.VisualInstructionBanner?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) public func updateDistance(for currentStepProgress: NbmapCoreNavigation.RouteStepProgress)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency public func update(for instruction: NbmapCoreNavigation.VisualInstructionBanner?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency public func updateDistance(for currentStepProgress: NbmapCoreNavigation.RouteStepProgress)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class StatusView : UIKit.UIControl {
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor @preconcurrency public class StatusView : UIKit.UIControl {
   public struct Status {
     public var identifier: Swift.String
     public let title: Swift.String
@@ -1090,13 +1092,13 @@ extension NbmapNavigation.NavigationView {
     public var priority: NbmapNavigation.StatusView.Priority
   }
   public typealias Priority = Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) public func show(status: NbmapNavigation.StatusView.Status)
-  @_Concurrency.MainActor(unsafe) public func hide(with status: NbmapNavigation.StatusView.Status? = nil, delay: Foundation.TimeInterval = 0, animated: Swift.Bool = true)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency public func show(status: NbmapNavigation.StatusView.Status)
+  @_Concurrency.MainActor @preconcurrency public func hide(with status: NbmapNavigation.StatusView.Status? = nil, delay: Foundation.TimeInterval = 0, animated: Swift.Bool = true)
   @objc deinit
 }
-@objc(NBBannerContainerView) @_Concurrency.MainActor(unsafe) open class BannerContainerView : UIKit.UIView {
+@objc(NBBannerContainerView) @_Concurrency.MainActor @preconcurrency open class BannerContainerView : UIKit.UIView {
   public enum `Type` {
     case top
     case bottom
@@ -1116,64 +1118,64 @@ extension NbmapNavigation.NavigationView {
       get
     }
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func safeAreaInsetsDidChange()
-  @_Concurrency.MainActor(unsafe) public var state: NbmapNavigation.BannerContainerView.State {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func safeAreaInsetsDidChange()
+  @_Concurrency.MainActor @preconcurrency public var state: NbmapNavigation.BannerContainerView.State {
     get
   }
-  @_Concurrency.MainActor(unsafe) weak public var delegate: (any NbmapNavigation.BannerContainerViewDelegate)? {
+  @_Concurrency.MainActor @preconcurrency weak public var delegate: (any NbmapNavigation.BannerContainerViewDelegate)? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) public init(_ type: NbmapNavigation.BannerContainerView.`Type`, frame: CoreFoundation.CGRect = .zero)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToSuperview()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency public init(_ type: NbmapNavigation.BannerContainerView.`Type`, frame: CoreFoundation.CGRect = .zero)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func didMoveToSuperview()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
   public typealias CompletionHandler = (_ completed: Swift.Bool) -> Swift.Void
-  @_Concurrency.MainActor(unsafe) public func show(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.2, animations: (() -> Swift.Void)? = nil, completion: NbmapNavigation.BannerContainerView.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func hide(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.2, animations: (() -> Swift.Void)? = nil, completion: NbmapNavigation.BannerContainerView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func show(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.2, animations: (() -> Swift.Void)? = nil, completion: NbmapNavigation.BannerContainerView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func hide(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.2, animations: (() -> Swift.Void)? = nil, completion: NbmapNavigation.BannerContainerView.CompletionHandler? = nil)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class BottomBannerViewController : UIKit.UIViewController, NbmapNavigation.NavigationComponent {
-  @_Concurrency.MainActor(unsafe) weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
-  @_Concurrency.MainActor(unsafe) open var bottomPaddingView: NbmapNavigation.BottomPaddingView {
+@objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor @preconcurrency open class BottomBannerViewController : UIKit.UIViewController, NbmapNavigation.NavigationComponent {
+  @_Concurrency.MainActor @preconcurrency weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
+  @_Concurrency.MainActor @preconcurrency open var bottomPaddingView: NbmapNavigation.BottomPaddingView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) open var bottomBannerView: NbmapNavigation.BottomBannerView {
+  @_Concurrency.MainActor @preconcurrency open var bottomBannerView: NbmapNavigation.BottomBannerView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) open var timeRemainingLabel: NbmapNavigation.TimeRemainingLabel!
-  @_Concurrency.MainActor(unsafe) open var distanceRemainingLabel: NbmapNavigation.DistanceRemainingLabel!
-  @_Concurrency.MainActor(unsafe) open var arrivalTimeLabel: NbmapNavigation.ArrivalTimeLabel!
-  @_Concurrency.MainActor(unsafe) open var cancelButton: NbmapNavigation.CancelButton!
-  @_Concurrency.MainActor(unsafe) open var overviewButton: NbmapNavigation.OverviewButton!
-  @_Concurrency.MainActor(unsafe) open var dotDividerView: NbmapNavigation.SeparatorView!
-  @_Concurrency.MainActor(unsafe) open var stepsContainer: NbmapNavigation.StepsInstructionView {
+  @_Concurrency.MainActor @preconcurrency open var timeRemainingLabel: NbmapNavigation.TimeRemainingLabel!
+  @_Concurrency.MainActor @preconcurrency open var distanceRemainingLabel: NbmapNavigation.DistanceRemainingLabel!
+  @_Concurrency.MainActor @preconcurrency open var arrivalTimeLabel: NbmapNavigation.ArrivalTimeLabel!
+  @_Concurrency.MainActor @preconcurrency open var cancelButton: NbmapNavigation.CancelButton!
+  @_Concurrency.MainActor @preconcurrency open var overviewButton: NbmapNavigation.OverviewButton!
+  @_Concurrency.MainActor @preconcurrency open var dotDividerView: NbmapNavigation.SeparatorView!
+  @_Concurrency.MainActor @preconcurrency open var stepsContainer: NbmapNavigation.StepsInstructionView {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) weak open var delegate: (any NbmapNavigation.BottomBannerViewControllerDelegate)?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency weak open var delegate: (any NbmapNavigation.BottomBannerViewControllerDelegate)?
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToRerouteWith error: any Swift.Error)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToRerouteWith error: any Swift.Error)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
 }
 extension NbmapNavigation.BottomBannerViewController : NbmapNavigation.StepsViewControllerDelegate {
-  @_Concurrency.MainActor(unsafe) public func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didOnTapArrived legIndex: Swift.Int, cell: NbmapNavigation.WaypointArrivedCell)
-  @_Concurrency.MainActor(unsafe) public func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didRemove legIndex: Swift.Int, cell: NbmapNavigation.LegSummaryCell)
-  @_Concurrency.MainActor(unsafe) public func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didSelect legIndex: Swift.Int, stepIndex: Swift.Int, cell: NbmapNavigation.StepTableViewCell)
+  @_Concurrency.MainActor @preconcurrency public func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didOnTapArrived legIndex: Swift.Int, cell: NbmapNavigation.WaypointArrivedCell)
+  @_Concurrency.MainActor @preconcurrency public func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didRemove legIndex: Swift.Int, cell: NbmapNavigation.LegSummaryCell)
+  @_Concurrency.MainActor @preconcurrency public func stepsViewController(_ viewController: NbmapNavigation.StepsViewController, didSelect legIndex: Swift.Int, stepIndex: Swift.Int, cell: NbmapNavigation.StepTableViewCell)
 }
 extension NbmapNavigation.BottomBannerViewController : NbmapNavigation.ArrivedConfirmViewControllerDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func arrivedConfirmViewControllerDidOpen(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func arrivedConfirmViewControllerDidConfirm(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController, legIndex: Swift.Int)
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func arrivedConfirmViewControllerDidCancel(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController, legIndex: Swift.Int)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func arrivedConfirmViewControllerDidOpen(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func arrivedConfirmViewControllerDidConfirm(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController, legIndex: Swift.Int)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func arrivedConfirmViewControllerDidCancel(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController, legIndex: Swift.Int)
 }
 extension NbmapCoreNavigation.VisualInstruction {
   public func maneuverImageSet(side: NbmapCoreNavigation.DrivingSide) -> CarPlay.CPImageSet?
@@ -1275,18 +1277,18 @@ public enum NavigationCameraType {
   public static func convertorText(text: Swift.String) -> Swift.String
   @objc deinit
 }
-@_inheritsConvenienceInitializers @IBDesignable @objc(NBDashedLineView) @_Concurrency.MainActor(unsafe) public class DashedLineView : NbmapNavigation.LineView {
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var dashedLength: CoreFoundation.CGFloat {
+@_inheritsConvenienceInitializers @IBDesignable @objc(NBDashedLineView) @_Concurrency.MainActor @preconcurrency public class DashedLineView : NbmapNavigation.LineView {
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var dashedLength: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var dashedGap: CoreFoundation.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor @preconcurrency public var dashedGap: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public struct FollowingCameraOptions : Swift.Equatable {
@@ -1353,33 +1355,33 @@ public struct PitchNearManeuver : Swift.Equatable {
 extension UIKit.UIImage {
   public func roundedWithBorder(width: CoreFoundation.CGFloat, color: UIKit.UIColor) -> UIKit.UIImage?
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class LaneView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class LaneView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var primaryColor: UIKit.UIColor {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var secondaryColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var primaryColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var primaryColorHighlighted: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var secondaryColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var secondaryColorHighlighted: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var primaryColorHighlighted: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) public var showHighlightedColors: Swift.Bool {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var secondaryColorHighlighted: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency public var showHighlightedColors: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) convenience public init(indications: NbmapCoreNavigation.LaneIndication, isUsable: Swift.Bool, direction: NbmapCoreNavigation.ManeuverDirection?, showHighlightedColors: Swift.Bool = false)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency convenience public init(indications: NbmapCoreNavigation.LaneIndication, isUsable: Swift.Bool, direction: NbmapCoreNavigation.ManeuverDirection?, showHighlightedColors: Swift.Bool = false)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func draw(_ rect: CoreFoundation.CGRect)
   @objc deinit
 }
 @objc public protocol ArrivedConfirmViewControllerDelegate {
@@ -1387,23 +1389,23 @@ extension UIKit.UIImage {
   @objc func arrivedConfirmViewControllerDidConfirm(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController, legIndex: Swift.Int)
   @objc func arrivedConfirmViewControllerDidCancel(_ arrivedConfirmViewController: NbmapNavigation.ArrivedConfirmViewController, legIndex: Swift.Int)
 }
-@objc(NBArrivedConfirmViewController) @_Concurrency.MainActor(unsafe) public class ArrivedConfirmViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) public var sections: [NbmapNavigation.FeedbackItem]
-  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any NbmapNavigation.ArrivedConfirmViewControllerDelegate)?
-  @_Concurrency.MainActor(unsafe) public var dataTracking: NbmapCoreNavigation.DataTracking?
-  @_Concurrency.MainActor(unsafe) public init(legIndex: Swift.Int, dataTracking: NbmapCoreNavigation.DataTracking?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func encode(with aCoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+@objc(NBArrivedConfirmViewController) @_Concurrency.MainActor @preconcurrency public class ArrivedConfirmViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public var sections: [NbmapNavigation.FeedbackItem]
+  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any NbmapNavigation.ArrivedConfirmViewControllerDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var dataTracking: NbmapCoreNavigation.DataTracking?
+  @_Concurrency.MainActor @preconcurrency public init(legIndex: Swift.Int, dataTracking: NbmapCoreNavigation.DataTracking?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func encode(with aCoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class WayPointSymbol : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, labelText: Swift.String)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func draw(_ rect: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) public func captureScreenshot() -> UIKit.UIImage?
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class WayPointSymbol : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, labelText: Swift.String)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency public func captureScreenshot() -> UIKit.UIImage?
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers open class SystemSpeechSynthesizer : ObjectiveC.NSObject, NbmapNavigation.SpeechSynthesizing {
@@ -1554,29 +1556,29 @@ public enum DissolvedRouteLineStyle : Swift.Int {
     get
   }
 }
-@_inheritsConvenienceInitializers @objc(NBTopBannerView) @_Concurrency.MainActor(unsafe) open class TopBannerView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBTopBannerView) @_Concurrency.MainActor @preconcurrency open class TopBannerView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBBottomBannerView) @_Concurrency.MainActor(unsafe) open class BottomBannerView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBBottomBannerView) @_Concurrency.MainActor @preconcurrency open class BottomBannerView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BottomPaddingView : NbmapNavigation.BottomBannerView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class BottomPaddingView : NbmapNavigation.BottomBannerView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBStepsInstructionView) @_Concurrency.MainActor(unsafe) open class StepsInstructionView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBStepsInstructionView) @_Concurrency.MainActor @preconcurrency open class StepsInstructionView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class StepSwitchContenerView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class StepSwitchContenerView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension UIKit.UIFont {
@@ -1601,10 +1603,10 @@ public enum MapOrnamentPosition {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class LegSummaryCell : UIKit.UITableViewCell {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) open func reinstallConstraints()
-  @_Concurrency.MainActor(unsafe) open func updateSection(index: Swift.Int, symbol: Swift.String, title: Swift.String, duration: Swift.String, completed: Swift.Bool)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class LegSummaryCell : UIKit.UITableViewCell {
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency open func reinstallConstraints()
+  @_Concurrency.MainActor @preconcurrency open func updateSection(index: Swift.Int, symbol: Swift.String, title: Swift.String, duration: Swift.String, completed: Swift.Bool)
   @objc deinit
 }
 extension CoreFoundation.CGSize : Swift.ExpressibleByFloatLiteral {
@@ -1636,41 +1638,41 @@ public enum ViewportDataSourceType {
   }
 }
 extension NbmapNavigation.FeedbackViewController : UIKit.UIViewControllerTransitioningDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> (any UIKit.UIViewControllerAnimatedTransitioning)?
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func interactionControllerForDismissal(using animator: any UIKit.UIViewControllerAnimatedTransitioning) -> (any UIKit.UIViewControllerInteractiveTransitioning)?
 }
 @objc public protocol FeedbackViewControllerDelegate {
   @objc optional func feedbackViewControllerDidOpen(_ feedbackViewController: NbmapNavigation.FeedbackViewController)
   @objc(feedbackViewController:didSendFeedbackItem:UUID:) optional func feedbackViewController(_ feedbackViewController: NbmapNavigation.FeedbackViewController, didSend feedbackItem: NbmapNavigation.FeedbackItem, uuid: Foundation.UUID)
   @objc optional func feedbackViewControllerDidCancel(_ feedbackViewController: NbmapNavigation.FeedbackViewController)
 }
-@objc(NBFeedbackViewController) @_Concurrency.MainActor(unsafe) public class FeedbackViewController : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor(unsafe) public var sections: [NbmapNavigation.FeedbackItem]
-  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any NbmapNavigation.FeedbackViewControllerDelegate)?
-  @_Concurrency.MainActor(unsafe) public var dataTracking: NbmapCoreNavigation.DataTracking?
-  @objc @_Concurrency.MainActor(unsafe) public init(dataTracking: NbmapCoreNavigation.DataTracking?)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func encode(with aCoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
-  @objc @_Concurrency.MainActor(unsafe) public func dismissFeedback()
-  @_Concurrency.MainActor(unsafe) @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+@objc(NBFeedbackViewController) @_Concurrency.MainActor @preconcurrency public class FeedbackViewController : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency public var sections: [NbmapNavigation.FeedbackItem]
+  @objc @_Concurrency.MainActor @preconcurrency weak public var delegate: (any NbmapNavigation.FeedbackViewControllerDelegate)?
+  @_Concurrency.MainActor @preconcurrency public var dataTracking: NbmapCoreNavigation.DataTracking?
+  @objc @_Concurrency.MainActor @preconcurrency public init(dataTracking: NbmapCoreNavigation.DataTracking?)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func encode(with aCoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @objc @_Concurrency.MainActor @preconcurrency public func dismissFeedback()
+  @_Concurrency.MainActor @preconcurrency @objc public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
   @objc deinit
 }
 extension NbmapNavigation.FeedbackViewController : UIKit.UICollectionViewDataSource {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func scrollViewDidScroll(_ scrollView: UIKit.UIScrollView)
 }
 extension NbmapNavigation.FeedbackViewController : UIKit.UICollectionViewDelegate {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
 }
 extension NbmapNavigation.FeedbackViewController : UIKit.UICollectionViewDelegateFlowLayout {
-  @_Concurrency.MainActor(unsafe) @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func collectionView(_ collectionView: UIKit.UICollectionView, layout collectionViewLayout: UIKit.UICollectionViewLayout, sizeForItemAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGSize
 }
 open class NavMapCameraOption {
   public init()
@@ -1699,29 +1701,29 @@ open class NavMapCameraOption {
   @objc deinit
   public func applyStyle(type styleType: NbmapNavigation.StyleType)
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class NextInstructionLabel : NbmapNavigation.InstructionLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency open class NextInstructionLabel : NbmapNavigation.InstructionLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class NextBannerView : UIKit.UIView, NbmapNavigation.NavigationComponent {
-  @_Concurrency.MainActor(unsafe) public var isCurrentlyVisible: Swift.Bool
-  @_Concurrency.MainActor(unsafe) weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable @_Concurrency.MainActor @preconcurrency open class NextBannerView : UIKit.UIView, NbmapNavigation.NavigationComponent {
+  @_Concurrency.MainActor @preconcurrency public var isCurrentlyVisible: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
   public typealias CompletionHandler = (_ completed: Swift.Bool) -> Swift.Void
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func update(for visualInstruction: NbmapCoreNavigation.VisualInstructionBanner?, animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.NextBannerView.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func show(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.NextBannerView.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func hide(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.NextBannerView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func update(for visualInstruction: NbmapCoreNavigation.VisualInstructionBanner?, animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.NextBannerView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func show(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.NextBannerView.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func hide(animated: Swift.Bool = true, duration: Foundation.TimeInterval = 0.5, completion: NbmapNavigation.NextBannerView.CompletionHandler? = nil)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers open class CPOrnamentsController : NbmapNavigation.NavigationComponent {
   public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class StepInstructionView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class StepInstructionView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public class NavigationViewportDataSource : NbmapNavigation.ViewportDataSource {
@@ -1752,13 +1754,13 @@ extension NbmapNavigation.NavigationViewportDataSource : NbmapNavigation.Locatio
   }
 }
 extension UIKit.UIDevice {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var isPluggedIn: Swift.Bool {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var isPluggedIn: Swift.Bool {
     @objc get
   }
 }
 extension NbmapNavigation.BottomBannerViewController {
-  @_Concurrency.MainActor(unsafe) public func reinstallConstraints()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor @preconcurrency public func reinstallConstraints()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
 }
 @_hasMissingDesignatedInitializers public class LocationSubject {
   @objc deinit
@@ -1915,284 +1917,284 @@ public protocol ViewportDataSourceDelegate : AnyObject {
   @objc required override dynamic public init()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBButton) @_Concurrency.MainActor(unsafe) open class Button : NbmapNavigation.StylableButton {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBButton) @_Concurrency.MainActor @preconcurrency open class Button : NbmapNavigation.StylableButton {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBCancelButton) @_Concurrency.MainActor(unsafe) open class CancelButton : NbmapNavigation.Button {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBCancelButton) @_Concurrency.MainActor @preconcurrency open class CancelButton : NbmapNavigation.Button {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBArrivedButton) @_Concurrency.MainActor(unsafe) open class ArrivedButton : NbmapNavigation.Button {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBArrivedButton) @_Concurrency.MainActor @preconcurrency open class ArrivedButton : NbmapNavigation.Button {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBOverviewButton) @_Concurrency.MainActor(unsafe) open class OverviewButton : NbmapNavigation.FloatingButton {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBOverviewButton) @_Concurrency.MainActor @preconcurrency open class OverviewButton : NbmapNavigation.FloatingButton {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBDismissButton) @_Concurrency.MainActor(unsafe) open class DismissButton : NbmapNavigation.Button {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBDismissButton) @_Concurrency.MainActor @preconcurrency open class DismissButton : NbmapNavigation.Button {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBFloatingButton) @_Concurrency.MainActor(unsafe) open class FloatingButton : NbmapNavigation.Button {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBFloatingButton) @_Concurrency.MainActor @preconcurrency open class FloatingButton : NbmapNavigation.Button {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBReportButton) @_Concurrency.MainActor(unsafe) public class ReportButton : NbmapNavigation.Button {
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+@_inheritsConvenienceInitializers @objc(NBReportButton) @_Concurrency.MainActor @preconcurrency public class ReportButton : NbmapNavigation.Button {
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBHighlightedButton) @_Concurrency.MainActor(unsafe) public class HighlightedButton : NbmapNavigation.Button {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBHighlightedButton) @_Concurrency.MainActor @preconcurrency public class HighlightedButton : NbmapNavigation.Button {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @IBDesignable @objc(NBResumeButton) @_Concurrency.MainActor(unsafe) public class ResumeButton : UIKit.UIControl {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var tintColor: UIKit.UIColor! {
+@_inheritsConvenienceInitializers @IBDesignable @objc(NBResumeButton) @_Concurrency.MainActor @preconcurrency public class ResumeButton : UIKit.UIControl {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var tintColor: UIKit.UIColor! {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func prepareForInterfaceBuilder()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBDraggableView) @_Concurrency.MainActor(unsafe) open class StepListIndicatorView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var gradientColors: [UIKit.UIColor] {
+@_inheritsConvenienceInitializers @objc(NBDraggableView) @_Concurrency.MainActor @preconcurrency open class StepListIndicatorView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var gradientColors: [UIKit.UIColor] {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBStylableLabel) @_Concurrency.MainActor(unsafe) open class StylableLabel : UIKit.UILabel {
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var normalTextColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @objc(NBStylableLabel) @_Concurrency.MainActor @preconcurrency open class StylableLabel : UIKit.UILabel {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var normalTextColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var normalFont: UIKit.UIFont {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var normalFont: UIKit.UIFont {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBStylableView) @_Concurrency.MainActor(unsafe) open class StylableView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBStylableView) @_Concurrency.MainActor @preconcurrency open class StylableView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBStylableTextView) @_Concurrency.MainActor(unsafe) open class StylableTextView : UIKit.UITextView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var normalTextColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @objc(NBStylableTextView) @_Concurrency.MainActor @preconcurrency open class StylableTextView : UIKit.UITextView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var normalTextColor: UIKit.UIColor {
     @objc get
     @objc set
   }
   @available(iOS 7.0, *)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBDistanceLabel) @_Concurrency.MainActor(unsafe) open class DistanceLabel : NbmapNavigation.StylableLabel {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var valueTextColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @objc(NBDistanceLabel) @_Concurrency.MainActor @preconcurrency open class DistanceLabel : NbmapNavigation.StylableLabel {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var valueTextColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var unitTextColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var unitTextColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var valueFont: UIKit.UIFont {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var valueFont: UIKit.UIFont {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var unitFont: UIKit.UIFont {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var unitFont: UIKit.UIFont {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBPrimaryLabel) @_Concurrency.MainActor(unsafe) open class PrimaryLabel : NbmapNavigation.InstructionLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBPrimaryLabel) @_Concurrency.MainActor @preconcurrency open class PrimaryLabel : NbmapNavigation.InstructionLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBSecondaryLabel) @_Concurrency.MainActor(unsafe) open class SecondaryLabel : NbmapNavigation.InstructionLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBSecondaryLabel) @_Concurrency.MainActor @preconcurrency open class SecondaryLabel : NbmapNavigation.InstructionLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBCompleteLabel) @_Concurrency.MainActor(unsafe) open class CompleteLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBCompleteLabel) @_Concurrency.MainActor @preconcurrency open class CompleteLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBTimeRemainingLabel) @_Concurrency.MainActor(unsafe) open class TimeRemainingLabel : NbmapNavigation.StylableLabel {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficUnknownColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @objc(NBTimeRemainingLabel) @_Concurrency.MainActor @preconcurrency open class TimeRemainingLabel : NbmapNavigation.StylableLabel {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficUnknownColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficLowColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficModerateColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficHeavyColor: UIKit.UIColor
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var trafficSevereColor: UIKit.UIColor
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficLowColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficModerateColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficHeavyColor: UIKit.UIColor
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var trafficSevereColor: UIKit.UIColor
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBDistanceRemainingLabel) @_Concurrency.MainActor(unsafe) open class DistanceRemainingLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBDistanceRemainingLabel) @_Concurrency.MainActor @preconcurrency open class DistanceRemainingLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBArrivalTimeLabel) @_Concurrency.MainActor(unsafe) open class ArrivalTimeLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBArrivalTimeLabel) @_Concurrency.MainActor @preconcurrency open class ArrivalTimeLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBTitleLabel) @_Concurrency.MainActor(unsafe) open class TitleLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBTitleLabel) @_Concurrency.MainActor @preconcurrency open class TitleLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBSubtitleLabel) @_Concurrency.MainActor(unsafe) open class SubtitleLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBSubtitleLabel) @_Concurrency.MainActor @preconcurrency open class SubtitleLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBWayNameView) @_Concurrency.MainActor(unsafe) open class WayNameView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var layer: QuartzCore.CALayer {
+@_inheritsConvenienceInitializers @objc(NBWayNameView) @_Concurrency.MainActor @preconcurrency open class WayNameView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var layer: QuartzCore.CALayer {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc dynamic override public var backgroundColor: UIKit.UIColor? {
-    @objc get
-    @objc set
-  }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var borderColor: UIKit.UIColor? {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic override public var backgroundColor: UIKit.UIColor? {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var borderWidth: CoreFoundation.CGFloat {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var borderColor: UIKit.UIColor? {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var cornerRadius: CoreFoundation.CGFloat {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var borderWidth: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder decoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBWayNameLabel) @_Concurrency.MainActor(unsafe) open class WayNameLabel : NbmapNavigation.StylableLabel {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBWayNameLabel) @_Concurrency.MainActor @preconcurrency open class WayNameLabel : NbmapNavigation.StylableLabel {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBProgressBar) @_Concurrency.MainActor(unsafe) public class ProgressBar : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var barColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @objc(NBProgressBar) @_Concurrency.MainActor @preconcurrency public class ProgressBar : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var barColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open var description: Swift.String {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var description: Swift.String {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBLineView) @_Concurrency.MainActor(unsafe) public class LineView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var lineColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @objc(NBLineView) @_Concurrency.MainActor @preconcurrency public class LineView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var lineColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBSeparatorView) @_Concurrency.MainActor(unsafe) public class SeparatorView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBSeparatorView) @_Concurrency.MainActor @preconcurrency public class SeparatorView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBStylableButton) @_Concurrency.MainActor(unsafe) open class StylableButton : UIKit.UIButton {
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var textFont: UIKit.UIFont {
+@_inheritsConvenienceInitializers @objc(NBStylableButton) @_Concurrency.MainActor @preconcurrency open class StylableButton : UIKit.UIButton {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var textFont: UIKit.UIFont {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var textColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var textColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var borderColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var borderColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var borderWidth: CoreFoundation.CGFloat {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var borderWidth: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic open var cornerRadius: CoreFoundation.CGFloat {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic open var cornerRadius: CoreFoundation.CGFloat {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBManeuverContainerView) @_Concurrency.MainActor(unsafe) open class ManeuverContainerView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBManeuverContainerView) @_Concurrency.MainActor @preconcurrency open class ManeuverContainerView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBInstructionsBannerContentView) @_Concurrency.MainActor(unsafe) open class InstructionsBannerContentView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBInstructionsBannerContentView) @_Concurrency.MainActor @preconcurrency open class InstructionsBannerContentView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBBottomBannerContentView) @_Concurrency.MainActor(unsafe) open class BottomBannerContentView : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+@_inheritsConvenienceInitializers @objc(NBBottomBannerContentView) @_Concurrency.MainActor @preconcurrency open class BottomBannerContentView : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBMarkerView) @_Concurrency.MainActor(unsafe) public class MarkerView : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var innerColor: UIKit.UIColor {
+@_inheritsConvenienceInitializers @objc(NBMarkerView) @_Concurrency.MainActor @preconcurrency public class MarkerView : UIKit.UIView {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var innerColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var shadowColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var shadowColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var pinColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var pinColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @_Concurrency.MainActor(unsafe) dynamic public var strokeColor: UIKit.UIColor {
+  @objc @_Concurrency.MainActor @preconcurrency dynamic public var strokeColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
     @objc get
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 public enum SpokenInstructionErrorCode : Swift.Int {
@@ -2230,58 +2232,58 @@ public protocol CarplayOperationsDelegate : AnyObject {
   public func onRouteCancled(fromCarplay carplay: Swift.Bool = false)
   @objc deinit
 }
-@objc @_Concurrency.MainActor(unsafe) open class RouteDurationSymbol : UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public init(duration: Swift.Double, isPrimary: Swift.Bool, durationSymbolType: NbmapNavigation.NavigationMapView.DurationSymbolType)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) public func screenshotImage() -> UIKit.UIImage?
+@objc @_Concurrency.MainActor @preconcurrency open class RouteDurationSymbol : UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public init(duration: Swift.Double, isPrimary: Swift.Bool, durationSymbolType: NbmapNavigation.NavigationMapView.DurationSymbolType)
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency public func screenshotImage() -> UIKit.UIImage?
   @objc deinit
 }
 public protocol LocationConsumer {
   func locationConsumerId() -> Swift.String
   func locationUpdate(to location: CoreLocation.CLLocationCoordinate2D)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class TopBannerViewController : UIKit.UIViewController {
-  @_Concurrency.MainActor(unsafe) weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
-  @_Concurrency.MainActor(unsafe) public var lanesView: NbmapNavigation.LanesView
-  @_Concurrency.MainActor(unsafe) public var nextBannerView: NbmapNavigation.NextBannerView
-  @_Concurrency.MainActor(unsafe) public var statusView: NbmapNavigation.StatusView
-  @_Concurrency.MainActor(unsafe) public var junctionView: NbmapNavigation.JunctionView
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) public var isDisplayingPreviewInstructions: Swift.Bool {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class TopBannerViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency weak public var navigationDataEventTracking: (any NbmapCoreNavigation.NavigationEventTracking)?
+  @_Concurrency.MainActor @preconcurrency public var lanesView: NbmapNavigation.LanesView
+  @_Concurrency.MainActor @preconcurrency public var nextBannerView: NbmapNavigation.NextBannerView
+  @_Concurrency.MainActor @preconcurrency public var statusView: NbmapNavigation.StatusView
+  @_Concurrency.MainActor @preconcurrency public var junctionView: NbmapNavigation.JunctionView
+  @_Concurrency.MainActor @preconcurrency @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor @preconcurrency public var isDisplayingPreviewInstructions: Swift.Bool {
     get
   }
-  @_Concurrency.MainActor(unsafe) public func preview(step stepOverride: NbmapCoreNavigation.RouteStep? = nil, maneuverStep: NbmapCoreNavigation.RouteStep, distance: CoreLocation.CLLocationDistance, steps: [NbmapCoreNavigation.RouteStep], completion: NbmapNavigation.CompletionHandler? = nil)
-  @_Concurrency.MainActor(unsafe) public func stopPreviewing(showingSecondaryChildren: Swift.Bool = true)
+  @_Concurrency.MainActor @preconcurrency public func preview(step stepOverride: NbmapCoreNavigation.RouteStep? = nil, maneuverStep: NbmapCoreNavigation.RouteStep, distance: CoreLocation.CLLocationDistance, steps: [NbmapCoreNavigation.RouteStep], completion: NbmapNavigation.CompletionHandler? = nil)
+  @_Concurrency.MainActor @preconcurrency public func stopPreviewing(showingSecondaryChildren: Swift.Bool = true)
   @objc deinit
 }
 extension NbmapNavigation.TopBannerViewController : NbmapNavigation.NavigationComponent {
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate locations: [CoreLocation.CLLocation])
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToRerouteWith error: any Swift.Error)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, routeController: NbmapCoreNavigation.RouteController, didRerouteAlong route: NbmapCoreNavigation.Route)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func updateTopBannerInfo(progress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willRerouteFrom location: CoreLocation.CLLocation)
-  @_Concurrency.MainActor(unsafe) public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willEndSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate locations: [CoreLocation.CLLocation])
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRerouteAlong route: NbmapCoreNavigation.Route, at location: CoreLocation.CLLocation?, proactive: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didFailToRerouteWith error: any Swift.Error)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, routeController: NbmapCoreNavigation.RouteController, didRerouteAlong route: NbmapCoreNavigation.Route)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didRefresh routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func updateTopBannerInfo(progress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassVisualInstructionPoint instruction: NbmapCoreNavigation.VisualInstructionBanner, routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willRerouteFrom location: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, willEndSimulating progress: NbmapCoreNavigation.RouteProgress, becauseOf reason: NbmapCoreNavigation.SimulationIntent)
 }
 extension NbmapNavigation.TopBannerViewController : NbmapNavigation.InstructionsBannerViewDelegate {
-  @_Concurrency.MainActor(unsafe) public func didTapInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView)
-  @_Concurrency.MainActor(unsafe) public func didSwipeInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView, swipeDirection direction: UIKit.UISwipeGestureRecognizer.Direction)
-  @_Concurrency.MainActor(unsafe) public func label(_ label: NbmapNavigation.InstructionLabel, willPresent instruction: NbmapCoreNavigation.VisualInstruction, as presented: Foundation.NSAttributedString) -> Foundation.NSAttributedString?
+  @_Concurrency.MainActor @preconcurrency public func didTapInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView)
+  @_Concurrency.MainActor @preconcurrency public func didSwipeInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView, swipeDirection direction: UIKit.UISwipeGestureRecognizer.Direction)
+  @_Concurrency.MainActor @preconcurrency public func label(_ label: NbmapNavigation.InstructionLabel, willPresent instruction: NbmapCoreNavigation.VisualInstruction, as presented: Foundation.NSAttributedString) -> Foundation.NSAttributedString?
 }
 extension NbmapNavigation.TopBannerViewController : NbmapNavigation.CarPlayConnectionObserver {
-  @_Concurrency.MainActor(unsafe) public func didConnectToCarPlay()
-  @_Concurrency.MainActor(unsafe) public func didDisconnectFromCarPlay()
+  @_Concurrency.MainActor @preconcurrency public func didConnectToCarPlay()
+  @_Concurrency.MainActor @preconcurrency public func didDisconnectFromCarPlay()
 }
 extension NbmapNavigation.TopBannerViewController : NbmapNavigation.NavigationStatusPresenter {
-  @_Concurrency.MainActor(unsafe) public func show(_ status: NbmapNavigation.StatusView.Status)
-  @_Concurrency.MainActor(unsafe) public func hide(_ status: NbmapNavigation.StatusView.Status)
+  @_Concurrency.MainActor @preconcurrency public func show(_ status: NbmapNavigation.StatusView.Status)
+  @_Concurrency.MainActor @preconcurrency public func hide(_ status: NbmapNavigation.StatusView.Status)
 }
 extension NbmapNavigation.TopBannerViewController : NbmapNavigation.NavigationMapInteractionObserver {
-  @_Concurrency.MainActor(unsafe) public func navigationViewController(didCenterOn location: CoreLocation.CLLocation)
+  @_Concurrency.MainActor @preconcurrency public func navigationViewController(didCenterOn location: CoreLocation.CLLocation)
 }
 public typealias CompletionHandler = () -> Swift.Void
 @objc(NBBimodalCache) public protocol BimodalCache {
