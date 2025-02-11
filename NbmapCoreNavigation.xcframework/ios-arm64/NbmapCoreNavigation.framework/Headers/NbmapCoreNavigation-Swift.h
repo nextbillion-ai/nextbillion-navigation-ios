@@ -318,7 +318,6 @@ SWIFT_CLASS("_TtC19NbmapCoreNavigation23AlternativeRouteManager")
 
 
 
-
 /// The component representable protocol that comprises what the instruction banner should display.
 SWIFT_PROTOCOL_NAMED("ComponentRepresentable")
 @protocol NBComponentRepresentable <NSSecureCoding>
@@ -1461,20 +1460,6 @@ SWIFT_CLASS_NAMED("RouteStepProgress")
 /// The manager calls delegate methods on a background thread.
 SWIFT_CLASS("_TtC19NbmapCoreNavigation24SimulatedLocationManager")
 @interface SimulatedLocationManager : NBNavigationLocationManager
-@property (nonatomic, strong) CLLocation * _Nullable location;
-- (void)startUpdatingLocation;
-- (void)stopUpdatingLocation;
-- (id _Nonnull)copy SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// The <code>SimulatedLocationModelManager</code> class simulates location updates along a given route. only for simulation navigation
-/// The route will be replaced upon a <code>RouteControllerDidReroute</code> notification.
-/// The manager calls delegate methods on a background thread.
-SWIFT_CLASS("_TtC19NbmapCoreNavigation29SimulatedLocationModelManager")
-@interface SimulatedLocationModelManager : NBNavigationLocationManager
 @property (nonatomic, strong) CLLocation * _Nullable location;
 - (void)startUpdatingLocation;
 - (void)stopUpdatingLocation;

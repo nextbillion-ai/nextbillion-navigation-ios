@@ -4619,26 +4619,6 @@ extension NbmapCoreNavigation.Google_Protobuf_FieldMask {
   public init(protoPaths: Swift.String...)
   public init?(jsonPaths: Swift.String...)
 }
-@objc open class SimulatedLocationModelManager : NbmapCoreNavigation.NavigationLocationManager {
-  public init(route: NbmapCoreNavigation.Route, simulateSpeed: Swift.Double? = 45)
-  public init(routeProgress: NbmapCoreNavigation.RouteProgress, simulateSpeed: Swift.Double? = 45)
-  @objc deinit
-  public var speedMultiplier: Swift.Double {
-    get
-    set
-  }
-  @objc override dynamic open var location: CoreLocation.CLLocation? {
-    @objc get
-    @objc set
-  }
-  override public var simulatesLocation: Swift.Bool {
-    get
-    set
-  }
-  @objc override dynamic open func startUpdatingLocation()
-  @objc override dynamic open func stopUpdatingLocation()
-  @objc override dynamic open func copy() -> Any
-}
 public protocol AlternativeRouteDelegate : ObjectiveC.NSObjectProtocol {
   func didSelectNewRoute(route: NbmapCoreNavigation.Route)
   func shouldRefreshRoutes(routes: [NbmapCoreNavigation.Route])
