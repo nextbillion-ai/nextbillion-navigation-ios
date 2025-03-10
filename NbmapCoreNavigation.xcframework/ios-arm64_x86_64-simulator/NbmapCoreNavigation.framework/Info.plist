@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2.0</string>
+	<string>2.3.0-beta.1</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>iPhoneSimulator</string>
@@ -41,7 +41,7 @@
 	<key>DTXcodeBuild</key>
 	<string>16A242d</string>
 	<key>GIT_REVISION</key>
-	<string>9c13e16</string>
+	<string>8bab73a</string>
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>NSAppTransportSecurity</key>

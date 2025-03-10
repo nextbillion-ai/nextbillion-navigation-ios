@@ -10,6 +10,7 @@ import CoreMotion
 import Darwin
 import Dispatch
 import Foundation
+import MachO
 import MapKit
 import Nbmap
 @_exported import NbmapCoreNavigation
@@ -7131,6 +7132,7 @@ public let NBEventTypeNavigationRouteRetrieval: Swift.String
 public let NBEventTypeNavigationBillingStart: Swift.String
 public let NBEventTypeNavigationBillingEnd: Swift.String
 public let NBEventTypeNavigationTrip: Swift.String
+public let NBEventTypeNavigationCrash: Swift.String
 public let NBDataTrackingKeyEvent: Swift.String
 public let NBDataTrackingKeyCreated: Swift.String
 public let BaseUrlKey: Swift.String
