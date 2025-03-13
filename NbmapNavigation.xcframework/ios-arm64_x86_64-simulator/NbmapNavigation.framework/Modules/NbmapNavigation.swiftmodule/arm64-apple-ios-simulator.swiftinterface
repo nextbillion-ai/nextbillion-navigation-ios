@@ -349,8 +349,8 @@ extension NbmapCoreNavigation.Route {
 }
 extension NbmapNavigation.NavigationMapView {
   @_Concurrency.MainActor @preconcurrency public func updateRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: CoreLocation.CLLocationCoordinate2D?, routes: [NbmapCoreNavigation.Route], shouldRedraw: Swift.Bool = false)
-  @_Concurrency.MainActor @preconcurrency public func updateTraveledRouteLine(routeProgress: NbmapCoreNavigation.RouteProgress)
-  @_Concurrency.MainActor @preconcurrency public func updateRoute(_ routeProgress: NbmapCoreNavigation.RouteProgress)
+  @_Concurrency.MainActor @preconcurrency public func updateUpcomingRoutePointIndex(routeProgress: NbmapCoreNavigation.RouteProgress, coordinate: CoreLocation.CLLocationCoordinate2D?) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func travelAlongRouteLine(to coordinate: CoreLocation.CLLocationCoordinate2D?, by verhence: Swift.Bool = false)
 }
 public protocol InstructionsBannerViewDelegate : NbmapNavigation.VisualInstructionDelegate {
   func didTapInstructionsBanner(_ sender: NbmapNavigation.BaseInstructionsBannerView)
@@ -439,7 +439,10 @@ open class NavigationOptions {
   @objc @_Concurrency.MainActor @preconcurrency public var longManeuverDistance: Swift.Double
   @objc @_Concurrency.MainActor @preconcurrency public var tapGestureDistanceThreshold: CoreFoundation.CGFloat
   @_Concurrency.MainActor @preconcurrency weak public var navigationMapDelegate: (any NbmapNavigation.NavigationMapViewDelegate)?
-  @_Concurrency.MainActor @preconcurrency public var routeLineTracksTraversal: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var routeLineTracksTraversal: Swift.Bool {
+    get
+    set
+  }
   @_Concurrency.MainActor @preconcurrency public var dissolvedRouteLineStyle: NbmapNavigation.DissolvedRouteLineStyle
   @objc public enum DurationSymbolType : Swift.Int {
     case ROUTE_DURATION = 0

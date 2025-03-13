@@ -10,6 +10,7 @@ import CoreMotion
 import Darwin
 import Dispatch
 import Foundation
+import MachO
 import MapKit
 import Nbmap
 @_exported import NbmapCoreNavigation
@@ -2704,11 +2705,11 @@ public class NBTripSession : NbmapCoreNavigation.TripSession {
   public static let halfDayDurationOfLegStart: Swift.Int
   weak public var delegate: (any NbmapCoreNavigation.NBTripSessionDelegate)?
   public init(routes: [NbmapCoreNavigation.Route], delegate: (any NbmapCoreNavigation.NBTripSessionDelegate)? = nil)
+  @objc deinit
   public func getFiredEvents() -> [Swift.String : Swift.Bool]
   public func getEventKey(forLegIndex legIndex: Swift.Int, isFirstEvent: Swift.Bool) -> Swift.String
   public func onTripSession(didUpdate progress: NbmapCoreNavigation.RouteProgress)
   public func onTripSession(didSet routes: [NbmapCoreNavigation.Route])
-  @objc deinit
 }
 extension NbmapCoreNavigation.Google_Protobuf_Duration {
   public init(seconds: Swift.Int64 = 0, nanos: Swift.Int32 = 0)
@@ -6097,6 +6098,7 @@ public struct RouteLineDistancesIndex {
   public var point: CoreLocation.CLLocationCoordinate2D
   public var distanceRemaining: Swift.Double
 }
+public func parseRoutePoints(route: NbmapCoreNavigation.Route) -> NbmapCoreNavigation.RoutePoints
 public func calculateGranularDistances(_ coordinates: [CoreLocation.CLLocationCoordinate2D]) -> NbmapCoreNavigation.RouteLineGranularDistances?
 public func calculateDistance(coordinate1: CoreLocation.CLLocationCoordinate2D, coordinate2: CoreLocation.CLLocationCoordinate2D) -> Swift.Double
 public typealias Log = NbmapCoreNavigation.NavigationLog
@@ -7133,6 +7135,7 @@ public let NBEventTypeNavigationRouteRetrieval: Swift.String
 public let NBEventTypeNavigationBillingStart: Swift.String
 public let NBEventTypeNavigationBillingEnd: Swift.String
 public let NBEventTypeNavigationTrip: Swift.String
+public let NBEventTypeNavigationCrash: Swift.String
 public let NBDataTrackingKeyEvent: Swift.String
 public let NBDataTrackingKeyCreated: Swift.String
 public let BaseUrlKey: Swift.String
