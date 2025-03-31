@@ -54171,58 +54171,6 @@
           {
             "kind": "Function",
             "name": "navigationViewController",
-            "printedName": "navigationViewController(_:shapeFor:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Nbmap.NGLShape?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NGLShape",
-                    "printedName": "Nbmap.NGLShape",
-                    "usr": "c:objc(cs)NGLShape"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationViewController",
-                "printedName": "NbmapNavigation.NavigationViewController",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[NbmapCoreNavigation.Route]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Route",
-                    "printedName": "NbmapCoreNavigation.Route",
-                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBNavRoute"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_8shapeForSo8NGLShapeCSgAA0bcD0C_Say0a4CoreB05RouteCGtF",
-            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_8shapeForSo8NGLShapeCSgAA0bcD0C_Say0a4CoreB05RouteCGtF",
-            "moduleName": "NbmapNavigation",
-            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
-            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "navigationViewController",
             "printedName": "navigationViewController(_:simplifiedShapeFor:)",
             "children": [
               {
@@ -54432,6 +54380,275 @@
           },
           {
             "kind": "Function",
+            "name": "navigationViewControllerDidDismiss",
+            "printedName": "navigationViewControllerDidDismiss(_:byCanceling:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD10DidDismiss_11byCancelingyAA0bcD0C_SbtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD10DidDismiss_11byCancelingyAA0bcD0C_SbtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didArriveAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Waypoint",
+                "printedName": "NbmapCoreNavigation.Waypoint",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBWaypoint"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_11didArriveAtyAA0bcD0C_0a4CoreB08WaypointCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_11didArriveAtyAA0bcD0C_0a4CoreB08WaypointCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didUpdate:with:rawLocation:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RouteProgress",
+                "printedName": "NbmapCoreNavigation.RouteProgress",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRouteProgress"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_9didUpdate4with11rawLocationyAA0bcD0C_0a4CoreB013RouteProgressCSo10CLLocationCANtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_9didUpdate4with11rawLocationyAA0bcD0C_0a4CoreB013RouteProgressCSo10CLLocationCANtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:shouldRerouteFrom:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_17shouldRerouteFromSbAA0bcD0C_So10CLLocationCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_17shouldRerouteFromSbAA0bcD0C_So10CLLocationCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didRefresh:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "RouteProgress",
+                "printedName": "NbmapCoreNavigation.RouteProgress",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBRouteProgress"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_10didRefreshyAA0bcD0C_0a4CoreB013RouteProgressCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_10didRefreshyAA0bcD0C_0a4CoreB013RouteProgressCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:willRerouteFrom:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_15willRerouteFromyAA0bcD0C_So10CLLocationCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_15willRerouteFromyAA0bcD0C_So10CLLocationCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didRerouteAlong:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Route",
+                "printedName": "NbmapCoreNavigation.Route",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBNavRoute"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_15didRerouteAlongyAA0bcD0C_0a4CoreB05RouteCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_15didRerouteAlongyAA0bcD0C_0a4CoreB05RouteCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didFailToRerouteWith:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "any Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_20didFailToRerouteWithyAA0bcD0C_s5Error_ptF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_20didFailToRerouteWithyAA0bcD0C_s5Error_ptF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "navigationViewController",
             "printedName": "navigationViewController(_:didSelect:)",
             "children": [
@@ -54459,9 +54676,6 @@
             "moduleName": "NbmapNavigation",
             "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
             "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
-            ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
@@ -54494,9 +54708,55 @@
             "moduleName": "NbmapNavigation",
             "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
             "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:shapeFor:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Nbmap.NGLShape?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NGLShape",
+                    "printedName": "Nbmap.NGLShape",
+                    "usr": "c:objc(cs)NGLShape"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[NbmapCoreNavigation.Route]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Route",
+                    "printedName": "NbmapCoreNavigation.Route",
+                    "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBNavRoute"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
             ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_8shapeForSo8NGLShapeCSgAA0bcD0C_Say0a4CoreB05RouteCGtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_8shapeForSo8NGLShapeCSgAA0bcD0C_Say0a4CoreB05RouteCGtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
@@ -54538,9 +54798,6 @@
             "moduleName": "NbmapNavigation",
             "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
             "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
-            ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
@@ -54582,45 +54839,6 @@
             "moduleName": "NbmapNavigation",
             "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
             "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "navigationViewController",
-            "printedName": "navigationViewController(_:mapViewUserAnchorPoint:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CGPoint",
-                "printedName": "CoreFoundation.CGPoint",
-                "usr": "c:@S@CGPoint"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationViewController",
-                "printedName": "NbmapNavigation.NavigationViewController",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationMapView",
-                "printedName": "NbmapNavigation.NavigationMapView",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_03mapC15UserAnchorPointSo7CGPointVAA0bcD0C_AA0b3MapC0CtF",
-            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_03mapC15UserAnchorPointSo7CGPointVAA0bcD0C_AA0b3MapC0CtF",
-            "moduleName": "NbmapNavigation",
-            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
-            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
-            ],
             "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           },
@@ -54651,6 +54869,431 @@
             "declKind": "Func",
             "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_13shouldDiscardSbAA0bcD0C_So10CLLocationCtF",
             "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_13shouldDiscardSbAA0bcD0C_So10CLLocationCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didFailToUpdateAlternatives:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AlternativeRouteError",
+                "printedName": "NbmapCoreNavigation.AlternativeRouteError",
+                "usr": "s:19NbmapCoreNavigation21AlternativeRouteErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_27didFailToUpdateAlternativesyAA0bcD0C_0a4CoreB021AlternativeRouteErrorOtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_27didFailToUpdateAlternativesyAA0bcD0C_0a4CoreB021AlternativeRouteErrorOtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:willTakeAlternativeRoute:at:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Route",
+                "printedName": "NbmapCoreNavigation.Route",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBNavRoute"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreLocation.CLLocation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocation",
+                    "printedName": "CoreLocation.CLLocation",
+                    "usr": "c:objc(cs)CLLocation"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_24willTakeAlternativeRoute2atyAA0bcD0C_0a4CoreB00J0CSo10CLLocationCSgtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_24willTakeAlternativeRoute2atyAA0bcD0C_0a4CoreB00J0CSo10CLLocationCSgtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didTakeAlternativeRouteAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreLocation.CLLocation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocation",
+                    "printedName": "CoreLocation.CLLocation",
+                    "usr": "c:objc(cs)CLLocation"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_25didTakeAlternativeRouteAtyAA0bcD0C_So10CLLocationCSgtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_25didTakeAlternativeRouteAtyAA0bcD0C_So10CLLocationCSgtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didFailToTakeAlternativeRouteAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreLocation.CLLocation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocation",
+                    "printedName": "CoreLocation.CLLocation",
+                    "usr": "c:objc(cs)CLLocation"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_31didFailToTakeAlternativeRouteAtyAA0bcD0C_So10CLLocationCSgtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_31didFailToTakeAlternativeRouteAtyAA0bcD0C_So10CLLocationCSgtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didSubmitArrivalFeedback:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "EndOfRouteFeedback",
+                "printedName": "NbmapCoreNavigation.EndOfRouteFeedback",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)EndOfRouteFeedback"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_24didSubmitArrivalFeedbackyAA0bcD0C_0a4CoreB0010EndOfRouteJ0CtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_24didSubmitArrivalFeedbackyAA0bcD0C_0a4CoreB0010EndOfRouteJ0CtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:shouldPreventReroutesWhenArrivingAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Waypoint",
+                "printedName": "NbmapCoreNavigation.Waypoint",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBWaypoint"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_35shouldPreventReroutesWhenArrivingAtSbAA0bcD0C_0a4CoreB08WaypointCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_35shouldPreventReroutesWhenArrivingAtSbAA0bcD0C_0a4CoreB08WaypointCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didSelect:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NGLAnnotation",
+                "printedName": "any Nbmap.NGLAnnotation",
+                "usr": "c:objc(pl)NGLAnnotation"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_9didSelectyAA0bcD0C_So13NGLAnnotation_ptF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_9didSelectyAA0bcD0C_So13NGLAnnotation_ptF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didRemove:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_9didRemoveyAA0bcD0C_SitF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_9didRemoveyAA0bcD0C_SitF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didCancleRemove:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_15didCancleRemoveyAA0bcD0C_SitF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_15didCancleRemoveyAA0bcD0C_SitF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:arrivalBottomSheet:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIViewController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Waypoint",
+                "printedName": "NbmapCoreNavigation.Waypoint",
+                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBWaypoint"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_18arrivalBottomSheetSo06UIViewD0CSgAA0bcD0C_0a4CoreB08WaypointCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_18arrivalBottomSheetSo06UIViewD0CSgAA0bcD0C_0a4CoreB08WaypointCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:didFinishLoading:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NGLStyle",
+                "printedName": "Nbmap.NGLStyle",
+                "usr": "c:objc(cs)NGLStyle"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_16didFinishLoadingyAA0bcD0C_So8NGLStyleCtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_16didFinishLoadingyAA0bcD0C_So8NGLStyleCtF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationViewController",
+            "printedName": "navigationViewController(_:mapViewUserAnchorPoint:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGPoint",
+                "printedName": "CoreFoundation.CGPoint",
+                "usr": "c:@S@CGPoint"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationViewController",
+                "printedName": "NbmapNavigation.NavigationViewController",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationMapView",
+                "printedName": "NbmapNavigation.NavigationMapView",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_03mapC15UserAnchorPointSo7CGPointVAA0bcD0C_AA0b3MapC0CtF",
+            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_03mapC15UserAnchorPointSo7CGPointVAA0bcD0C_AA0b3MapC0CtF",
             "moduleName": "NbmapNavigation",
             "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
             "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
@@ -54725,47 +55368,6 @@
             "declKind": "Func",
             "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE013navigationMapC15UserAnchorPointySo7CGPointVAA0bcD0CF",
             "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE013navigationMapC15UserAnchorPointySo7CGPointVAA0bcD0CF",
-            "moduleName": "NbmapNavigation",
-            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
-            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
-            "declAttributes": [
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "navigationViewController",
-            "printedName": "navigationViewController(_:didDetectAlternative:at:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationViewController",
-                "printedName": "NbmapNavigation.NavigationViewController",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationViewController"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Route",
-                "printedName": "NbmapCoreNavigation.Route",
-                "usr": "c:@M@NbmapCoreNavigation@objc(cs)NBNavRoute"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
-                "usr": "c:objc(cs)CLLocation"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_20didDetectAlternative2atyAA0bcD0C_0a4CoreB05RouteCSo10CLLocationCtF",
-            "mangledName": "$s15NbmapNavigation0B22ViewControllerDelegatePAAE010navigationcD0_20didDetectAlternative2atyAA0bcD0C_0a4CoreB05RouteCSo10CLLocationCtF",
             "moduleName": "NbmapNavigation",
             "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationViewControllerDelegate>",
             "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationViewControllerDelegate>",
