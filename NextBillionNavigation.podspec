@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "NextBillionNavigation"
-  spec.version      = "2.3.0"
+  spec.version      = "2.4.0-beta.1"
   spec.summary      = "The nextbillion.ai iOS  navigation cocoapods repo"
 
   spec.description  = <<-DESC
@@ -20,7 +20,10 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
 
   spec.authors             = { "qiuyu" => "qiuyu@nextbillion.ai", "qiu" => "zhengshen@nextbillion.ai" }
-  spec.source       = { :git => "https://github.com/nextbillion-ai/nextbillion-navigation-ios.git" }
+  spec.source       = { 
+    :git => "https://github.com/nextbillion-ai/nextbillion-navigation-ios.git" ,
+    :branch => "release/2.4.0-beta.1"
+  }
 
   spec.vendored_frameworks = '*.xcframework'
   spec.platform     = :ios, '12.0'

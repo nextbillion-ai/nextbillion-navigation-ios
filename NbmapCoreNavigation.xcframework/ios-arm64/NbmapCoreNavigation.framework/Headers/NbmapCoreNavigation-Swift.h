@@ -491,7 +491,7 @@ SWIFT_CLASS_NAMED("DirectionsOptions")
 - (nonnull instancetype)initWithWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints profile:(NBNavigationMode _Nonnull)profile OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
-- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)_ SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isEqualToDirectionsOptions:(NBDirectionsOptions * _Nullable)directionsOptions SWIFT_WARN_UNUSED_RESULT;
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
@@ -690,8 +690,6 @@ typedef SWIFT_ENUM_NAMED(NSUInteger, NBInstructionFormat, "InstructionFormat", o
 /// A single cross street along a step.
 SWIFT_CLASS_NAMED("Intersection")
 @interface NBIntersection : NSObject <NSSecureCoding>
-/// The geographic coordinates at the center of the intersection.
-@property (nonatomic, readonly) CLLocationCoordinate2D location;
 /// An array of <code>CLLocationDirection</code>s indicating the absolute headings of the roads that meet at the intersection.
 /// A road is represented in this array by a heading indicating the direction from which the road meets the intersection. To get the direction of travel when leaving the intersection along the road, rotate the heading 180 degrees.
 /// A single road that passes through this intersection is represented by two items in this array: one for the segment that enters the intersection and one for the segment that exits it.
@@ -884,12 +882,12 @@ SWIFT_CLASS("_TtC19NbmapCoreNavigation19NBNavigationService")
 @class RouteController;
 
 @interface NBNavigationService (SWIFT_EXTENSION(NbmapCoreNavigation))
-- (BOOL)routeController:(RouteController * _Nonnull)routeController shouldRerouteFrom:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
-- (void)routeController:(RouteController * _Nonnull)routeController willRerouteFrom:(CLLocation * _Nonnull)location;
-- (void)routeController:(RouteController * _Nonnull)routeController didRerouteAlong:(NBNavRoute * _Nonnull)route at:(CLLocation * _Nullable)location proactive:(BOOL)proactive;
-- (void)routeController:(RouteController * _Nonnull)routeController didFailToRerouteWith:(NSError * _Nonnull)error;
-- (BOOL)routeController:(RouteController * _Nonnull)routeController shouldDiscard:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
-- (void)routeController:(RouteController * _Nonnull)routeController didArriveAt:(NBWaypoint * _Nonnull)waypoint;
+- (BOOL)routeController:(RouteController * _Nonnull)_ shouldRerouteFrom:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
+- (void)routeController:(RouteController * _Nonnull)_ willRerouteFrom:(CLLocation * _Nonnull)location;
+- (void)routeController:(RouteController * _Nonnull)_ didRerouteAlong:(NBNavRoute * _Nonnull)route at:(CLLocation * _Nullable)location proactive:(BOOL)proactive;
+- (void)routeController:(RouteController * _Nonnull)_ didFailToRerouteWith:(NSError * _Nonnull)error;
+- (BOOL)routeController:(RouteController * _Nonnull)_ shouldDiscard:(CLLocation * _Nonnull)location SWIFT_WARN_UNUSED_RESULT;
+- (void)routeController:(RouteController * _Nonnull)_ didArriveAt:(NBWaypoint * _Nonnull)waypoint;
 @end
 
 
@@ -918,7 +916,7 @@ SWIFT_PROTOCOL("_TtP19NbmapCoreNavigation23NavigationEventTracking_")
 /// <code>NavigationLocationManager</code> is the base location manager which handles permissions and background modes.
 SWIFT_CLASS_NAMED("NavigationLocationManager")
 @interface NBNavigationLocationManager : CLLocationManager <NSCopying>
-- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)_ SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1020,19 +1018,11 @@ SWIFT_CLASS_NAMED("NavigationRouteOptions")
 /// Properties are prefixed and before they are stored in UserDefaults.standard.
 SWIFT_CLASS_NAMED("NavigationSettings")
 @interface NBNavigationSettings : NSObject
-/// The volume that the voice controller will use.
-/// This volume is relative to the system’s volume where 1.0 is same volume as the system.
 @property (nonatomic) float voiceVolume;
-/// Specifies whether to mute the voice controller or not.
 @property (nonatomic) BOOL voiceMuted;
-/// Specifies the preferred distance measurement unit.
-/// note:
-/// Anything but <code>kilometer</code> and <code>mile</code> will fall back to the default measurement for the current locale.
-/// Meters and feets will be used when the presented distances are small enough. See <code>DistanceFormatter</code> for more information.
 @property (nonatomic) NSLengthFormatterUnit distanceUnit;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)observeValueForKeyPath:(NSString * _Nullable)keyPath ofObject:(id _Nullable)object change:(NSDictionary<NSKeyValueChangeKey, id> * _Nullable)change context:(void * _Nullable)context;
 @end
 
 
@@ -1112,8 +1102,8 @@ SWIFT_CLASS("_TtC19NbmapCoreNavigation15RouteController")
 
 
 @interface RouteController (SWIFT_EXTENSION(NbmapCoreNavigation)) <CLLocationManagerDelegate>
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateHeading:(CLHeading * _Nonnull)newHeading;
-- (void)locationManager:(CLLocationManager * _Nonnull)manager didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)_ didUpdateLocations:(NSArray<CLLocation *> * _Nonnull)locations;
+- (void)locationManager:(CLLocationManager * _Nonnull)_ didUpdateHeading:(CLHeading * _Nonnull)newHeading;
 @end
 
 @class NBRouteStep;
@@ -1351,8 +1341,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 @property (nonatomic, readonly) enum NBManeuverType maneuverType;
 /// Additional directional information to clarify the maneuver type.
 @property (nonatomic, readonly) enum NBManeuverDirection maneuverDirection;
-/// The location of the maneuver at the beginning of this step.
-@property (nonatomic, readonly) CLLocationCoordinate2D maneuverLocation;
 /// Any <a href="https://en.wikipedia.org/wiki/Exit_number">exit numbers</a> assigned to the highway exit at the maneuver.
 /// This property is only set when the <code>maneuverType</code> is <code>ManeuverType.takeOffRamp</code>. For the number of exits from the previous maneuver, regardless of the highway’s exit numbering scheme, use the <code>exitIndex</code> property. For the route reference codes associated with the connecting road, use the <code>destinationCodes</code> property. For the names associated with a roundabout exit, use the <code>exitNames</code> property.
 /// An exit number is an alphanumeric identifier posted at or ahead of a highway off-ramp. Exit numbers may increase or decrease sequentially along a road, or they may correspond to distances from either end of the road. An alphabetic suffix may appear when multiple exits are located in the same interchange. If multiple exits are <a href="https://en.wikipedia.org/wiki/Local-express_lanes#Example_of_cloverleaf_interchanges">combined into a single exit</a>, the step may have multiple exit codes.
@@ -1534,7 +1522,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 - (nonnull instancetype)initWithLocation:(CLLocation * _Nonnull)location heading:(CLHeading * _Nullable)heading name:(NSString * _Nullable)name OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)_ SWIFT_WARN_UNUSED_RESULT;
 /// The geographic coordinate of the waypoint.
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 /// The radius of uncertainty for the waypoint, measured in meters.
@@ -1703,7 +1691,7 @@ SWIFT_CLASS_NAMED("VisualInstructionBanner")
 /// The distance at which the visual instruction should be shown, measured in meters from the beginning of the step.
 @property (nonatomic, readonly) CLLocationDistance distanceAlongStep;
 /// The most important information to convey to the user about the <code>RouteStep</code>.
-@property (nonatomic, readonly, strong) NBVisualInstruction * _Nonnull primaryInstruction;
+@property (nonatomic, readonly, strong) NBVisualInstruction * _Nullable primaryInstruction;
 /// Less important details about the <code>RouteStep</code>.
 @property (nonatomic, readonly, strong) NBVisualInstruction * _Nullable secondaryInstruction;
 /// A visual instruction that is presented simultaneously to provide information about an additional maneuver that occurs in rapid succession.
@@ -1726,7 +1714,7 @@ SWIFT_CLASS_NAMED("VisualInstructionBanner")
 ///
 /// \param drivingSide Which side of a bidirectional road the driver should drive on.
 ///
-- (nonnull instancetype)initWithDistanceAlongStep:(CLLocationDistance)distanceAlongStep primaryInstruction:(NBVisualInstruction * _Nonnull)primaryInstruction secondaryInstruction:(NBVisualInstruction * _Nullable)secondaryInstruction tertiaryInstruction:(NBVisualInstruction * _Nullable)tertiaryInstruction drivingSide:(enum NBDrivingSide)drivingSide OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDistanceAlongStep:(CLLocationDistance)distanceAlongStep primaryInstruction:(NBVisualInstruction * _Nullable)primaryInstruction secondaryInstruction:(NBVisualInstruction * _Nullable)secondaryInstruction tertiaryInstruction:(NBVisualInstruction * _Nullable)tertiaryInstruction drivingSide:(enum NBDrivingSide)drivingSide OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;

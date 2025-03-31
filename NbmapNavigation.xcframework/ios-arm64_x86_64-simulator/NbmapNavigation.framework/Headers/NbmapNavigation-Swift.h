@@ -401,7 +401,6 @@ SWIFT_CLASS_NAMED("ArrivedConfirmViewController")
 - (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
@@ -433,7 +432,7 @@ SWIFT_CLASS("_TtC15NbmapNavigation21ArrivedViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)willTransitionToTraitCollection:(UITraitCollection * _Nonnull)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)_ shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -441,16 +440,16 @@ SWIFT_CLASS("_TtC15NbmapNavigation21ArrivedViewController")
 @protocol UIViewControllerInteractiveTransitioning;
 
 @interface ArrivedViewController (SWIFT_EXTENSION(NbmapNavigation)) <UIViewControllerTransitioningDelegate>
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)animator SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)_ presentingController:(UIViewController * _Nonnull)_ sourceController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 SWIFT_CLASS_NAMED("BannerContainerView")
 @interface NBBannerContainerView : UIView
 - (void)safeAreaInsetsDidChange;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (void)didMoveToSuperview;
 - (void)layoutSubviews;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -531,9 +530,9 @@ SWIFT_CLASS("_TtC15NbmapNavigation26BottomBannerViewController")
 
 
 @interface BottomBannerViewController (SWIFT_EXTENSION(NbmapNavigation)) <ArrivedConfirmViewControllerDelegate>
-- (void)arrivedConfirmViewControllerDidOpen:(NBArrivedConfirmViewController * _Nonnull)arrivedConfirmViewController;
-- (void)arrivedConfirmViewControllerDidConfirm:(NBArrivedConfirmViewController * _Nonnull)arrivedConfirmViewController legIndex:(NSInteger)legIndex;
-- (void)arrivedConfirmViewControllerDidCancel:(NBArrivedConfirmViewController * _Nonnull)arrivedConfirmViewController legIndex:(NSInteger)legIndex;
+- (void)arrivedConfirmViewControllerDidOpen:(NBArrivedConfirmViewController * _Nonnull)_;
+- (void)arrivedConfirmViewControllerDidConfirm:(NBArrivedConfirmViewController * _Nonnull)_ legIndex:(NSInteger)legIndex;
+- (void)arrivedConfirmViewControllerDidCancel:(NBArrivedConfirmViewController * _Nonnull)_ legIndex:(NSInteger)legIndex;
 @end
 
 
@@ -611,7 +610,7 @@ SWIFT_PROTOCOL_NAMED("CarPlayNavigationDelegate") SWIFT_AVAILABILITY(ios,introdu
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationCarPlayDelegate>
 - (void)carPlayNavigationViewControllerDidArrive:(CarPlayNavigationViewController * _Nonnull)_;
-- (void)carPlayNavigationViewControllerDidDismiss:(CarPlayNavigationViewController * _Nonnull)carPlayNavigationViewController byCanceling:(BOOL)canceled;
+- (void)carPlayNavigationViewControllerDidDismiss:(CarPlayNavigationViewController * _Nonnull)_ byCanceling:(BOOL)_;
 @end
 
 @class UIApplication;
@@ -620,16 +619,16 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPApplicationDelegate>
-- (void)application:(UIApplication * _Nonnull)application didConnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
-- (void)application:(UIApplication * _Nonnull)application didDisconnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
+- (void)application:(UIApplication * _Nonnull)_ didConnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
+- (void)application:(UIApplication * _Nonnull)_ didDisconnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
 @end
 
 @class CPTemplateApplicationScene;
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPTemplateApplicationSceneDelegate>
-- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)templateApplicationScene didConnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
-- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)templateApplicationScene didDisconnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
+- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)_ didConnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
+- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)_ didDisconnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
 @end
 
 
@@ -648,7 +647,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPListTemplateDelegate>
-- (void)listTemplate:(CPListTemplate * _Nonnull)listTemplate didSelectListItem:(CPListItem * _Nonnull)item completionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)listTemplate:(CPListTemplate * _Nonnull)_ didSelectListItem:(CPListItem * _Nonnull)item completionHandler:(void (^ _Nonnull)(void))completionHandler;
 @end
 
 
@@ -658,14 +657,14 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPMapTemplateDelegate>
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)_ startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
 - (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate selectedPreviewForTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
-- (void)mapTemplateDidCancelNavigation:(CPMapTemplate * _Nonnull)mapTemplate;
+- (void)mapTemplateDidCancelNavigation:(CPMapTemplate * _Nonnull)_;
 - (void)mapTemplateDidBeginPanGesture:(CPMapTemplate * _Nonnull)mapTemplate;
 - (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate didEndPanGestureWithVelocity:(CGPoint)velocity;
-- (void)mapTemplateWillDismissPanningInterface:(CPMapTemplate * _Nonnull)mapTemplate;
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate didUpdatePanGestureWithTranslation:(CGPoint)translation velocity:(CGPoint)velocity;
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate panWithDirection:(CPPanDirection)direction;
+- (void)mapTemplateWillDismissPanningInterface:(CPMapTemplate * _Nonnull)_;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate didUpdatePanGestureWithTranslation:(CGPoint)translation velocity:(CGPoint)_;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)_ panWithDirection:(CPPanDirection)direction;
 @end
 
 @class CPSearchTemplate;
@@ -673,7 +672,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPSearchTemplateDelegate>
 - (void)searchTemplate:(CPSearchTemplate * _Nonnull)searchTemplate updatedSearchText:(NSString * _Nonnull)searchText completionHandler:(void (^ _Nonnull)(NSArray<CPListItem *> * _Nonnull))completionHandler;
-- (void)searchTemplateSearchButtonPressed:(CPSearchTemplate * _Nonnull)searchTemplate;
+- (void)searchTemplateSearchButtonPressed:(CPSearchTemplate * _Nonnull)_;
 - (void)searchTemplate:(CPSearchTemplate * _Nonnull)searchTemplate selectedResult:(CPListItem * _Nonnull)item completionHandler:(void (^ _Nonnull)(void))completionHandler;
 @end
 
@@ -689,7 +688,7 @@ SWIFT_CLASS("_TtC15NbmapNavigation31CarPlayNavigationViewController") SWIFT_AVAI
 @property (nonatomic, weak) id <NBNavigationCarPlayDelegate> _Nullable delegate;
 /// The map view showing the route and the user’s location.
 @property (nonatomic, strong) NBNavigationMapView * _Nonnull navigationMapView;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
@@ -705,6 +704,8 @@ SWIFT_CLASS("_TtC15NbmapNavigation31CarPlayNavigationViewController") SWIFT_AVAI
 /// \param canceled A Boolean value indicating whether this method is being called because the user intends to cancel the trip, as opposed to letting it run to completion.
 ///
 - (void)exitNavigationByCanceling:(BOOL)canceled;
+/// Shows the interface for providing feedback about the route.
+- (void)showFeedback;
 /// A Boolean value indicating whether the map should follow the user’s location and rotate when the course changes.
 /// When this property is true, the map follows the user’s location and rotates when their course changes. Otherwise, the map shows an overview of the route.
 @property (nonatomic) BOOL tracksUserCourse;
@@ -838,14 +839,14 @@ SWIFT_PROTOCOL_NAMED("NavigationMapViewDelegate")
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationMapViewDelegate>
-- (void)mapView:(NGLMapView * _Nonnull)mapView didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
+- (void)mapView:(NGLMapView * _Nonnull)_ didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
 @end
 
 @class CPSessionConfiguration;
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <CPSessionConfigurationDelegate>
-- (void)sessionConfiguration:(CPSessionConfiguration * _Nonnull)sessionConfiguration contentStyleChanged:(CPContentStyle)contentStyle;
+- (void)sessionConfiguration:(CPSessionConfiguration * _Nonnull)_ contentStyleChanged:(CPContentStyle)contentStyle;
 @end
 
 
@@ -868,9 +869,9 @@ SWIFT_PROTOCOL_NAMED("StyleManagerDelegate")
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>
-- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)styleManager SWIFT_WARN_UNUSED_RESULT;
-- (void)styleManager:(NBStyleManager * _Nonnull)styleManager didApply:(NBStyle * _Nonnull)style;
-- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)styleManager;
+- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (void)styleManager:(NBStyleManager * _Nonnull)_ didApply:(NBStyle * _Nonnull)style;
+- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)_;
 @end
 
 
@@ -1052,7 +1053,7 @@ SWIFT_CLASS_NAMED("FeedbackViewController")
 - (void)willTransitionToTraitCollection:(UITraitCollection * _Nonnull)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 /// Instantly dismisses the FeedbackViewController if it is currently presented.
 - (void)dismissFeedback;
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)_ shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -1061,19 +1062,19 @@ SWIFT_CLASS_NAMED("FeedbackViewController")
 @class NSIndexPath;
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UICollectionViewDelegateFlowLayout>
-- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)_ sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UICollectionViewDelegate>
-- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)collectionView:(UICollectionView * _Nonnull)_ didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UIViewControllerTransitioningDelegate>
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)animator SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)_ presentingController:(UIViewController * _Nonnull)_ sourceController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UICollectionViewCell;
@@ -1081,9 +1082,9 @@ SWIFT_CLASS_NAMED("FeedbackViewController")
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UICollectionViewDataSource>
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)_ numberOfItemsInSection:(NSInteger)_ SWIFT_WARN_UNUSED_RESULT;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)_;
 @end
 
 @class NSUUID;
@@ -1342,7 +1343,7 @@ SWIFT_CLASS_NAMED("ManeuversStyleKit")
 + (void)drawForkWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size;
 + (void)drawOfframpWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size;
 + (void)drawArriverightWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor size:(CGSize)size;
-+ (void)drawRoundaboutWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size roundabout_angle:(CGFloat)roundabout_angle roundabout_radius:(CGFloat)roundabout_radius;
++ (void)drawRoundaboutWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size roundaboutAngle:(CGFloat)roundaboutAngle roundaboutRadius:(CGFloat)roundaboutRadius;
 + (void)drawArriveright2WithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor size:(CGSize)size;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1456,9 +1457,7 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame styleURL:(NSURL * _Nullable)styleURL OBJC_DESIGNATED_INITIALIZER;
-- (void)reloadStyle:(id _Nullable)sender;
 - (void)prepareForInterfaceBuilder;
-- (CGPoint)anchorPointForGesture:(UIGestureRecognizer * _Nonnull)gesture SWIFT_WARN_UNUSED_RESULT;
 - (void)mapViewDidFinishRenderingFrameFullyRendered:(BOOL)fullyRendered;
 - (void)movePuckToCurrentLocationWithLocation:(CLLocation * _Nullable)location animated:(BOOL)animated updateWaynameLabel:(BOOL)updateWaynameLabel;
 /// Find the visible road network features acording to the given coordinate and area length
@@ -1502,9 +1501,9 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @end
 
 typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {
-  DurationSymbolTypeROUTE_DURATION = 0,
-  DurationSymbolTypeROUTE_DURATION_DIFF = 1,
-  DurationSymbolTypeNONE_ROUTE_DURATION = 2,
+  DurationSymbolTypeRouteDuration = 0,
+  DurationSymbolTypeRouteDurationDiff = 1,
+  DurationSymbolTypeNoneRouteDuration = 2,
 };
 
 
@@ -1516,11 +1515,11 @@ typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {
 SWIFT_CLASS_NAMED("NavigationPreviewController")
 @interface NavigationPreviewController : UIViewController <NGLMapViewDelegate>
 - (nonnull instancetype)initWithRoute:(NBNavRoute * _Nonnull)route styles:(NBStyle * _Nonnull)style OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
-- (void)mapViewDidFinishLoadingMap:(NGLMapView * _Nonnull)mapView;
+- (void)mapViewDidFinishLoadingMap:(NGLMapView * _Nonnull)_;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -1642,30 +1641,30 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 @class NGLAnnotationView;
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NGLMapViewDelegate>
-- (NGLAnnotationImage * _Nullable)mapView:(NGLMapView * _Nonnull)mapView imageForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
-- (NGLAnnotationView * _Nullable)mapView:(NGLMapView * _Nonnull)mapView viewForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
-- (void)mapView:(NGLMapView * _Nonnull)mapView didSelectAnnotation:(id <NGLAnnotation> _Nonnull)annotation;
+- (NGLAnnotationImage * _Nullable)mapView:(NGLMapView * _Nonnull)_ imageForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
+- (NGLAnnotationView * _Nullable)mapView:(NGLMapView * _Nonnull)_ viewForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
+- (void)mapView:(NGLMapView * _Nonnull)_ didSelectAnnotation:(id <NGLAnnotation> _Nonnull)annotation;
 @end
 
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>
-- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)styleManager SWIFT_WARN_UNUSED_RESULT;
-- (void)styleManager:(NBStyleManager * _Nonnull)styleManager didApply:(NBStyle * _Nonnull)style;
-- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)styleManager;
+- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (void)styleManager:(NBStyleManager * _Nonnull)_ didApply:(NBStyle * _Nonnull)style;
+- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)_;
 @end
 
 
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationMapViewDelegate>
-- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView routeStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView routeCasingStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView waypointSymbolStyleLayerWithIdentifier:(NSString * _Nonnull)identifier waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView shapeForWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints legIndex:(NSInteger)legIndex SWIFT_WARN_UNUSED_RESULT;
-- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView shapeForRoutes:(NSArray<NBNavRoute *> * _Nonnull)routes SWIFT_WARN_UNUSED_RESULT;
-- (void)navigationMapView:(NBNavigationMapView * _Nonnull)mapView didSelectRoute:(NBNavRoute * _Nonnull)route;
-- (void)navigationMapView:(NBNavigationMapView * _Nonnull)mapView didSelectWaypoint:(NBWaypoint * _Nonnull)waypoint;
-- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView simplifiedShapeForRoute:(NBNavRoute * _Nonnull)route SWIFT_WARN_UNUSED_RESULT;
-- (void)mapView:(NGLMapView * _Nonnull)mapView didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
+- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ routeStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ routeCasingStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ waypointSymbolStyleLayerWithIdentifier:(NSString * _Nonnull)identifier waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ shapeForWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints legIndex:(NSInteger)legIndex SWIFT_WARN_UNUSED_RESULT;
+- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ shapeForRoutes:(NSArray<NBNavRoute *> * _Nonnull)routes SWIFT_WARN_UNUSED_RESULT;
+- (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectRoute:(NBNavRoute * _Nonnull)route;
+- (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectWaypoint:(NBWaypoint * _Nonnull)waypoint;
+- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ simplifiedShapeForRoute:(NBNavRoute * _Nonnull)route SWIFT_WARN_UNUSED_RESULT;
+- (void)mapView:(NGLMapView * _Nonnull)_ didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
 @end
 
 
@@ -1745,7 +1744,7 @@ SWIFT_CLASS_NAMED("ResumeButton")
 /// A view that displays the duration of a route as a symbol on the map.
 SWIFT_CLASS("_TtC15NbmapNavigation19RouteDurationSymbol")
 @interface RouteDurationSymbol : UIView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -1761,8 +1760,8 @@ SWIFT_CLASS_NAMED("RouteVoiceController")
 /// If true, a noise indicating the user is going to be rerouted will play prior to rerouting.
 @property (nonatomic) BOOL playRerouteSound;
 /// Sound to play prior to reroute. Inherits volume level from <code>volume</code>.
-@property (nonatomic, strong) AVAudioPlayer * _Nonnull rerouteSoundPlayer;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+@property (nonatomic, readonly, strong) AVAudioPlayer * _Nullable rerouteSoundPlayer;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
 - (void)didPassSpokenInstructionPointWithNotification:(NSNotification * _Nonnull)notification;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1898,7 +1897,7 @@ SWIFT_CLASS_NAMED("StepsViewController")
 
 
 @interface NBStepsViewController (SWIFT_EXTENSION(NbmapNavigation)) <UIGestureRecognizerDelegate>
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UITableView;
@@ -1909,9 +1908,9 @@ SWIFT_CLASS_NAMED("StepsViewController")
 
 
 @interface NBStepsViewController (SWIFT_EXTENSION(NbmapNavigation)) <UITableViewDataSource>
-- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)_ numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)_ heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -1924,7 +1923,7 @@ SWIFT_CLASS_NAMED("StepsViewController")
 SWIFT_CLASS_NAMED("StyleKitMarker")
 @interface NBStyleKitMarker : NSObject
 /// / Drawing Methods
-+ (void)drawMarkerWithFrame:(CGRect)frame innerColor:(UIColor * _Nonnull)innerColor shadowColor:(UIColor * _Nonnull)shadowColor pinColor:(UIColor * _Nonnull)pinColor strokeColor:(UIColor * _Nonnull)strokeColor;
++ (void)drawMarkerWithFrame:(CGRect)_ innerColor:(UIColor * _Nonnull)innerColor shadowColor:(UIColor * _Nonnull)shadowColor pinColor:(UIColor * _Nonnull)pinColor strokeColor:(UIColor * _Nonnull)strokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1973,11 +1972,11 @@ SWIFT_CLASS("_TtC15NbmapNavigation23SystemSpeechSynthesizer")
 
 
 @interface SystemSpeechSynthesizer (SWIFT_EXTENSION(NbmapNavigation)) <AVSpeechSynthesizerDelegate>
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
 @end
 
 
@@ -2095,7 +2094,7 @@ SWIFT_CLASS_NAMED("WayNameView")
 SWIFT_CLASS("_TtC15NbmapNavigation14WayPointSymbol")
 @interface WayPointSymbol : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (void)drawRect:(CGRect)rect;
 @end
 
@@ -2518,7 +2517,6 @@ SWIFT_CLASS_NAMED("ArrivedConfirmViewController")
 - (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
@@ -2550,7 +2548,7 @@ SWIFT_CLASS("_TtC15NbmapNavigation21ArrivedViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)willTransitionToTraitCollection:(UITraitCollection * _Nonnull)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)_ shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -2558,16 +2556,16 @@ SWIFT_CLASS("_TtC15NbmapNavigation21ArrivedViewController")
 @protocol UIViewControllerInteractiveTransitioning;
 
 @interface ArrivedViewController (SWIFT_EXTENSION(NbmapNavigation)) <UIViewControllerTransitioningDelegate>
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)animator SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)_ presentingController:(UIViewController * _Nonnull)_ sourceController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 SWIFT_CLASS_NAMED("BannerContainerView")
 @interface NBBannerContainerView : UIView
 - (void)safeAreaInsetsDidChange;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (void)didMoveToSuperview;
 - (void)layoutSubviews;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -2648,9 +2646,9 @@ SWIFT_CLASS("_TtC15NbmapNavigation26BottomBannerViewController")
 
 
 @interface BottomBannerViewController (SWIFT_EXTENSION(NbmapNavigation)) <ArrivedConfirmViewControllerDelegate>
-- (void)arrivedConfirmViewControllerDidOpen:(NBArrivedConfirmViewController * _Nonnull)arrivedConfirmViewController;
-- (void)arrivedConfirmViewControllerDidConfirm:(NBArrivedConfirmViewController * _Nonnull)arrivedConfirmViewController legIndex:(NSInteger)legIndex;
-- (void)arrivedConfirmViewControllerDidCancel:(NBArrivedConfirmViewController * _Nonnull)arrivedConfirmViewController legIndex:(NSInteger)legIndex;
+- (void)arrivedConfirmViewControllerDidOpen:(NBArrivedConfirmViewController * _Nonnull)_;
+- (void)arrivedConfirmViewControllerDidConfirm:(NBArrivedConfirmViewController * _Nonnull)_ legIndex:(NSInteger)legIndex;
+- (void)arrivedConfirmViewControllerDidCancel:(NBArrivedConfirmViewController * _Nonnull)_ legIndex:(NSInteger)legIndex;
 @end
 
 
@@ -2728,7 +2726,7 @@ SWIFT_PROTOCOL_NAMED("CarPlayNavigationDelegate") SWIFT_AVAILABILITY(ios,introdu
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationCarPlayDelegate>
 - (void)carPlayNavigationViewControllerDidArrive:(CarPlayNavigationViewController * _Nonnull)_;
-- (void)carPlayNavigationViewControllerDidDismiss:(CarPlayNavigationViewController * _Nonnull)carPlayNavigationViewController byCanceling:(BOOL)canceled;
+- (void)carPlayNavigationViewControllerDidDismiss:(CarPlayNavigationViewController * _Nonnull)_ byCanceling:(BOOL)_;
 @end
 
 @class UIApplication;
@@ -2737,16 +2735,16 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPApplicationDelegate>
-- (void)application:(UIApplication * _Nonnull)application didConnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
-- (void)application:(UIApplication * _Nonnull)application didDisconnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
+- (void)application:(UIApplication * _Nonnull)_ didConnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
+- (void)application:(UIApplication * _Nonnull)_ didDisconnectCarInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
 @end
 
 @class CPTemplateApplicationScene;
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPTemplateApplicationSceneDelegate>
-- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)templateApplicationScene didConnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
-- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)templateApplicationScene didDisconnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
+- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)_ didConnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController toWindow:(CPWindow * _Nonnull)window;
+- (void)templateApplicationScene:(CPTemplateApplicationScene * _Nonnull)_ didDisconnectInterfaceController:(CPInterfaceController * _Nonnull)interfaceController fromWindow:(CPWindow * _Nonnull)window;
 @end
 
 
@@ -2765,7 +2763,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPListTemplateDelegate>
-- (void)listTemplate:(CPListTemplate * _Nonnull)listTemplate didSelectListItem:(CPListItem * _Nonnull)item completionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)listTemplate:(CPListTemplate * _Nonnull)_ didSelectListItem:(CPListItem * _Nonnull)item completionHandler:(void (^ _Nonnull)(void))completionHandler;
 @end
 
 
@@ -2775,14 +2773,14 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPMapTemplateDelegate>
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)_ startedTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
 - (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate selectedPreviewForTrip:(CPTrip * _Nonnull)trip usingRouteChoice:(CPRouteChoice * _Nonnull)routeChoice;
-- (void)mapTemplateDidCancelNavigation:(CPMapTemplate * _Nonnull)mapTemplate;
+- (void)mapTemplateDidCancelNavigation:(CPMapTemplate * _Nonnull)_;
 - (void)mapTemplateDidBeginPanGesture:(CPMapTemplate * _Nonnull)mapTemplate;
 - (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate didEndPanGestureWithVelocity:(CGPoint)velocity;
-- (void)mapTemplateWillDismissPanningInterface:(CPMapTemplate * _Nonnull)mapTemplate;
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate didUpdatePanGestureWithTranslation:(CGPoint)translation velocity:(CGPoint)velocity;
-- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate panWithDirection:(CPPanDirection)direction;
+- (void)mapTemplateWillDismissPanningInterface:(CPMapTemplate * _Nonnull)_;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)mapTemplate didUpdatePanGestureWithTranslation:(CGPoint)translation velocity:(CGPoint)_;
+- (void)mapTemplate:(CPMapTemplate * _Nonnull)_ panWithDirection:(CPPanDirection)direction;
 @end
 
 @class CPSearchTemplate;
@@ -2790,7 +2788,7 @@ SWIFT_AVAILABILITY(ios,introduced=13.0)
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayManager (SWIFT_EXTENSION(NbmapNavigation)) <CPSearchTemplateDelegate>
 - (void)searchTemplate:(CPSearchTemplate * _Nonnull)searchTemplate updatedSearchText:(NSString * _Nonnull)searchText completionHandler:(void (^ _Nonnull)(NSArray<CPListItem *> * _Nonnull))completionHandler;
-- (void)searchTemplateSearchButtonPressed:(CPSearchTemplate * _Nonnull)searchTemplate;
+- (void)searchTemplateSearchButtonPressed:(CPSearchTemplate * _Nonnull)_;
 - (void)searchTemplate:(CPSearchTemplate * _Nonnull)searchTemplate selectedResult:(CPListItem * _Nonnull)item completionHandler:(void (^ _Nonnull)(void))completionHandler;
 @end
 
@@ -2806,7 +2804,7 @@ SWIFT_CLASS("_TtC15NbmapNavigation31CarPlayNavigationViewController") SWIFT_AVAI
 @property (nonatomic, weak) id <NBNavigationCarPlayDelegate> _Nullable delegate;
 /// The map view showing the route and the user’s location.
 @property (nonatomic, strong) NBNavigationMapView * _Nonnull navigationMapView;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ SWIFT_UNAVAILABLE;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
@@ -2822,6 +2820,8 @@ SWIFT_CLASS("_TtC15NbmapNavigation31CarPlayNavigationViewController") SWIFT_AVAI
 /// \param canceled A Boolean value indicating whether this method is being called because the user intends to cancel the trip, as opposed to letting it run to completion.
 ///
 - (void)exitNavigationByCanceling:(BOOL)canceled;
+/// Shows the interface for providing feedback about the route.
+- (void)showFeedback;
 /// A Boolean value indicating whether the map should follow the user’s location and rotate when the course changes.
 /// When this property is true, the map follows the user’s location and rotates when their course changes. Otherwise, the map shows an overview of the route.
 @property (nonatomic) BOOL tracksUserCourse;
@@ -2955,14 +2955,14 @@ SWIFT_PROTOCOL_NAMED("NavigationMapViewDelegate")
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationMapViewDelegate>
-- (void)mapView:(NGLMapView * _Nonnull)mapView didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
+- (void)mapView:(NGLMapView * _Nonnull)_ didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
 @end
 
 @class CPSessionConfiguration;
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <CPSessionConfigurationDelegate>
-- (void)sessionConfiguration:(CPSessionConfiguration * _Nonnull)sessionConfiguration contentStyleChanged:(CPContentStyle)contentStyle;
+- (void)sessionConfiguration:(CPSessionConfiguration * _Nonnull)_ contentStyleChanged:(CPContentStyle)contentStyle;
 @end
 
 
@@ -2985,9 +2985,9 @@ SWIFT_PROTOCOL_NAMED("StyleManagerDelegate")
 
 SWIFT_AVAILABILITY(ios,introduced=13.0)
 @interface CarPlayNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>
-- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)styleManager SWIFT_WARN_UNUSED_RESULT;
-- (void)styleManager:(NBStyleManager * _Nonnull)styleManager didApply:(NBStyle * _Nonnull)style;
-- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)styleManager;
+- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (void)styleManager:(NBStyleManager * _Nonnull)_ didApply:(NBStyle * _Nonnull)style;
+- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)_;
 @end
 
 
@@ -3169,7 +3169,7 @@ SWIFT_CLASS_NAMED("FeedbackViewController")
 - (void)willTransitionToTraitCollection:(UITraitCollection * _Nonnull)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 /// Instantly dismisses the FeedbackViewController if it is currently presented.
 - (void)dismissFeedback;
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)_ shouldReceiveTouch:(UITouch * _Nonnull)touch SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -3178,19 +3178,19 @@ SWIFT_CLASS_NAMED("FeedbackViewController")
 @class NSIndexPath;
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UICollectionViewDelegateFlowLayout>
-- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)_ sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UICollectionViewDelegate>
-- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)collectionView:(UICollectionView * _Nonnull)_ didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UIViewControllerTransitioningDelegate>
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)animator SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)_ presentingController:(UIViewController * _Nonnull)_ sourceController:(UIViewController * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerInteractiveTransitioning> _Nullable)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning> _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UICollectionViewCell;
@@ -3198,9 +3198,9 @@ SWIFT_CLASS_NAMED("FeedbackViewController")
 
 @interface NBFeedbackViewController (SWIFT_EXTENSION(NbmapNavigation)) <UICollectionViewDataSource>
 - (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)_ numberOfItemsInSection:(NSInteger)_ SWIFT_WARN_UNUSED_RESULT;
+- (void)scrollViewDidScroll:(UIScrollView * _Nonnull)_;
 @end
 
 @class NSUUID;
@@ -3459,7 +3459,7 @@ SWIFT_CLASS_NAMED("ManeuversStyleKit")
 + (void)drawForkWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size;
 + (void)drawOfframpWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size;
 + (void)drawArriverightWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor size:(CGSize)size;
-+ (void)drawRoundaboutWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size roundabout_angle:(CGFloat)roundabout_angle roundabout_radius:(CGFloat)roundabout_radius;
++ (void)drawRoundaboutWithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor secondaryColor:(UIColor * _Nonnull)secondaryColor size:(CGSize)size roundaboutAngle:(CGFloat)roundaboutAngle roundaboutRadius:(CGFloat)roundaboutRadius;
 + (void)drawArriveright2WithFrame:(CGRect)targetFrame resizing:(enum ManeuversStyleKitResizingBehavior)resizing primaryColor:(UIColor * _Nonnull)primaryColor size:(CGSize)size;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -3573,9 +3573,7 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame styleURL:(NSURL * _Nullable)styleURL OBJC_DESIGNATED_INITIALIZER;
-- (void)reloadStyle:(id _Nullable)sender;
 - (void)prepareForInterfaceBuilder;
-- (CGPoint)anchorPointForGesture:(UIGestureRecognizer * _Nonnull)gesture SWIFT_WARN_UNUSED_RESULT;
 - (void)mapViewDidFinishRenderingFrameFullyRendered:(BOOL)fullyRendered;
 - (void)movePuckToCurrentLocationWithLocation:(CLLocation * _Nullable)location animated:(BOOL)animated updateWaynameLabel:(BOOL)updateWaynameLabel;
 /// Find the visible road network features acording to the given coordinate and area length
@@ -3619,9 +3617,9 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @end
 
 typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {
-  DurationSymbolTypeROUTE_DURATION = 0,
-  DurationSymbolTypeROUTE_DURATION_DIFF = 1,
-  DurationSymbolTypeNONE_ROUTE_DURATION = 2,
+  DurationSymbolTypeRouteDuration = 0,
+  DurationSymbolTypeRouteDurationDiff = 1,
+  DurationSymbolTypeNoneRouteDuration = 2,
 };
 
 
@@ -3633,11 +3631,11 @@ typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {
 SWIFT_CLASS_NAMED("NavigationPreviewController")
 @interface NavigationPreviewController : UIViewController <NGLMapViewDelegate>
 - (nonnull instancetype)initWithRoute:(NBNavRoute * _Nonnull)route styles:(NBStyle * _Nonnull)style OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
 - (void)viewDidLoad;
-- (void)mapViewDidFinishLoadingMap:(NGLMapView * _Nonnull)mapView;
+- (void)mapViewDidFinishLoadingMap:(NGLMapView * _Nonnull)_;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
@@ -3759,30 +3757,30 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 @class NGLAnnotationView;
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NGLMapViewDelegate>
-- (NGLAnnotationImage * _Nullable)mapView:(NGLMapView * _Nonnull)mapView imageForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
-- (NGLAnnotationView * _Nullable)mapView:(NGLMapView * _Nonnull)mapView viewForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
-- (void)mapView:(NGLMapView * _Nonnull)mapView didSelectAnnotation:(id <NGLAnnotation> _Nonnull)annotation;
+- (NGLAnnotationImage * _Nullable)mapView:(NGLMapView * _Nonnull)_ imageForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
+- (NGLAnnotationView * _Nullable)mapView:(NGLMapView * _Nonnull)_ viewForAnnotation:(id <NGLAnnotation> _Nonnull)annotation SWIFT_WARN_UNUSED_RESULT;
+- (void)mapView:(NGLMapView * _Nonnull)_ didSelectAnnotation:(id <NGLAnnotation> _Nonnull)annotation;
 @end
 
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>
-- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)styleManager SWIFT_WARN_UNUSED_RESULT;
-- (void)styleManager:(NBStyleManager * _Nonnull)styleManager didApply:(NBStyle * _Nonnull)style;
-- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)styleManager;
+- (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (void)styleManager:(NBStyleManager * _Nonnull)_ didApply:(NBStyle * _Nonnull)style;
+- (void)styleManagerDidRefreshAppearance:(NBStyleManager * _Nonnull)_;
 @end
 
 
 
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBNavigationMapViewDelegate>
-- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView routeStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView routeCasingStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView waypointSymbolStyleLayerWithIdentifier:(NSString * _Nonnull)identifier waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
-- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView shapeForWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints legIndex:(NSInteger)legIndex SWIFT_WARN_UNUSED_RESULT;
-- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView shapeForRoutes:(NSArray<NBNavRoute *> * _Nonnull)routes SWIFT_WARN_UNUSED_RESULT;
-- (void)navigationMapView:(NBNavigationMapView * _Nonnull)mapView didSelectRoute:(NBNavRoute * _Nonnull)route;
-- (void)navigationMapView:(NBNavigationMapView * _Nonnull)mapView didSelectWaypoint:(NBWaypoint * _Nonnull)waypoint;
-- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView simplifiedShapeForRoute:(NBNavRoute * _Nonnull)route SWIFT_WARN_UNUSED_RESULT;
-- (void)mapView:(NGLMapView * _Nonnull)mapView didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
+- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ routeStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ routeCasingStyleLayerWithIdentifier:(NSString * _Nonnull)identifier source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (NGLStyleLayer * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ waypointSymbolStyleLayerWithIdentifier:(NSString * _Nonnull)identifier waypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints source:(NGLSource * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ shapeForWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints legIndex:(NSInteger)legIndex SWIFT_WARN_UNUSED_RESULT;
+- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ shapeForRoutes:(NSArray<NBNavRoute *> * _Nonnull)routes SWIFT_WARN_UNUSED_RESULT;
+- (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectRoute:(NBNavRoute * _Nonnull)route;
+- (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectWaypoint:(NBWaypoint * _Nonnull)waypoint;
+- (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ simplifiedShapeForRoute:(NBNavRoute * _Nonnull)route SWIFT_WARN_UNUSED_RESULT;
+- (void)mapView:(NGLMapView * _Nonnull)_ didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
 @end
 
 
@@ -3862,7 +3860,7 @@ SWIFT_CLASS_NAMED("ResumeButton")
 /// A view that displays the duration of a route as a symbol on the map.
 SWIFT_CLASS("_TtC15NbmapNavigation19RouteDurationSymbol")
 @interface RouteDurationSymbol : UIView
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
 @end
 
@@ -3878,8 +3876,8 @@ SWIFT_CLASS_NAMED("RouteVoiceController")
 /// If true, a noise indicating the user is going to be rerouted will play prior to rerouting.
 @property (nonatomic) BOOL playRerouteSound;
 /// Sound to play prior to reroute. Inherits volume level from <code>volume</code>.
-@property (nonatomic, strong) AVAudioPlayer * _Nonnull rerouteSoundPlayer;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+@property (nonatomic, readonly, strong) AVAudioPlayer * _Nullable rerouteSoundPlayer;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
 - (void)didPassSpokenInstructionPointWithNotification:(NSNotification * _Nonnull)notification;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -4015,7 +4013,7 @@ SWIFT_CLASS_NAMED("StepsViewController")
 
 
 @interface NBStepsViewController (SWIFT_EXTENSION(NbmapNavigation)) <UIGestureRecognizerDelegate>
-- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class UITableView;
@@ -4026,9 +4024,9 @@ SWIFT_CLASS_NAMED("StepsViewController")
 
 
 @interface NBStepsViewController (SWIFT_EXTENSION(NbmapNavigation)) <UITableViewDataSource>
-- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)tableView:(UITableView * _Nonnull)_ numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)_ heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -4041,7 +4039,7 @@ SWIFT_CLASS_NAMED("StepsViewController")
 SWIFT_CLASS_NAMED("StyleKitMarker")
 @interface NBStyleKitMarker : NSObject
 /// / Drawing Methods
-+ (void)drawMarkerWithFrame:(CGRect)frame innerColor:(UIColor * _Nonnull)innerColor shadowColor:(UIColor * _Nonnull)shadowColor pinColor:(UIColor * _Nonnull)pinColor strokeColor:(UIColor * _Nonnull)strokeColor;
++ (void)drawMarkerWithFrame:(CGRect)_ innerColor:(UIColor * _Nonnull)innerColor shadowColor:(UIColor * _Nonnull)shadowColor pinColor:(UIColor * _Nonnull)pinColor strokeColor:(UIColor * _Nonnull)strokeColor;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -4090,11 +4088,11 @@ SWIFT_CLASS("_TtC15NbmapNavigation23SystemSpeechSynthesizer")
 
 
 @interface SystemSpeechSynthesizer (SWIFT_EXTENSION(NbmapNavigation)) <AVSpeechSynthesizerDelegate>
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
-- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)utterance;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didStartSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didContinueSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didFinishSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didPauseSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
+- (void)speechSynthesizer:(AVSpeechSynthesizer * _Nonnull)_ didCancelSpeechUtterance:(AVSpeechUtterance * _Nonnull)_;
 @end
 
 
@@ -4212,7 +4210,7 @@ SWIFT_CLASS_NAMED("WayNameView")
 SWIFT_CLASS("_TtC15NbmapNavigation14WayPointSymbol")
 @interface WayPointSymbol : UIView
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)_ OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (void)drawRect:(CGRect)rect;
 @end
 
