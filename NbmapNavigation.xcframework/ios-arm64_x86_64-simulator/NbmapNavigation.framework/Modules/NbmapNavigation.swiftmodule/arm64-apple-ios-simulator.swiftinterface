@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NbmapNavigation
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NbmapNavigation
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import AVFAudio
 import AVFoundation
 import CarPlay
@@ -1183,7 +1183,7 @@ extension NbmapNavigation.BottomBannerViewController : NbmapNavigation.ArrivedCo
 extension NbmapCoreNavigation.VisualInstruction {
   public func maneuverImageSet(side: NbmapCoreNavigation.DrivingSide) -> CarPlay.CPImageSet?
   public func shouldFlipImage(side: NbmapCoreNavigation.DrivingSide) -> Swift.Bool
-  public func carPlayManeuverLabelAttributedText<T>(bounds: @escaping () -> (CoreFoundation.CGRect), shieldHeight: CoreFoundation.CGFloat, window: UIKit.UIWindow?, traitCollection: UIKit.UITraitCollection? = nil, instructionLabelType: T.Type? = nil) -> Foundation.NSAttributedString? where T : NbmapNavigation.InstructionLabel
+  public func carPlayManeuverLabelAttributedText<T>(bounds: @escaping () -> CoreFoundation.CGRect, shieldHeight: CoreFoundation.CGFloat, window: UIKit.UIWindow?, traitCollection: UIKit.UITraitCollection? = nil, instructionLabelType: T.Type? = nil) -> Foundation.NSAttributedString? where T : NbmapNavigation.InstructionLabel
   public func lanesImageSet(side: NbmapCoreNavigation.DrivingSide, direction: NbmapCoreNavigation.ManeuverDirection?, scale: CoreFoundation.CGFloat) -> CarPlay.CPImageSet?
 }
 public enum NavigationCameraType {
@@ -1592,8 +1592,8 @@ extension UIKit.UIFont {
 public protocol CameraStateTransition : AnyObject {
   var mapView: Nbmap.NGLMapView? { get }
   init(_ mapView: Nbmap.NGLMapView)
-  func transitionToFollowing(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping (() -> Swift.Void))
-  func transitionToOverview(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping (() -> Swift.Void))
+  func transitionToFollowing(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping () -> Swift.Void)
+  func transitionToOverview(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping () -> Swift.Void)
   func update(to cameraOptions: NbmapNavigation.NavMapCameraOption, state: NbmapNavigation.NavigationCameraState)
   func cancelPendingTransition()
 }
@@ -2328,8 +2328,8 @@ extension UIKit.UIEdgeInsets : Swift.ExpressibleByFloatLiteral {
 public class NavigationCameraStateTransition : NbmapNavigation.CameraStateTransition {
   weak public var mapView: Nbmap.NGLMapView?
   required public init(_ mapView: Nbmap.NGLMapView)
-  public func transitionToFollowing(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping (() -> Swift.Void))
-  public func transitionToOverview(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping (() -> Swift.Void))
+  public func transitionToFollowing(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping () -> Swift.Void)
+  public func transitionToOverview(_ cameraOptions: NbmapNavigation.NavMapCameraOption, completion: @escaping () -> Swift.Void)
   public func cancelPendingTransition()
   public func update(to cameraOptions: NbmapNavigation.NavMapCameraOption, state: NbmapNavigation.NavigationCameraState)
   @objc deinit

@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NbmapCoreNavigation
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.1 effective-5.10 (swiftlang-6.1.0.110.21 clang-1700.0.13.3)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name NbmapCoreNavigation
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1
 import AVFoundation
 import CarPlay
 import CommonCrypto
@@ -329,15 +329,9 @@ public protocol NavigationProviderRequest {
   public func create() -> NbmapCoreNavigation.Resource
   @objc deinit
 }
-#if compiler(>=5.3) && $RetroactiveAttribute
 extension UIKit.UIApplication.State : @retroactive Swift.Encodable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
-#else
-extension UIKit.UIApplication.State : Swift.Encodable {
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-#endif
 @_hasMissingDesignatedInitializers public class StepLink {
   @objc deinit
 }
@@ -2288,8 +2282,8 @@ public struct Resource : Swift.Equatable, Swift.Hashable, Swift.Codable {
   public mutating func merge(other: NbmapCoreNavigation.Resource)
   public func merging(other: NbmapCoreNavigation.Resource) -> NbmapCoreNavigation.Resource
   public static func == (a: NbmapCoreNavigation.Resource, b: NbmapCoreNavigation.Resource) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -2624,7 +2618,7 @@ extension NbmapCoreNavigation.DataTracking {
   @objc dynamic public func updateFeedback(uuid: Foundation.UUID, type: NbmapCoreNavigation.FeedbackType, source: NbmapCoreNavigation.FeedbackSource, description: Swift.String?)
   @objc dynamic public func cancelFeedback(uuid: Foundation.UUID)
 }
-public typealias SpanProcessorCallback = ((Swift.String, NbmapCoreNavigation.SpanExporterResultCode) -> Swift.Void)
+public typealias SpanProcessorCallback = (Swift.String, NbmapCoreNavigation.SpanExporterResultCode) -> Swift.Void
 public struct SimpleSpanProcessor : NbmapCoreNavigation.SpanProcessor {
   public let isStartRequired: Swift.Bool
   public let isEndRequired: Swift.Bool
@@ -2705,11 +2699,11 @@ public class NBTripSession : NbmapCoreNavigation.TripSession {
   public static let halfDayDurationOfLegStart: Swift.Int
   weak public var delegate: (any NbmapCoreNavigation.NBTripSessionDelegate)?
   public init(routes: [NbmapCoreNavigation.Route], delegate: (any NbmapCoreNavigation.NBTripSessionDelegate)? = nil)
-  @objc deinit
   public func getFiredEvents() -> [Swift.String : Swift.Bool]
   public func getEventKey(forLegIndex legIndex: Swift.Int, isFirstEvent: Swift.Bool) -> Swift.String
   public func onTripSession(didUpdate progress: NbmapCoreNavigation.RouteProgress)
   public func onTripSession(didSet routes: [NbmapCoreNavigation.Route])
+  @objc deinit
 }
 extension NbmapCoreNavigation.Google_Protobuf_Duration {
   public init(seconds: Swift.Int64 = 0, nanos: Swift.Int32 = 0)
@@ -4955,8 +4949,8 @@ public struct TraceId : Swift.Comparable, Swift.Hashable, Swift.CustomStringConv
   }
   public static func < (lhs: NbmapCoreNavigation.TraceId, rhs: NbmapCoreNavigation.TraceId) -> Swift.Bool
   public static func == (lhs: NbmapCoreNavigation.TraceId, rhs: NbmapCoreNavigation.TraceId) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -4970,11 +4964,11 @@ public struct TraceId : Swift.Comparable, Swift.Hashable, Swift.CustomStringConv
   open class func postToMainThread(_ name: Swift.String, sender: ObjectiveC.NSObject?)
   open class func postToMainThread(_ name: Swift.String, sender: Any? = nil, userInfo: [Swift.AnyHashable : Any]?)
   @discardableResult
-  open class func on(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, queue: Foundation.OperationQueue?, handler: @escaping ((Foundation.Notification?) -> Swift.Void)) -> any ObjectiveC.NSObjectProtocol
+  open class func on(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, queue: Foundation.OperationQueue?, handler: @escaping (Foundation.Notification?) -> Swift.Void) -> any ObjectiveC.NSObjectProtocol
   @discardableResult
-  open class func onMainThread(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, handler: @escaping ((Foundation.Notification?) -> Swift.Void)) -> any ObjectiveC.NSObjectProtocol
+  open class func onMainThread(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, handler: @escaping (Foundation.Notification?) -> Swift.Void) -> any ObjectiveC.NSObjectProtocol
   @discardableResult
-  open class func onBackgroundThread(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, handler: @escaping ((Foundation.Notification?) -> Swift.Void)) -> any ObjectiveC.NSObjectProtocol
+  open class func onBackgroundThread(_ target: Swift.AnyObject, name: Swift.String, sender: Any? = nil, handler: @escaping (Foundation.Notification?) -> Swift.Void) -> any ObjectiveC.NSObjectProtocol
   open class func unregister(_ target: Swift.AnyObject)
   open class func unregister(_ target: Swift.AnyObject, name: Swift.String)
   @objc deinit
@@ -5815,8 +5809,8 @@ public struct SpanId : Swift.Equatable, Swift.Comparable, Swift.Hashable, Swift.
   }
   public static func < (lhs: NbmapCoreNavigation.SpanId, rhs: NbmapCoreNavigation.SpanId) -> Swift.Bool
   public static func == (lhs: NbmapCoreNavigation.SpanId, rhs: NbmapCoreNavigation.SpanId) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
   public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
@@ -6468,7 +6462,9 @@ public protocol Span : AnyObject, Swift.CustomStringConvertible {
 }
 extension NbmapCoreNavigation.Span {
   public func hash(into hasher: inout Swift.Hasher)
-  public static func == (lhs: any NbmapCoreNavigation.Span, rhs: any NbmapCoreNavigation.Span) -> Swift.Bool
+}
+extension NbmapCoreNavigation.Span where Self : Swift.Equatable {
+  public static func == (lhs: Self, rhs: Self) -> Swift.Bool
 }
 extension NbmapCoreNavigation.Span {
   public func setAttribute(key: Swift.String, value: Swift.String)
@@ -6871,9 +6867,9 @@ public struct InstrumentationScopeInfo : Swift.Hashable, Swift.Codable {
   }
   public init()
   public init(name: Swift.String, version: Swift.String? = nil, schemaUrl: Swift.String? = nil)
-  public func hash(into hasher: inout Swift.Hasher)
   public static func == (a: NbmapCoreNavigation.InstrumentationScopeInfo, b: NbmapCoreNavigation.InstrumentationScopeInfo) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
