@@ -6,8 +6,8 @@ typedef NSString * NBNavigationMode NS_EXTENSIBLE_STRING_ENUM;
 
 extern NBNavigationMode const NBNavigationModeCar;
 //extern NBNavigationMode const NBNavigationModeAuto;
-//extern NBNavigationMode const NBNavigationModeBike;
-//extern NBNavigationMode const NBNavigationModeEscooter;
+extern NBNavigationMode const NBNavigationModeBike;
+extern NBNavigationMode const NBNavigationModeMotocycle;
 //extern NBNavigationMode const NBNavigationMode4W;
 //extern NBNavigationMode const NBNavigationMode2W;
 extern NBNavigationMode const NBNavigationModeTruck;
