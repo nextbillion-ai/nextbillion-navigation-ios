@@ -279,6 +279,7 @@ public struct BatchSpanProcessor : NbmapCoreNavigation.SpanProcessor {
   @available(*, deprecated, message: "Use `avoid` instead.")
   @objc open var roadClassesToAvoid: NbmapCoreNavigation.RoadClasses
   @objc open var avoid: [Swift.String]
+  @objc open var turnAngleRange: Swift.Int
   @objc open var mapOption: NbmapCoreNavigation.NBMapOption
   @objc open var truckSize: [Swift.Int]
   @objc open var truckWeight: Swift.Int
@@ -287,6 +288,7 @@ public struct BatchSpanProcessor : NbmapCoreNavigation.SpanProcessor {
   open var hazmatTypes: NbmapCoreNavigation.NavigationHazmatTypes
   @objc open var truckAxleLoad: Swift.Double
   @objc open var allow: Swift.String
+  @objc open var roadInfo: NbmapCoreNavigation.NBNavigationRoadInfo?
   public func response(from json: NbmapCoreNavigation.JSONDictionary) -> [NbmapCoreNavigation.Route]?
   @objc override public class var supportsSecureCoding: Swift.Bool {
     @objc get
@@ -2573,6 +2575,11 @@ public struct NavigationEngineConfig : Swift.Equatable {
   public var defaultNavigationCameraPitch: Swift.Double
   public var enableRoadNetworkDetector: Swift.Bool
   public var enableStationaryDetector: Swift.Bool
+  public var additionalRerouteDebounceInterval: Swift.Int
+  public var minimumDistanceForReroute: Swift.Double
+  public var minimumRerouteTimeInterval: Swift.Double
+  public var enhancedOffRouteRadiusMultiplier: Swift.Double
+  public var minimumDistanceToTriggerRerouteMultiplier: Swift.Double
   public static func == (a: NbmapCoreNavigation.NavigationEngineConfig, b: NbmapCoreNavigation.NavigationEngineConfig) -> Swift.Bool
 }
 public struct PolylineEncoder {
@@ -7242,6 +7249,8 @@ public enum StringUtils {
   public static func isValidMetricName(_ metricName: Swift.String) -> Swift.Bool
 }
 @_hasMissingDesignatedInitializers public class DeadReckoning {
+  public var preLocation: CoreLocation.CLLocation?
+  public func reset()
   @objc deinit
 }
 public protocol MeasureMetric {

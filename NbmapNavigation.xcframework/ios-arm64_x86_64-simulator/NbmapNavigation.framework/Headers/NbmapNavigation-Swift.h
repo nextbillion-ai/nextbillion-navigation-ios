@@ -782,6 +782,7 @@ SWIFT_PROTOCOL_NAMED("NavigationMapViewDelegate")
 /// returns:
 /// Optionally, a <code>NGLShape</code> that defines the shape of the waypoint, or <code>nil</code> to use default behavior.
 - (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView shapeForWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints legIndex:(NSInteger)legIndex SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)navigationMapViewUserAnchorPoint:(NBNavigationMapView * _Nonnull)mapView SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NGLMapView;
@@ -1315,8 +1316,9 @@ SWIFT_CLASS("_TtC15NbmapNavigation16NavigationCamera")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@protocol NGLFeature;
+@class NGLMapCamera;
 enum DurationSymbolType : NSInteger;
+@class NGLMapOptions;
 /// <code>NavigationMapView</code> is a subclass of <code>NGLMapView</code> with convenience functions for adding <code>Route</code> lines to a map.
 SWIFT_CLASS_NAMED("NavigationMapView")
 @interface NBNavigationMapView : NGLMapView <NGLMapViewDelegate, UIGestureRecognizerDelegate>
@@ -1346,14 +1348,17 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficSevereColor;
 @property (nonatomic, strong) UIColor * _Nonnull routeRestrictedAreaColor;
 @property (nonatomic) BOOL showsUserLocation;
+@property (nonatomic, strong) UIView * _Nullable userCourseView;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame styleURL:(NSURL * _Nullable)styleURL OBJC_DESIGNATED_INITIALIZER;
 - (void)prepareForInterfaceBuilder;
-- (void)mapViewDidFinishRenderingFrameFullyRendered:(BOOL)fullyRendered;
-- (void)movePuckToCurrentLocationWithLocation:(CLLocation * _Nullable)location animated:(BOOL)animated updateWaynameLabel:(BOOL)updateWaynameLabel;
-/// Find the visible road network features acording to the given coordinate and area length
-- (NSArray<id <NGLFeature>> * _Nonnull)getVisibleRoadFeaturesIn:(CLLocationCoordinate2D)coordinate length:(CLLocationDistance)length SWIFT_WARN_UNUSED_RESULT;
+- (void)layoutSubviews;
+- (CGPoint)anchorPointForGesture:(UIGestureRecognizer * _Nonnull)gesture SWIFT_WARN_UNUSED_RESULT;
+/// Track position on a frame by frame basis. Used for first location update and when resuming tracking mode.
+/// Call this method when you are doing custom zoom animations, this will make sure the puck stays on the route during these animations.
+- (void)enableFrameByFrameCourseViewTrackingFor:(NSTimeInterval)duration;
+- (void)updateCourseTrackingWithLocation:(CLLocation * _Nullable)location camera:(NGLMapCamera * _Nullable)camera animated:(BOOL)animated;
 - (void)showcase:(NSArray<NBNavRoute *> * _Nonnull)routes padding:(UIEdgeInsets)padding animated:(BOOL)animated;
 /// Adds or updates both the route line and the route line casing
 - (void)showRoutes:(NSArray<NBNavRoute *> * _Nonnull)routes legIndex:(NSInteger)legIndex;
@@ -1390,6 +1395,8 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 - (void)showVoiceInstructionsOnMapWithRoute:(NBNavRoute * _Nonnull)route;
 /// Sets the camera directly over a series of coordinates.
 - (void)setOverheadCameraViewFrom:(CLLocationCoordinate2D)userLocation along:(NSArray<NSValue *> * _Nonnull)coordinates for:(UIEdgeInsets)bounds;
+- (nonnull instancetype)initWithFrame:(CGRect)frame styleJSON:(NSString * _Nonnull)styleJSON SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame options:(NGLMapOptions * _Nonnull)options SWIFT_UNAVAILABLE;
 @end
 
 typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {
@@ -1470,7 +1477,6 @@ SWIFT_CLASS_NAMED("NavigationView")
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 @end
 
-@class NGLMapCamera;
 @protocol NGLAnnotation;
 @class NBRouteVoiceController;
 /// <code>NavigationViewController</code> is a fully-featured turn-by-turn navigation UI.
@@ -1523,6 +1529,10 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 - (void)mapView:(NGLMapView * _Nonnull)_ didSelectAnnotation:(id <NGLAnnotation> _Nonnull)annotation;
 @end
 
+@interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation))
+- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)mapView fullyRendered:(BOOL)fullyRendered;
+@end
+
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>
 - (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 - (void)styleManager:(NBStyleManager * _Nonnull)_ didApply:(NBStyle * _Nonnull)style;
@@ -1538,6 +1548,7 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 - (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectRoute:(NBNavRoute * _Nonnull)route;
 - (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectWaypoint:(NBWaypoint * _Nonnull)waypoint;
 - (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ simplifiedShapeForRoute:(NBNavRoute * _Nonnull)route SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)navigationMapViewUserAnchorPoint:(NBNavigationMapView * _Nonnull)mapView SWIFT_WARN_UNUSED_RESULT;
 - (void)mapView:(NGLMapView * _Nonnull)_ didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
 @end
 
@@ -1771,7 +1782,7 @@ SWIFT_CLASS_NAMED("StyleManager")
 @interface NBStyleManager : NSObject
 /// The receiver of the delegate. See <code>StyleManagerDelegate</code> for more information.
 @property (nonatomic, weak) id <NBStyleManagerDelegate> _Nullable delegate;
-/// Determines whether the style manager should apply a new style given the time of day.
+/// Determines whether the style manager should apply a new style based on system appearance mode.
 /// precondition:
 /// Two styles must be provided for this property to have any effect.
 @property (nonatomic) BOOL automaticallyAdjustsStyleForTimeOfDay;
@@ -2694,6 +2705,7 @@ SWIFT_PROTOCOL_NAMED("NavigationMapViewDelegate")
 /// returns:
 /// Optionally, a <code>NGLShape</code> that defines the shape of the waypoint, or <code>nil</code> to use default behavior.
 - (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)mapView shapeForWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints legIndex:(NSInteger)legIndex SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)navigationMapViewUserAnchorPoint:(NBNavigationMapView * _Nonnull)mapView SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NGLMapView;
@@ -3227,8 +3239,9 @@ SWIFT_CLASS("_TtC15NbmapNavigation16NavigationCamera")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@protocol NGLFeature;
+@class NGLMapCamera;
 enum DurationSymbolType : NSInteger;
+@class NGLMapOptions;
 /// <code>NavigationMapView</code> is a subclass of <code>NGLMapView</code> with convenience functions for adding <code>Route</code> lines to a map.
 SWIFT_CLASS_NAMED("NavigationMapView")
 @interface NBNavigationMapView : NGLMapView <NGLMapViewDelegate, UIGestureRecognizerDelegate>
@@ -3258,14 +3271,17 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 @property (nonatomic, strong) UIColor * _Nonnull alternativeTrafficSevereColor;
 @property (nonatomic, strong) UIColor * _Nonnull routeRestrictedAreaColor;
 @property (nonatomic) BOOL showsUserLocation;
+@property (nonatomic, strong) UIView * _Nullable userCourseView;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithFrame:(CGRect)frame styleURL:(NSURL * _Nullable)styleURL OBJC_DESIGNATED_INITIALIZER;
 - (void)prepareForInterfaceBuilder;
-- (void)mapViewDidFinishRenderingFrameFullyRendered:(BOOL)fullyRendered;
-- (void)movePuckToCurrentLocationWithLocation:(CLLocation * _Nullable)location animated:(BOOL)animated updateWaynameLabel:(BOOL)updateWaynameLabel;
-/// Find the visible road network features acording to the given coordinate and area length
-- (NSArray<id <NGLFeature>> * _Nonnull)getVisibleRoadFeaturesIn:(CLLocationCoordinate2D)coordinate length:(CLLocationDistance)length SWIFT_WARN_UNUSED_RESULT;
+- (void)layoutSubviews;
+- (CGPoint)anchorPointForGesture:(UIGestureRecognizer * _Nonnull)gesture SWIFT_WARN_UNUSED_RESULT;
+/// Track position on a frame by frame basis. Used for first location update and when resuming tracking mode.
+/// Call this method when you are doing custom zoom animations, this will make sure the puck stays on the route during these animations.
+- (void)enableFrameByFrameCourseViewTrackingFor:(NSTimeInterval)duration;
+- (void)updateCourseTrackingWithLocation:(CLLocation * _Nullable)location camera:(NGLMapCamera * _Nullable)camera animated:(BOOL)animated;
 - (void)showcase:(NSArray<NBNavRoute *> * _Nonnull)routes padding:(UIEdgeInsets)padding animated:(BOOL)animated;
 /// Adds or updates both the route line and the route line casing
 - (void)showRoutes:(NSArray<NBNavRoute *> * _Nonnull)routes legIndex:(NSInteger)legIndex;
@@ -3302,6 +3318,8 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 - (void)showVoiceInstructionsOnMapWithRoute:(NBNavRoute * _Nonnull)route;
 /// Sets the camera directly over a series of coordinates.
 - (void)setOverheadCameraViewFrom:(CLLocationCoordinate2D)userLocation along:(NSArray<NSValue *> * _Nonnull)coordinates for:(UIEdgeInsets)bounds;
+- (nonnull instancetype)initWithFrame:(CGRect)frame styleJSON:(NSString * _Nonnull)styleJSON SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame options:(NGLMapOptions * _Nonnull)options SWIFT_UNAVAILABLE;
 @end
 
 typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {
@@ -3382,7 +3400,6 @@ SWIFT_CLASS_NAMED("NavigationView")
 - (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 @end
 
-@class NGLMapCamera;
 @protocol NGLAnnotation;
 @class NBRouteVoiceController;
 /// <code>NavigationViewController</code> is a fully-featured turn-by-turn navigation UI.
@@ -3435,6 +3452,10 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 - (void)mapView:(NGLMapView * _Nonnull)_ didSelectAnnotation:(id <NGLAnnotation> _Nonnull)annotation;
 @end
 
+@interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation))
+- (void)mapViewDidFinishRenderingFrame:(NGLMapView * _Nonnull)mapView fullyRendered:(BOOL)fullyRendered;
+@end
+
 @interface NBNavigationViewController (SWIFT_EXTENSION(NbmapNavigation)) <NBStyleManagerDelegate>
 - (CLLocation * _Nullable)locationForStyleManager:(NBStyleManager * _Nonnull)_ SWIFT_WARN_UNUSED_RESULT;
 - (void)styleManager:(NBStyleManager * _Nonnull)_ didApply:(NBStyle * _Nonnull)style;
@@ -3450,6 +3471,7 @@ SWIFT_CLASS_NAMED("NavigationViewController")
 - (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectRoute:(NBNavRoute * _Nonnull)route;
 - (void)navigationMapView:(NBNavigationMapView * _Nonnull)_ didSelectWaypoint:(NBWaypoint * _Nonnull)waypoint;
 - (NGLShape * _Nullable)navigationMapView:(NBNavigationMapView * _Nonnull)_ simplifiedShapeForRoute:(NBNavRoute * _Nonnull)route SWIFT_WARN_UNUSED_RESULT;
+- (CGPoint)navigationMapViewUserAnchorPoint:(NBNavigationMapView * _Nonnull)mapView SWIFT_WARN_UNUSED_RESULT;
 - (void)mapView:(NGLMapView * _Nonnull)_ didFinishLoadingStyle:(NGLStyle * _Nonnull)style;
 @end
 
@@ -3683,7 +3705,7 @@ SWIFT_CLASS_NAMED("StyleManager")
 @interface NBStyleManager : NSObject
 /// The receiver of the delegate. See <code>StyleManagerDelegate</code> for more information.
 @property (nonatomic, weak) id <NBStyleManagerDelegate> _Nullable delegate;
-/// Determines whether the style manager should apply a new style given the time of day.
+/// Determines whether the style manager should apply a new style based on system appearance mode.
 /// precondition:
 /// Two styles must be provided for this property to have any effect.
 @property (nonatomic) BOOL automaticallyAdjustsStyleForTimeOfDay;

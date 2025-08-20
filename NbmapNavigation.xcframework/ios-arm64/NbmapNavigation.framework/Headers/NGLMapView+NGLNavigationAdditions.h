@@ -2,6 +2,6 @@
 
 @interface NGLMapView (NGLNavigationAdditions)
 
-- (void)mapViewDidFinishRenderingFrameFullyRendered:(BOOL)fullyRendered;
+//- (void)mapViewDidFinishRenderingFrameFullyRendered:(BOOL)fullyRendered;
 
 @end

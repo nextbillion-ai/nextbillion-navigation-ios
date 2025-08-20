@@ -9365,6 +9365,44 @@
           },
           {
             "kind": "Function",
+            "name": "mapViewDidFinishRenderingFrame",
+            "printedName": "mapViewDidFinishRenderingFrame(_:fullyRendered:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NGLMapView",
+                "printedName": "Nbmap.NGLMapView",
+                "usr": "c:objc(cs)NGLMapView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@NbmapNavigation@objc(cs)NBNavigationViewController(im)mapViewDidFinishRenderingFrame:fullyRendered:",
+            "mangledName": "$s15NbmapNavigation0B14ViewControllerC03mapC23DidFinishRenderingFrame_13fullyRenderedySo06NGLMapC0C_SbtF",
+            "moduleName": "NbmapNavigation",
+            "objc_name": "mapViewDidFinishRenderingFrame:fullyRendered:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "navigationService",
             "printedName": "navigationService(_:didUpdate:with:rawLocation:)",
             "children": [
@@ -11087,10 +11125,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:15NbmapNavigation0B14ViewControllerC013navigationMapC15UserAnchorPointySo7CGPointVAA0bfC0CF",
+            "usr": "c:@CM@NbmapNavigation@objc(cs)NBNavigationViewController(im)navigationMapViewUserAnchorPoint:",
             "mangledName": "$s15NbmapNavigation0B14ViewControllerC013navigationMapC15UserAnchorPointySo7CGPointVAA0bfC0CF",
             "moduleName": "NbmapNavigation",
+            "objc_name": "navigationMapViewUserAnchorPoint:",
             "declAttributes": [
+              "Dynamic",
+              "ObjC",
               "Preconcurrency",
               "Custom",
               "AccessControl"
@@ -16831,6 +16872,184 @@
           },
           {
             "kind": "Var",
+            "name": "showsUserLocation",
+            "printedName": "showsUserLocation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)showsUserLocation",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC17showsUserLocationSbvp",
+            "moduleName": "NbmapNavigation",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "showsUserLocation",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)showsUserLocation",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC17showsUserLocationSbvg",
+                "moduleName": "NbmapNavigation",
+                "overriding": true,
+                "isOpen": true,
+                "objc_name": "showsUserLocation",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setShowsUserLocation:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC17showsUserLocationSbvs",
+                "moduleName": "NbmapNavigation",
+                "overriding": true,
+                "isOpen": true,
+                "objc_name": "setShowsUserLocation:",
+                "declAttributes": [
+                  "Dynamic",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "tracksUserCourse",
+            "printedName": "tracksUserCourse",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15NbmapNavigation0B7MapViewC16tracksUserCourseSbvp",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC16tracksUserCourseSbvp",
+            "moduleName": "NbmapNavigation",
+            "isOpen": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7MapViewC16tracksUserCourseSbvg",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC16tracksUserCourseSbvg",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7MapViewC16tracksUserCourseSbvs",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC16tracksUserCourseSbvs",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7MapViewC16tracksUserCourseSbvM",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC16tracksUserCourseSbvM",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "isOpen": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "userLocationStyle",
             "printedName": "userLocationStyle",
             "children": [
@@ -16858,8 +17077,7 @@
               "Preconcurrency",
               "Custom",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -16944,31 +17162,37 @@
           },
           {
             "kind": "Var",
-            "name": "showsUserLocation",
-            "printedName": "showsUserLocation",
+            "name": "userCourseView",
+            "printedName": "userCourseView",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
+                "name": "Optional",
+                "printedName": "UIKit.UIView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIView",
+                    "printedName": "UIKit.UIView",
+                    "usr": "c:objc(cs)UIView"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)showsUserLocation",
-            "mangledName": "$s15NbmapNavigation0B7MapViewC17showsUserLocationSbvp",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(py)userCourseView",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC010userCourseD0So6UIViewCSgvp",
             "moduleName": "NbmapNavigation",
-            "overriding": true,
-            "isOpen": true,
-            "objc_name": "showsUserLocation",
             "declAttributes": [
-              "Dynamic",
-              "ObjC",
+              "HasInitialValue",
               "Preconcurrency",
               "Custom",
+              "HasStorage",
               "AccessControl",
-              "Override"
+              "ObjC"
             ],
+            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -16977,20 +17201,25 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
+                    "name": "Optional",
+                    "printedName": "UIKit.UIView?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIView",
+                        "printedName": "UIKit.UIView",
+                        "usr": "c:objc(cs)UIView"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)showsUserLocation",
-                "mangledName": "$s15NbmapNavigation0B7MapViewC17showsUserLocationSbvg",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)userCourseView",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC010userCourseD0So6UIViewCSgvg",
                 "moduleName": "NbmapNavigation",
-                "overriding": true,
-                "isOpen": true,
-                "objc_name": "showsUserLocation",
+                "implicit": true,
                 "declAttributes": [
-                  "Dynamic",
                   "ObjC"
                 ],
                 "accessorKind": "get"
@@ -17007,23 +17236,46 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
+                    "name": "Optional",
+                    "printedName": "UIKit.UIView?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIView",
+                        "printedName": "UIKit.UIView",
+                        "usr": "c:objc(cs)UIView"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setShowsUserLocation:",
-                "mangledName": "$s15NbmapNavigation0B7MapViewC17showsUserLocationSbvs",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)setUserCourseView:",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC010userCourseD0So6UIViewCSgvs",
                 "moduleName": "NbmapNavigation",
-                "overriding": true,
-                "isOpen": true,
-                "objc_name": "setShowsUserLocation:",
+                "implicit": true,
                 "declAttributes": [
-                  "Dynamic",
                   "ObjC"
                 ],
                 "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation0B7MapViewC010userCourseD0So6UIViewCSgvM",
+                "mangledName": "$s15NbmapNavigation0B7MapViewC010userCourseD0So6UIViewCSgvM",
+                "moduleName": "NbmapNavigation",
+                "implicit": true,
+                "accessorKind": "_modify"
               }
             ]
           },
@@ -17284,40 +17536,6 @@
           },
           {
             "kind": "Function",
-            "name": "mapViewDidFinishRenderingFrameFullyRendered",
-            "printedName": "mapViewDidFinishRenderingFrameFullyRendered(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)mapViewDidFinishRenderingFrameFullyRendered:",
-            "mangledName": "$s15NbmapNavigation0B7MapViewC03mapD36DidFinishRenderingFrameFullyRenderedyySbF",
-            "moduleName": "NbmapNavigation",
-            "overriding": true,
-            "isOpen": true,
-            "objc_name": "mapViewDidFinishRenderingFrameFullyRendered:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "Override"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "updatePreferredFrameRate",
             "printedName": "updatePreferredFrameRate(for:)",
             "children": [
@@ -17347,8 +17565,103 @@
           },
           {
             "kind": "Function",
-            "name": "movePuckToCurrentLocation",
-            "printedName": "movePuckToCurrentLocation(location:animated:updateWaynameLabel:)",
+            "name": "layoutSubviews",
+            "printedName": "layoutSubviews()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)layoutSubviews",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC14layoutSubviewsyyF",
+            "moduleName": "NbmapNavigation",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "layoutSubviews",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "anchorPoint",
+            "printedName": "anchorPoint(forGesture:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGPoint",
+                "printedName": "CoreFoundation.CGPoint",
+                "usr": "c:@S@CGPoint"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIGestureRecognizer",
+                "printedName": "UIKit.UIGestureRecognizer",
+                "usr": "c:objc(cs)UIGestureRecognizer"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)anchorPointForGesture:",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC11anchorPoint10forGestureSo7CGPointVSo19UIGestureRecognizerC_tF",
+            "moduleName": "NbmapNavigation",
+            "overriding": true,
+            "isOpen": true,
+            "objc_name": "anchorPointForGesture:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "enableFrameByFrameCourseViewTracking",
+            "printedName": "enableFrameByFrameCourseViewTracking(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)enableFrameByFrameCourseViewTrackingFor:",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC013enableFrameByf6CourseD8Tracking3forySd_tF",
+            "moduleName": "NbmapNavigation",
+            "objc_name": "enableFrameByFrameCourseViewTrackingFor:",
+            "declAttributes": [
+              "Preconcurrency",
+              "Custom",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateCourseTracking",
+            "printedName": "updateCourseTracking(location:camera:animated:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -17371,77 +17684,37 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)movePuckToCurrentLocationWithLocation:animated:updateWaynameLabel:",
-            "mangledName": "$s15NbmapNavigation0B7MapViewC25movePuckToCurrentLocation8location8animated18updateWaynameLabelySo10CLLocationCSg_S2btF",
-            "moduleName": "NbmapNavigation",
-            "objc_name": "movePuckToCurrentLocationWithLocation:animated:updateWaynameLabel:",
-            "declAttributes": [
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getVisibleRoadFeatures",
-            "printedName": "getVisibleRoadFeatures(in:length:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Array",
-                "printedName": "[any Nbmap.NGLFeature]",
+                "name": "Optional",
+                "printedName": "Nbmap.NGLMapCamera?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "NGLFeature",
-                    "printedName": "any Nbmap.NGLFeature",
-                    "usr": "c:objc(pl)NGLFeature"
+                    "name": "NGLMapCamera",
+                    "printedName": "Nbmap.NGLMapCamera",
+                    "usr": "c:objc(cs)NGLMapCamera"
                   }
                 ],
-                "usr": "s:Sa"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocationCoordinate2D",
-                "printedName": "CoreLocation.CLLocationCoordinate2D",
-                "usr": "c:@S@CLLocationCoordinate2D"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
                 "hasDefaultArg": true,
-                "usr": "s:Sd"
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)getVisibleRoadFeaturesIn:length:",
-            "mangledName": "$s15NbmapNavigation0B7MapViewC22getVisibleRoadFeatures2in6lengthSaySo10NGLFeature_pGSo22CLLocationCoordinate2DV_SdtF",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)updateCourseTrackingWithLocation:camera:animated:",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC20updateCourseTracking8location6camera8animatedySo10CLLocationCSg_So12NGLMapCameraCSgSbtF",
             "moduleName": "NbmapNavigation",
-            "objc_name": "getVisibleRoadFeaturesIn:length:",
+            "objc_name": "updateCourseTrackingWithLocation:camera:animated:",
             "declAttributes": [
               "Preconcurrency",
               "Custom",
               "AccessControl",
-              "ObjC",
-              "RawDocComment"
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -17943,6 +18216,86 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:styleJSON:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationMapView",
+                "printedName": "NbmapNavigation.NavigationMapView",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)initWithFrame:styleJSON:",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC5frame9styleJSONACSo6CGRectV_SStcfc",
+            "moduleName": "NbmapNavigation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithFrame:styleJSON:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:options:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationMapView",
+                "printedName": "NbmapNavigation.NavigationMapView",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NGLMapOptions",
+                "printedName": "Nbmap.NGLMapOptions",
+                "usr": "c:objc(cs)NGLMapOptions"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)initWithFrame:options:",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC5frame7optionsACSo6CGRectV_So13NGLMapOptionsCtcfc",
+            "moduleName": "NbmapNavigation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithFrame:options:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
             "kind": "Function",
             "name": "updateRouteLine",
             "printedName": "updateRouteLine(routeProgress:coordinate:routes:shouldRedraw:)",
@@ -18141,7 +18494,6 @@
           "RawDocComment"
         ],
         "superclassUsr": "c:objc(cs)NGLMapView",
-        "inheritsConvenienceInitializers": true,
         "superclassNames": [
           "Nbmap.NGLMapView",
           "UIKit.UIView",
@@ -18766,6 +19118,39 @@
               "Optional",
               "ObjC",
               "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "navigationMapViewUserAnchorPoint",
+            "printedName": "navigationMapViewUserAnchorPoint(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGPoint",
+                "printedName": "CoreFoundation.CGPoint",
+                "usr": "c:@S@CGPoint"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationMapView",
+                "printedName": "NbmapNavigation.NavigationMapView",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@NbmapNavigation@objc(pl)NBNavigationMapViewDelegate(im)navigationMapViewUserAnchorPoint:",
+            "mangledName": "$s15NbmapNavigation0B15MapViewDelegateP010navigationcD15UserAnchorPointySo7CGPointVAA0bcD0CF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.NavigationMapViewDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.NavigationMapViewDelegate>",
+            "protocolReq": true,
+            "objc_name": "navigationMapViewUserAnchorPoint:",
+            "declAttributes": [
+              "Optional",
+              "ObjC"
             ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
@@ -33885,7 +34270,7 @@
           {
             "kind": "Function",
             "name": "update",
-            "printedName": "update(location:pitch:direction:animated:navigationCameraState:)",
+            "printedName": "update(location:pitch:direction:animated:tracksUserCourse:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -33918,14 +34303,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "NavigationCameraState",
-                "printedName": "NbmapNavigation.NavigationCameraState",
-                "usr": "s:15NbmapNavigation0B11CameraStateO"
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15NbmapNavigation15CourseUpdatableP6update8location5pitch9direction8animated21navigationCameraStateySo10CLLocationC_14CoreFoundation7CGFloatVSdSbAA0bkL0OtF",
-            "mangledName": "$s15NbmapNavigation15CourseUpdatableP6update8location5pitch9direction8animated21navigationCameraStateySo10CLLocationC_12CoreGraphics7CGFloatVSdSbAA0bkL0OtF",
+            "usr": "s:15NbmapNavigation15CourseUpdatableP6update8location5pitch9direction8animated010tracksUserC0ySo10CLLocationC_14CoreFoundation7CGFloatVSdS2btF",
+            "mangledName": "$s15NbmapNavigation15CourseUpdatableP6update8location5pitch9direction8animated010tracksUserC0ySo10CLLocationC_12CoreGraphics7CGFloatVSdS2btF",
             "moduleName": "NbmapNavigation",
             "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.CourseUpdatable>",
             "sugared_genericSig": "<Self where Self : NbmapNavigation.CourseUpdatable>",
@@ -33933,57 +34318,6 @@
             "declAttributes": [
               "RawDocComment"
             ],
-            "reqNewWitnessTableEntry": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "update",
-            "printedName": "update(from:to:pitch:animated:navigationCameraState:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
-                "usr": "s:14CoreFoundation7CGFloatV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationCameraState",
-                "printedName": "NbmapNavigation.NavigationCameraState",
-                "usr": "s:15NbmapNavigation0B11CameraStateO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation15CourseUpdatableP6update4from2to5pitch8animated21navigationCameraStateySd_Sd14CoreFoundation7CGFloatVSbAA0bkL0OtF",
-            "mangledName": "$s15NbmapNavigation15CourseUpdatableP6update4from2to5pitch8animated21navigationCameraStateySd_Sd12CoreGraphics7CGFloatVSbAA0bkL0OtF",
-            "moduleName": "NbmapNavigation",
-            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.CourseUpdatable>",
-            "sugared_genericSig": "<Self where Self : NbmapNavigation.CourseUpdatable>",
-            "protocolReq": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
@@ -34064,7 +34398,7 @@
           {
             "kind": "Function",
             "name": "update",
-            "printedName": "update(from:to:pitch:animated:navigationCameraState:)",
+            "printedName": "update(location:pitch:direction:animated:tracksUserCourse:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -34073,15 +34407,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
               },
               {
                 "kind": "TypeNominal",
@@ -34091,25 +34419,32 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
               },
               {
                 "kind": "TypeNominal",
-                "name": "NavigationCameraState",
-                "printedName": "NbmapNavigation.NavigationCameraState",
-                "usr": "s:15NbmapNavigation0B11CameraStateO"
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:15NbmapNavigation18UserPuckCourseViewC6update4from2to5pitch8animated21navigationCameraStateySd_Sd14CoreFoundation7CGFloatVSbAA0bmN0OtF",
-            "mangledName": "$s15NbmapNavigation18UserPuckCourseViewC6update4from2to5pitch8animated21navigationCameraStateySd_Sd12CoreGraphics7CGFloatVSbAA0bmN0OtF",
+            "usr": "s:15NbmapNavigation18UserPuckCourseViewC6update8location5pitch9direction8animated06trackscE0ySo10CLLocationC_14CoreFoundation7CGFloatVSdS2btF",
+            "mangledName": "$s15NbmapNavigation18UserPuckCourseViewC6update8location5pitch9direction8animated06trackscE0ySo10CLLocationC_12CoreGraphics7CGFloatVSdS2btF",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
               "Preconcurrency",
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -34316,59 +34651,6 @@
           },
           {
             "kind": "Function",
-            "name": "update",
-            "printedName": "update(location:pitch:direction:animated:navigationCameraState:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CLLocation",
-                "printedName": "CoreLocation.CLLocation",
-                "usr": "c:objc(cs)CLLocation"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
-                "usr": "s:14CoreFoundation7CGFloatV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationCameraState",
-                "printedName": "NbmapNavigation.NavigationCameraState",
-                "usr": "s:15NbmapNavigation0B11CameraStateO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:15NbmapNavigation18UserPuckCourseViewC6update8location5pitch9direction8animated21navigationCameraStateySo10CLLocationC_14CoreFoundation7CGFloatVSdSbAA0bmN0OtF",
-            "mangledName": "$s15NbmapNavigation18UserPuckCourseViewC6update8location5pitch9direction8animated21navigationCameraStateySo10CLLocationC_12CoreGraphics7CGFloatVSdSbAA0bmN0OtF",
-            "moduleName": "NbmapNavigation",
-            "declAttributes": [
-              "Preconcurrency",
-              "Custom",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "updateWayNameLabel",
             "printedName": "updateWayNameLabel(wayNameFeatures:cameraState:)",
             "children": [
@@ -34405,7 +34687,8 @@
             "declAttributes": [
               "Preconcurrency",
               "Custom",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -50314,6 +50597,318 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "NbmapNavigation"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AnnouncementConvertor",
+        "printedName": "AnnouncementConvertor",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "abbreviationDictionary",
+            "printedName": "abbreviationDictionary",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15NbmapNavigation21AnnouncementConvertorC22abbreviationDictionarySDyS2SGvpZ",
+            "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC22abbreviationDictionarySDyS2SGvpZ",
+            "moduleName": "NbmapNavigation",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapNavigation21AnnouncementConvertorC22abbreviationDictionarySDyS2SGvgZ",
+                "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC22abbreviationDictionarySDyS2SGvgZ",
+                "moduleName": "NbmapNavigation",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "replaceAbbreviations",
+            "printedName": "replaceAbbreviations(_:abbreviations:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation21AnnouncementConvertorC20replaceAbbreviations_13abbreviationsS2S_SDyS2SGSgtFZ",
+            "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC20replaceAbbreviations_13abbreviationsS2S_SDyS2SGSgtFZ",
+            "moduleName": "NbmapNavigation",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "findAllCapsAbbreviations",
+            "printedName": "findAllCapsAbbreviations(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation21AnnouncementConvertorC24findAllCapsAbbreviationsySaySSGSSFZ",
+            "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC24findAllCapsAbbreviationsySaySSGSSFZ",
+            "moduleName": "NbmapNavigation",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "splitUppercaseWithSeparator",
+            "printedName": "splitUppercaseWithSeparator(_:separator:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation21AnnouncementConvertorC27splitUppercaseWithSeparator_9separatorS2S_SStFZ",
+            "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC27splitUppercaseWithSeparator_9separatorS2S_SStFZ",
+            "moduleName": "NbmapNavigation",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "convertText",
+            "printedName": "convertText(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation21AnnouncementConvertorC11convertTextyS2SFZ",
+            "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC11convertTextyS2SFZ",
+            "moduleName": "NbmapNavigation",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "convertAttributedString",
+            "printedName": "convertAttributedString(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NSAttributedString",
+                "printedName": "Foundation.NSAttributedString",
+                "usr": "c:objc(cs)NSAttributedString"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSAttributedString",
+                "printedName": "Foundation.NSAttributedString",
+                "usr": "c:objc(cs)NSAttributedString"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation21AnnouncementConvertorC23convertAttributedStringySo012NSAttributedG0CAFFZ",
+            "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC23convertAttributedStringySo012NSAttributedG0CAFFZ",
+            "moduleName": "NbmapNavigation",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:15NbmapNavigation21AnnouncementConvertorC",
+        "mangledName": "$s15NbmapNavigation21AnnouncementConvertorC",
+        "moduleName": "NbmapNavigation",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "AVFAudio",
         "printedName": "AVFAudio",
         "declKind": "Import",
@@ -51979,10 +52574,24 @@
             "funcSelfKind": "NonMutating"
           },
           {
-            "kind": "Var",
-            "name": "viewportDataSource",
-            "printedName": "viewportDataSource",
+            "kind": "Function",
+            "name": "viewportDataSourceRetriveMapview",
+            "printedName": "viewportDataSourceRetriveMapview(_:)",
             "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapNavigation.NavigationMapView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NavigationMapView",
+                    "printedName": "NbmapNavigation.NavigationMapView",
+                    "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
               {
                 "kind": "TypeNominal",
                 "name": "ViewportDataSource",
@@ -51990,11 +52599,41 @@
                 "usr": "s:15NbmapNavigation18ViewportDataSourceP"
               }
             ],
-            "declKind": "Var",
-            "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvp",
-            "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvp",
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation0B6CameraC32viewportDataSourceRetriveMapviewyAA0B7MapViewCSgAA08ViewporteF0_pF",
+            "mangledName": "$s15NbmapNavigation0B6CameraC32viewportDataSourceRetriveMapviewyAA0B7MapViewCSgAA08ViewporteF0_pF",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "viewportDataSource",
+            "printedName": "viewportDataSource",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(any NbmapNavigation.ViewportDataSource)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ViewportDataSource",
+                    "printedName": "any NbmapNavigation.ViewportDataSource",
+                    "usr": "s:15NbmapNavigation18ViewportDataSourceP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvp",
+            "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvp",
+            "moduleName": "NbmapNavigation",
+            "declAttributes": [
+              "HasInitialValue",
               "HasStorage",
               "AccessControl",
               "RawDocComment"
@@ -52008,14 +52647,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "ViewportDataSource",
-                    "printedName": "any NbmapNavigation.ViewportDataSource",
-                    "usr": "s:15NbmapNavigation18ViewportDataSourceP"
+                    "name": "Optional",
+                    "printedName": "(any NbmapNavigation.ViewportDataSource)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ViewportDataSource",
+                        "printedName": "any NbmapNavigation.ViewportDataSource",
+                        "usr": "s:15NbmapNavigation18ViewportDataSourceP"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvg",
-                "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvg",
+                "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvg",
+                "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvg",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "get"
@@ -52032,14 +52679,22 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "ViewportDataSource",
-                    "printedName": "any NbmapNavigation.ViewportDataSource",
-                    "usr": "s:15NbmapNavigation18ViewportDataSourceP"
+                    "name": "Optional",
+                    "printedName": "(any NbmapNavigation.ViewportDataSource)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ViewportDataSource",
+                        "printedName": "any NbmapNavigation.ViewportDataSource",
+                        "usr": "s:15NbmapNavigation18ViewportDataSourceP"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvs",
-                "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvs",
+                "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvs",
+                "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvs",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "set"
@@ -52056,8 +52711,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvM",
-                "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pvM",
+                "usr": "s:15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvM",
+                "mangledName": "$s15NbmapNavigation0B6CameraC18viewportDataSourceAA08ViewporteF0_pSgvM",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -52117,16 +52772,25 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "CameraStateTransition",
-                "printedName": "any NbmapNavigation.CameraStateTransition",
-                "usr": "s:15NbmapNavigation21CameraStateTransitionP"
+                "name": "Optional",
+                "printedName": "(any NbmapNavigation.CameraStateTransition)?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CameraStateTransition",
+                    "printedName": "any NbmapNavigation.CameraStateTransition",
+                    "usr": "s:15NbmapNavigation21CameraStateTransitionP"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvp",
-            "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvp",
+            "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvp",
+            "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvp",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
+              "HasInitialValue",
               "HasStorage",
               "AccessControl",
               "RawDocComment"
@@ -52140,14 +52804,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "CameraStateTransition",
-                    "printedName": "any NbmapNavigation.CameraStateTransition",
-                    "usr": "s:15NbmapNavigation21CameraStateTransitionP"
+                    "name": "Optional",
+                    "printedName": "(any NbmapNavigation.CameraStateTransition)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CameraStateTransition",
+                        "printedName": "any NbmapNavigation.CameraStateTransition",
+                        "usr": "s:15NbmapNavigation21CameraStateTransitionP"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvg",
-                "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvg",
+                "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvg",
+                "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvg",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "get"
@@ -52164,14 +52836,22 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "CameraStateTransition",
-                    "printedName": "any NbmapNavigation.CameraStateTransition",
-                    "usr": "s:15NbmapNavigation21CameraStateTransitionP"
+                    "name": "Optional",
+                    "printedName": "(any NbmapNavigation.CameraStateTransition)?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CameraStateTransition",
+                        "printedName": "any NbmapNavigation.CameraStateTransition",
+                        "usr": "s:15NbmapNavigation21CameraStateTransitionP"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvs",
-                "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvs",
+                "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvs",
+                "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvs",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "set"
@@ -52188,8 +52868,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvM",
-                "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pvM",
+                "usr": "s:15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvM",
+                "mangledName": "$s15NbmapNavigation0B6CameraC21cameraStateTransitionAA0ceF0_pSgvM",
                 "moduleName": "NbmapNavigation",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -62232,19 +62912,13 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(_:viewportDataSourceType:navigationEnginConfig:)",
+            "printedName": "init(viewportDataSourceType:navigationEnginConfig:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "NavigationViewportDataSource",
                 "printedName": "NbmapNavigation.NavigationViewportDataSource",
                 "usr": "s:15NbmapNavigation0B18ViewportDataSourceC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "NavigationMapView",
-                "printedName": "NbmapNavigation.NavigationMapView",
-                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
               },
               {
                 "kind": "TypeNominal",
@@ -62262,8 +62936,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:15NbmapNavigation0B18ViewportDataSourceC_08viewportdE4Type21navigationEnginConfigAcA0B7MapViewC_AA0cdeG0O0a4CoreB00b6EngineJ0Vtcfc",
-            "mangledName": "$s15NbmapNavigation0B18ViewportDataSourceC_08viewportdE4Type21navigationEnginConfigAcA0B7MapViewC_AA0cdeG0O0a4CoreB00b6EngineJ0Vtcfc",
+            "usr": "s:15NbmapNavigation0B18ViewportDataSourceC08viewportdE4Type21navigationEnginConfigAcA0cdeG0O_0a4CoreB00b6EngineJ0Vtcfc",
+            "mangledName": "$s15NbmapNavigation0B18ViewportDataSourceC08viewportdE4Type21navigationEnginConfigAcA0cdeG0O_0a4CoreB00b6EngineJ0Vtcfc",
             "moduleName": "NbmapNavigation",
             "declAttributes": [
               "Required",
@@ -67819,6 +68493,42 @@
             "declAttributes": [
               "RawDocComment"
             ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewportDataSourceRetriveMapview",
+            "printedName": "viewportDataSourceRetriveMapview(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "NbmapNavigation.NavigationMapView?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NavigationMapView",
+                    "printedName": "NbmapNavigation.NavigationMapView",
+                    "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ViewportDataSource",
+                "printedName": "any NbmapNavigation.ViewportDataSource",
+                "usr": "s:15NbmapNavigation18ViewportDataSourceP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:15NbmapNavigation26ViewportDataSourceDelegateP08viewportdE14RetriveMapviewyAA0B7MapViewCSgAA0cdE0_pF",
+            "mangledName": "$s15NbmapNavigation26ViewportDataSourceDelegateP08viewportdE14RetriveMapviewyAA0B7MapViewCSgAA0cdE0_pF",
+            "moduleName": "NbmapNavigation",
+            "genericSig": "<τ_0_0 where τ_0_0 : NbmapNavigation.ViewportDataSourceDelegate>",
+            "sugared_genericSig": "<Self where Self : NbmapNavigation.ViewportDataSourceDelegate>",
+            "protocolReq": true,
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           }
@@ -88850,7 +89560,7 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationPreviewController.swift",
       "kind": "FloatLiteral",
-      "offset": 8055,
+      "offset": 8084,
       "length": 3,
       "value": "1.0"
     },
@@ -88892,98 +89602,98 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4211,
+      "offset": 4182,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4408,
+      "offset": 4379,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4985,
+      "offset": 4956,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5343,
+      "offset": 5314,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6019,
+      "offset": 5990,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "Array",
-      "offset": 7953,
+      "offset": 7924,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 14830,
+      "offset": 14801,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15265,
+      "offset": 15236,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15436,
+      "offset": 15407,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 15902,
+      "offset": 15873,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 16865,
+      "offset": 16836,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 18276,
+      "offset": 18247,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "Array",
-      "offset": 20161,
+      "offset": 20132,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 43628,
+      "offset": 43888,
       "length": 4,
       "value": "true"
     },
@@ -88997,21 +89707,21 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 2126,
+      "offset": 2189,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 2911,
+      "offset": 2974,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 15649,
+      "offset": 15712,
       "length": 5,
       "value": "false"
     },
@@ -89641,217 +90351,231 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7416,
+      "offset": 7318,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 7608,
+      "offset": 7456,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7648,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 7737,
+      "offset": 7777,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 7886,
+      "offset": 7926,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 7927,
+      "offset": 7967,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "FloatLiteral",
-      "offset": 8632,
+      "offset": 8672,
       "length": 4,
       "value": "15.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 8689,
+      "offset": 8729,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 12333,
+      "length": 1,
+      "value": "3"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 16275,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 16309,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 17127,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 17169,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "FloatLiteral",
-      "offset": 18991,
+      "offset": 12430,
       "length": 4,
-      "value": "50.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21352,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21362,
-      "length": 2,
-      "value": "20"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21374,
-      "length": 2,
-      "value": "10"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 21385,
-      "length": 2,
-      "value": "20"
+      "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 21519,
+      "offset": 12583,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12206,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12991,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 19909,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 22066,
-      "length": 1,
-      "value": "0"
+      "offset": 24006,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 24016,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 24028,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 24039,
+      "length": 2,
+      "value": "20"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "BooleanLiteral",
-      "offset": 22146,
+      "offset": 24173,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 22669,
+      "offset": 24679,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 24759,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 25282,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 31456,
+      "offset": 34066,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "Array",
-      "offset": 63082,
+      "offset": 66054,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 63214,
+      "offset": 66186,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 63305,
+      "offset": 66277,
       "length": 41,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 63337,
+      "offset": 66309,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 63345,
+      "offset": 66317,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 63423,
+      "offset": 66395,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 63597,
+      "offset": 66569,
       "length": 16,
       "value": "\"isPrimaryRoute\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 63624,
+      "offset": 66596,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 64153,
+      "offset": 67125,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 64312,
+      "offset": 67284,
       "length": 1,
       "value": "0"
     },
@@ -89942,35 +90666,35 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10230,
+      "offset": 10314,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10281,
+      "offset": 10365,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10328,
+      "offset": 10412,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10424,
+      "offset": 10508,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12219,
+      "offset": 12303,
       "length": 5,
       "value": "false"
     },
@@ -90264,84 +90988,84 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "IntegerLiteral",
-      "offset": 2022,
+      "offset": 2286,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2067,
+      "offset": 2331,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2147,
+      "offset": 2411,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 2373,
+      "offset": 2637,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3589,
+      "offset": 3853,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3782,
+      "offset": 4046,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4811,
+      "offset": 5075,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4866,
+      "offset": 5130,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 4988,
+      "offset": 5252,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5216,
+      "offset": 5480,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5473,
+      "offset": 5737,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationView.swift",
       "kind": "BooleanLiteral",
-      "offset": 5556,
+      "offset": 5820,
       "length": 5,
       "value": "false"
     },
@@ -90397,7 +91121,7 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/CarPlayNavigationViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9944,
+      "offset": 9909,
       "length": 5,
       "value": "false"
     },
@@ -91067,6 +91791,62 @@
       "value": "\"cameraOptions\""
     },
     {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 275,
+      "length": 8,
+      "value": "\"Bright\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 382,
+      "length": 45,
+      "value": "\"tomtom:\/\/styles\/22.2.1-9\/basic_street-light\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 675,
+      "length": 6,
+      "value": "\"Dark\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 780,
+      "length": 44,
+      "value": "\"tomtom:\/\/styles\/22.2.1-9\/basic_street-dark\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 1057,
+      "length": 8,
+      "value": "\"Bright\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 1164,
+      "length": 45,
+      "value": "\"tomtom:\/\/styles\/22.2.1-9\/basic_street-light\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 1446,
+      "length": 6,
+      "value": "\"Dark\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NGLStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 1551,
+      "length": 44,
+      "value": "\"tomtom:\/\/styles\/22.2.1-9\/basic_street-dark\""
+    },
+    {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/BasicCameraAnimator.swift",
       "kind": "BooleanLiteral",
       "offset": 413,
@@ -91454,28 +92234,28 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Puck\/UserCourseView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3783,
+      "offset": 3135,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Puck\/UserCourseView.swift",
       "kind": "Array",
-      "offset": 6158,
+      "offset": 5552,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Puck\/UserCourseView.swift",
       "kind": "StringLiteral",
-      "offset": 7992,
+      "offset": 7422,
       "length": 6,
       "value": "\"puck\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Puck\/UserCourseView.swift",
       "kind": "StringLiteral",
-      "offset": 8262,
+      "offset": 7692,
       "length": 14,
       "value": "\"carplay_puck\""
     },
@@ -97980,7 +98760,7 @@
       "kind": "FloatLiteral",
       "offset": 2003,
       "length": 5,
-      "value": "14.50"
+      "value": "15.10"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
@@ -98050,14 +98830,14 @@
       "kind": "IntegerLiteral",
       "offset": 2635,
       "length": 2,
-      "value": "11"
+      "value": "13"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
       "kind": "FloatLiteral",
       "offset": 2642,
       "length": 4,
-      "value": "15.5"
+      "value": "16.5"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/FollowingCameraOptions.swift",
@@ -98471,6 +99251,13 @@
       "offset": 4325,
       "length": 2,
       "value": "14"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/AnnouncementConvertor.swift",
+      "kind": "Dictionary",
+      "offset": 321,
+      "length": 1741,
+      "value": "[(\"N\", \"north\"), (\"S\", \"south\"), (\"E\", \"east\"), (\"W\", \"west\"), (\"NW\", \"northwest\"), (\"SW\", \"southwest\"), (\"NE\", \"northeast\"), (\"SE\", \"southeast\"), (\"St\", \"street\"), (\"st\", \"street\"), (\"Rd\", \"road\"), (\"rd\", \"road\"), (\"Ctr\", \"center\"), (\"Nat'l\", \"national\"), (\"Mt\", \"mount\"), (\"Mtn\", \"mountain\"), (\"Xing\", \"crossing\"), (\"Dtwn\", \"downtown\"), (\"Int'l\", \"international\"), (\"Pk\", \"park\"), (\"SS\", \"saints\"), (\"Hts\", \"heights\"), (\"Rte\", \"route\"), (\"Ft\", \"fort\"), (\"Mkt\", \"market\"), (\"Wm\", \"william\"), (\"Sch\", \"school\"), (\"Sr\", \"senior\"), (\"Riv\", \"river\"), (\"Vil\", \"village\"), (\"Sta\", \"station\"), (\"apts\", \"apartments\"), (\"Univ\", \"university\"), (\"Twp\", \"township\"), (\"Lk\", \"lake\"), (\"Jr\", \"junior\"), (\"Fr\", \"father\"), (\"Mem\", \"memorial\"), (\"Jct\", \"junction\"), (\"Ct\", \"court\"), (\"Byp\", \"bypass\"), (\"Dr\", \"drive\"), (\"Mwy\", \"motorway\"), (\"Br\", \"bridge\"), (\"Pl\", \"place\"), (\"Cres\", \"crescent\"), (\"Pky\", \"parkway\"), (\"Ln\", \"lane\"), (\"Ave\", \"avenue\"), (\"ave\", \"avenue\"), (\"Expy\", \"expressway\"), (\"Hwy\", \"highway\"), (\"Sq\", \"square\"), (\"Wky\", \"walkway\"), (\"Fwy\", \"freeway\"), (\"Ftwy\", \"footway\"), (\"Ter\", \"terrace\"), (\"Blvd\", \"boulevard\"), (\"Cv\", \"cove\"), (\"Tpk\", \"turnpike\"), (\"Wk\", \"walk\"), (\"Plz\", \"plaza\"), (\"Cir\", \"circle\"), (\"Aly\", \"alley\"), (\"Pt\", \"point\"), (\"No.\", \"number\"), (\"No\", \"number\"), (\"no.\", \"number\"), (\"no\", \"number\")]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/SystemSpeechSynthesizer.swift",
@@ -99035,7 +99822,7 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Style\/StyleManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1372,
+      "offset": 1382,
       "length": 4,
       "value": "true"
     },
@@ -99112,56 +99899,70 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "Array",
-      "offset": 2334,
+      "offset": 2288,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 27791,
+      "offset": 27834,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 27829,
+      "offset": 27872,
       "length": 3,
       "value": "0.0"
-    },
-    {
-      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
-      "kind": "FloatLiteral",
-      "offset": 27923,
-      "length": 4,
-      "value": "12.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
       "offset": 27966,
       "length": 4,
-      "value": "22.0"
+      "value": "12.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
       "offset": 28009,
+      "length": 4,
+      "value": "22.0"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
+      "kind": "FloatLiteral",
+      "offset": 28052,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
+      "kind": "BooleanLiteral",
+      "offset": 28099,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 29089,
+      "offset": 28146,
+      "length": 3,
+      "value": "0.8"
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
+      "kind": "FloatLiteral",
+      "offset": 37147,
       "length": 6,
       "value": "1000.0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationViewportDataSource.swift",
       "kind": "FloatLiteral",
-      "offset": 29420,
+      "offset": 37478,
       "length": 3,
       "value": "0.0"
     },
@@ -100050,7 +100851,7 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/CameraController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9153,
+      "offset": 9273,
       "length": 4,
       "value": "true"
     },

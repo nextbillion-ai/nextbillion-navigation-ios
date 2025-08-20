@@ -282,6 +282,9 @@ public typealias ContainerViewController = UIKit.UIViewController & NbmapNavigat
   @available(iOS 13.0, *)
   @_Concurrency.MainActor @preconcurrency public class func carPlayManagerDidEndNavigation(_: NbmapNavigation.CarPlayManager, window: UIKit.UIWindow)
 }
+extension NbmapNavigation.NavigationViewController {
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapViewDidFinishRenderingFrame(_ mapView: Nbmap.NGLMapView, fullyRendered: Swift.Bool)
+}
 extension NbmapNavigation.NavigationViewController : NbmapCoreNavigation.NavigationServiceDelegate {
   @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didUpdate progress: NbmapCoreNavigation.RouteProgress, with location: CoreLocation.CLLocation, rawLocation: CoreLocation.CLLocation)
   @_Concurrency.MainActor @preconcurrency public func navigationService(_ service: any NbmapCoreNavigation.NavigationService, didPassSpokenInstructionPoint instruction: NbmapCoreNavigation.SpokenInstruction, routeProgress: NbmapCoreNavigation.RouteProgress)
@@ -334,7 +337,7 @@ extension NbmapNavigation.NavigationViewController : NbmapNavigation.NavigationM
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapView(_: NbmapNavigation.NavigationMapView, simplifiedShapeFor route: NbmapCoreNavigation.Route) -> Nbmap.NGLShape?
   @_Concurrency.MainActor @preconcurrency public func navigationMapView(_: Nbmap.NGLMapView, imageFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationImage?
   @_Concurrency.MainActor @preconcurrency public func navigationMapView(_: Nbmap.NGLMapView, viewFor annotation: any Nbmap.NGLAnnotation) -> Nbmap.NGLAnnotationView?
-  @_Concurrency.MainActor @preconcurrency public func navigationMapViewUserAnchorPoint(_ mapView: NbmapNavigation.NavigationMapView) -> CoreFoundation.CGPoint
+  @_Concurrency.MainActor @preconcurrency @objc dynamic public func navigationMapViewUserAnchorPoint(_ mapView: NbmapNavigation.NavigationMapView) -> CoreFoundation.CGPoint
   @_Concurrency.MainActor @preconcurrency @objc dynamic public func mapView(_: Nbmap.NGLMapView, didFinishLoading style: Nbmap.NGLStyle)
 }
 extension NbmapNavigation.NavigationViewController : Nbmap.NGLMapViewDelegate {
@@ -436,7 +439,7 @@ open class NavigationOptions {
   public class func navigationOptions() -> Self
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc(NBNavigationMapView) @_Concurrency.MainActor @preconcurrency open class NavigationMapView : Nbmap.NGLMapView, UIKit.UIGestureRecognizerDelegate, Nbmap.NGLMapViewDelegate {
+@objc(NBNavigationMapView) @_Concurrency.MainActor @preconcurrency open class NavigationMapView : Nbmap.NGLMapView, UIKit.UIGestureRecognizerDelegate, Nbmap.NGLMapViewDelegate {
   @objc @_Concurrency.MainActor @preconcurrency public var defaultAltitude: Swift.Double
   @objc @_Concurrency.MainActor @preconcurrency public var zoomedOutMotorwayAltitude: Swift.Double
   @objc @_Concurrency.MainActor @preconcurrency public var longManeuverDistance: Swift.Double
@@ -473,11 +476,16 @@ open class NavigationOptions {
   @objc @_Concurrency.MainActor @preconcurrency dynamic public var alternativeTrafficHeavyColor: UIKit.UIColor
   @objc @_Concurrency.MainActor @preconcurrency dynamic public var alternativeTrafficSevereColor: UIKit.UIColor
   @objc @_Concurrency.MainActor @preconcurrency dynamic public var routeRestrictedAreaColor: UIKit.UIColor
-  @_Concurrency.MainActor @preconcurrency public var userLocationStyle: NbmapNavigation.UserLocationStyle? {
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var showsUserLocation: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor @preconcurrency open var tracksUserCourse: Swift.Bool {
     get
     set
   }
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic open var showsUserLocation: Swift.Bool {
+  @_Concurrency.MainActor @preconcurrency public var userLocationStyle: NbmapNavigation.UserLocationStyle?
+  @objc @_Concurrency.MainActor @preconcurrency public var userCourseView: UIKit.UIView? {
     @objc get
     @objc set
   }
@@ -490,10 +498,11 @@ open class NavigationOptions {
   @_Concurrency.MainActor @preconcurrency public init(frame: CoreFoundation.CGRect, navigationCameraType: NbmapNavigation.NavigationCameraType = .mobile)
   @objc deinit
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func prepareForInterfaceBuilder()
-  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func mapViewDidFinishRenderingFrameFullyRendered(_ fullyRendered: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency public func updatePreferredFrameRate(for routeProgress: NbmapCoreNavigation.RouteProgress)
-  @objc @_Concurrency.MainActor @preconcurrency public func movePuckToCurrentLocation(location: CoreLocation.CLLocation?, animated: Swift.Bool = false, updateWaynameLabel: Swift.Bool = false)
-  @objc @_Concurrency.MainActor @preconcurrency public func getVisibleRoadFeatures(in coordinate: CoreLocation.CLLocationCoordinate2D, length: CoreLocation.CLLocationDistance = 50.0) -> [any Nbmap.NGLFeature]
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor @preconcurrency @objc override dynamic open func anchorPoint(forGesture gesture: UIKit.UIGestureRecognizer) -> CoreFoundation.CGPoint
+  @objc @_Concurrency.MainActor @preconcurrency public func enableFrameByFrameCourseViewTracking(for duration: Foundation.TimeInterval)
+  @objc @_Concurrency.MainActor @preconcurrency public func updateCourseTracking(location: CoreLocation.CLLocation?, camera: Nbmap.NGLMapCamera? = nil, animated: Swift.Bool = false)
   @_Concurrency.MainActor @preconcurrency public static let defaultPadding: UIKit.UIEdgeInsets
   @objc @_Concurrency.MainActor @preconcurrency public func showcase(_ routes: [NbmapCoreNavigation.Route], padding: UIKit.UIEdgeInsets = NavigationMapView.defaultPadding, animated: Swift.Bool = false)
   @objc @_Concurrency.MainActor @preconcurrency public func showRoutes(_ routes: [NbmapCoreNavigation.Route], legIndex: Swift.Int = 0)
@@ -523,6 +532,7 @@ extension NbmapNavigation.NavigationMapView : NbmapNavigation.NavigationCameraDe
   @objc(navigationMapView:shapeForRoutes:) optional func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, shapeFor routes: [NbmapCoreNavigation.Route]) -> Nbmap.NGLShape?
   @objc(navigationMapView:simplifiedShapeForRoute:) optional func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, simplifiedShapeFor route: NbmapCoreNavigation.Route) -> Nbmap.NGLShape?
   @objc(navigationMapView:shapeForWaypoints:legIndex:) optional func navigationMapView(_ mapView: NbmapNavigation.NavigationMapView, shapeFor waypoints: [NbmapCoreNavigation.Waypoint], legIndex: Swift.Int) -> Nbmap.NGLShape?
+  @objc(navigationMapViewUserAnchorPoint:) optional func navigationMapViewUserAnchorPoint(_ mapView: NbmapNavigation.NavigationMapView) -> CoreFoundation.CGPoint
 }
 @objc @_Concurrency.MainActor @preconcurrency open class CPNavigationView : UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public var navigationMapView: NbmapNavigation.NavigationMapView {
@@ -1029,15 +1039,13 @@ extension CoreLocation.CLLocation : Swift.Encodable {
   @objc deinit
 }
 public protocol CourseUpdatable : UIKit.UIView {
-  func update(location: CoreLocation.CLLocation, pitch: CoreFoundation.CGFloat, direction: CoreLocation.CLLocationDegrees, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
-  func update(from degress: CoreLocation.CLLocationDegrees, to direction: CoreLocation.CLLocationDegrees, pitch: CoreFoundation.CGFloat, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
+  func update(location: CoreLocation.CLLocation, pitch: CoreFoundation.CGFloat, direction: CoreLocation.CLLocationDegrees, animated: Swift.Bool, tracksUserCourse: Swift.Bool)
   func updateWayNameLabel(wayNameFeatures: [any Nbmap.NGLFeature], cameraState: NbmapNavigation.NavigationCameraState)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor @preconcurrency public class UserPuckCourseView : UIKit.UIView, NbmapNavigation.CourseUpdatable {
-  @_Concurrency.MainActor @preconcurrency public func update(from direction: CoreLocation.CLLocationDegrees, to degress: CoreLocation.CLLocationDegrees, pitch: CoreFoundation.CGFloat, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
+  @_Concurrency.MainActor @preconcurrency public func update(location: CoreLocation.CLLocation, pitch: CoreFoundation.CGFloat, direction: CoreLocation.CLLocationDegrees, animated: Swift.Bool, tracksUserCourse: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency public var minimizesInOverview: Swift.Bool
   @_Concurrency.MainActor @preconcurrency public var puckImage: UIKit.UIImage?
-  @_Concurrency.MainActor @preconcurrency public func update(location: CoreLocation.CLLocation, pitch _: CoreFoundation.CGFloat, direction: CoreLocation.CLLocationDegrees, animated: Swift.Bool, navigationCameraState: NbmapNavigation.NavigationCameraState)
   @_Concurrency.MainActor @preconcurrency public func updateWayNameLabel(wayNameFeatures: [any Nbmap.NGLFeature], cameraState: NbmapNavigation.NavigationCameraState)
   @_Concurrency.MainActor @preconcurrency public var puckView: UIKit.UIImageView! {
     get
@@ -1413,6 +1421,15 @@ extension UIKit.UIImage {
   @_Concurrency.MainActor @preconcurrency public func captureScreenshot() -> UIKit.UIImage?
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class AnnouncementConvertor {
+  public static let abbreviationDictionary: [Swift.String : Swift.String]
+  public static func replaceAbbreviations(_ string: Swift.String, abbreviations: [Swift.String : Swift.String]? = nil) -> Swift.String
+  public static func findAllCapsAbbreviations(_ string: Swift.String) -> [Swift.String]
+  public static func splitUppercaseWithSeparator(_ string: Swift.String, separator: Swift.String) -> Swift.String
+  public static func convertText(_ text: Swift.String) -> Swift.String
+  public static func convertAttributedString(_ attributedString: Foundation.NSAttributedString) -> Foundation.NSAttributedString
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers open class SystemSpeechSynthesizer : ObjectiveC.NSObject, NbmapNavigation.SpeechSynthesizing {
   weak public var delegate: (any NbmapNavigation.SpeechSynthesizingDelegate)?
   public var muted: Swift.Bool {
@@ -1470,14 +1487,15 @@ public protocol NavigationCameraDelegate : AnyObject {
   weak public var delegate: (any NbmapNavigation.NavigationCameraDelegate)?
   required public init(_ mapView: NbmapNavigation.NavigationMapView, navigationCameraType: NbmapNavigation.NavigationCameraType = .mobile)
   public func viewportDataSource(_: any NbmapNavigation.ViewportDataSource, didUpdate cameraOptions: [Swift.String : NbmapNavigation.NavMapCameraOption])
-  public var viewportDataSource: any NbmapNavigation.ViewportDataSource {
+  public func viewportDataSourceRetriveMapview(_: any NbmapNavigation.ViewportDataSource) -> NbmapNavigation.NavigationMapView?
+  public var viewportDataSource: (any NbmapNavigation.ViewportDataSource)? {
     get
     set
   }
   public var state: NbmapNavigation.NavigationCameraState {
     get
   }
-  public var cameraStateTransition: any NbmapNavigation.CameraStateTransition
+  public var cameraStateTransition: (any NbmapNavigation.CameraStateTransition)?
   public func follow(_ completion: (() -> Swift.Void)? = nil)
   public func moveToOverview(_ completion: (() -> Swift.Void)? = nil)
   @objc public func stop()
@@ -1735,7 +1753,7 @@ public class NavigationViewportDataSource : NbmapNavigation.ViewportDataSource {
   public var overviewMobileCamera: NbmapNavigation.NavMapCameraOption
   public var overviewCarPlayCamera: NbmapNavigation.NavMapCameraOption
   public var options: NbmapNavigation.NavigationViewportDataSourceOptions
-  required public init(_ mapView: NbmapNavigation.NavigationMapView, viewportDataSourceType: NbmapNavigation.ViewportDataSourceType = .active, navigationEnginConfig: NbmapCoreNavigation.NavigationEngineConfig = NavigationEngineConfig())
+  required public init(viewportDataSourceType: NbmapNavigation.ViewportDataSourceType = .active, navigationEnginConfig: NbmapCoreNavigation.NavigationEngineConfig = NavigationEngineConfig())
   @objc deinit
 }
 @objc(NBStyleType) public enum StyleType : Swift.Int, Swift.CustomStringConvertible {
@@ -1910,6 +1928,7 @@ public protocol ViewportDataSource : AnyObject {
 }
 public protocol ViewportDataSourceDelegate : AnyObject {
   func viewportDataSource(_ dataSource: any NbmapNavigation.ViewportDataSource, didUpdate cameraOptions: [Swift.String : NbmapNavigation.NavMapCameraOption])
+  func viewportDataSourceRetriveMapview(_: any NbmapNavigation.ViewportDataSource) -> NbmapNavigation.NavigationMapView?
 }
 @_inheritsConvenienceInitializers @objc(NBStyle) open class Style : ObjectiveC.NSObject {
   @objc public var tintColor: UIKit.UIColor?
