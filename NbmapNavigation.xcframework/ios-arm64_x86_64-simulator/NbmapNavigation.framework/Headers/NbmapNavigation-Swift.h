@@ -1397,6 +1397,7 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 - (void)setOverheadCameraViewFrom:(CLLocationCoordinate2D)userLocation along:(NSArray<NSValue *> * _Nonnull)coordinates for:(UIEdgeInsets)bounds;
 - (nonnull instancetype)initWithFrame:(CGRect)frame styleJSON:(NSString * _Nonnull)styleJSON SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame options:(NGLMapOptions * _Nonnull)options SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame styleType:(NGMapStyleType)styleType SWIFT_UNAVAILABLE;
 @end
 
 typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {
@@ -3320,6 +3321,7 @@ SWIFT_CLASS_NAMED("NavigationMapView")
 - (void)setOverheadCameraViewFrom:(CLLocationCoordinate2D)userLocation along:(NSArray<NSValue *> * _Nonnull)coordinates for:(UIEdgeInsets)bounds;
 - (nonnull instancetype)initWithFrame:(CGRect)frame styleJSON:(NSString * _Nonnull)styleJSON SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame options:(NGLMapOptions * _Nonnull)options SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame styleType:(NGMapStyleType)styleType SWIFT_UNAVAILABLE;
 @end
 
 typedef SWIFT_ENUM(NSInteger, DurationSymbolType, open) {

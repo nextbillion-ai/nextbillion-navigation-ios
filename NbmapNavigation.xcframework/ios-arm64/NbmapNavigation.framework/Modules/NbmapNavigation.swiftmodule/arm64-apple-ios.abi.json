@@ -18296,6 +18296,46 @@
             "init_kind": "Designated"
           },
           {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(frame:styleType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "NavigationMapView",
+                "printedName": "NbmapNavigation.NavigationMapView",
+                "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NGMapStyleType",
+                "printedName": "Nbmap.NGMapStyleType",
+                "usr": "c:@E@NGMapStyleType"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@NbmapNavigation@objc(cs)NBNavigationMapView(im)initWithFrame:styleType:",
+            "mangledName": "$s15NbmapNavigation0B7MapViewC5frame9styleTypeACSo6CGRectV_So010NGMapStyleG0Vtcfc",
+            "moduleName": "NbmapNavigation",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithFrame:styleType:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Preconcurrency",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
             "kind": "Function",
             "name": "updateRouteLine",
             "printedName": "updateRouteLine(routeProgress:coordinate:routes:shouldRedraw:)",
