@@ -89747,21 +89747,21 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 2189,
+      "offset": 2227,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 2974,
+      "offset": 3012,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/NavigationMapView+VanishingRouteLine.swift",
       "kind": "BooleanLiteral",
-      "offset": 15712,
+      "offset": 15750,
       "length": 5,
       "value": "false"
     },
@@ -90552,70 +90552,70 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "Array",
-      "offset": 66054,
+      "offset": 66163,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 66186,
+      "offset": 66295,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 66277,
+      "offset": 66386,
       "length": 41,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 66309,
+      "offset": 66418,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 66317,
+      "offset": 66426,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 66395,
+      "offset": 66504,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "StringLiteral",
-      "offset": 66569,
+      "offset": 66678,
       "length": 16,
       "value": "\"isPrimaryRoute\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 66596,
+      "offset": 66705,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 67125,
+      "offset": 67234,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/NavigationMapView.swift",
       "kind": "IntegerLiteral",
-      "offset": 67284,
+      "offset": 67393,
       "length": 1,
       "value": "0"
     },
@@ -90706,35 +90706,35 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10314,
+      "offset": 10229,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10365,
+      "offset": 10280,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10412,
+      "offset": 10327,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 10508,
+      "offset": 10423,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/GitHub\/navigation-ios\/NbmapNavigation\/Navigation\/RouteLineController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12303,
+      "offset": 12218,
       "length": 5,
       "value": "false"
     },
