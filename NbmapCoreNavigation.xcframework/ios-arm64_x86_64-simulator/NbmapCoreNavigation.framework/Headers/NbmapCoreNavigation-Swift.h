@@ -970,12 +970,15 @@ SWIFT_CLASS_NAMED("RouteOptions")
 ///   <li>
 ///     <ul>
 ///       <li>
-///         When using avoid=sharp_turn, default range of permissible turn angles is [120,240]. In order to override default range, please use turn_angle_range parameter.
+///         When using avoid=sharp_turn, default range of permissible turn angles is [120,240]. In order to override default range, please use <code>turnAngleRange</code> parameter.
 ///       </li>
 ///     </ul>
 ///   </li>
 /// </ul>
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull avoid;
+/// Specify the turn angles that can be taken safely by the vehicle. The permissible turn angles are calculated as [0 + turn_angle_range , 360 - turn_angle_range]. Please note that this parameter is effective only when <code>avoid = sharp_turn</code>.
+/// It is worth highlighting here that providing smaller angles might lead to 4xx errors as route engine might not be able find routes satisfying the smaller turn angle criteria for all turns in the route.
+@property (nonatomic) NSInteger turnAngleRange;
 @property (nonatomic) NBMapOption _Nonnull mapOption;
 /// This defines the dimensions of a truck in centimeters (cm). This parameter is effective only when the <code>profileIdentifier</code> is<code>NBNavigationMode6W</code>. Maximum dimensions are as follows:
 /// Height = 1000 cm
@@ -990,7 +993,7 @@ SWIFT_CLASS_NAMED("RouteOptions")
 @property (nonatomic) NBNavigationRouteType _Nullable routeType;
 /// Specify if crossing an international border is expected. When set to <code>false</code>, the API will place a penalty for crossing an international border through a checkpoint. Consequently, alternative routes will be preferred if they are feasible for the given set of destination or waypoints . A higher penalty is placed on a route crossing international border without a checkpoint, hence such routes will be preferred the least.
 /// When set to <code>true</code>, there will be no penalty for crossing an international border.
-/// Please note this parameter is effective only when  <code>mapOption</code> is<code>.valhalla</code>
+/// Please note this parameter is effective only when  <code>mapOption</code> is<code>.flexible</code>
 /// The default value is set to <code>false</code>
 @property (nonatomic) BOOL crossBorder;
 /// Specify the total load per axle (including the weight of trailers and shipped goods) of the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
@@ -998,6 +1001,7 @@ SWIFT_CLASS_NAMED("RouteOptions")
 @property (nonatomic) double truckAxleLoad;
 /// Allowed Values:  <code>taxi</code> <code>hov</code>
 @property (nonatomic, copy) NSString * _Nonnull allow;
+@property (nonatomic) NBNavigationRoadInfo _Nullable roadInfo;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
@@ -2820,12 +2824,15 @@ SWIFT_CLASS_NAMED("RouteOptions")
 ///   <li>
 ///     <ul>
 ///       <li>
-///         When using avoid=sharp_turn, default range of permissible turn angles is [120,240]. In order to override default range, please use turn_angle_range parameter.
+///         When using avoid=sharp_turn, default range of permissible turn angles is [120,240]. In order to override default range, please use <code>turnAngleRange</code> parameter.
 ///       </li>
 ///     </ul>
 ///   </li>
 /// </ul>
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull avoid;
+/// Specify the turn angles that can be taken safely by the vehicle. The permissible turn angles are calculated as [0 + turn_angle_range , 360 - turn_angle_range]. Please note that this parameter is effective only when <code>avoid = sharp_turn</code>.
+/// It is worth highlighting here that providing smaller angles might lead to 4xx errors as route engine might not be able find routes satisfying the smaller turn angle criteria for all turns in the route.
+@property (nonatomic) NSInteger turnAngleRange;
 @property (nonatomic) NBMapOption _Nonnull mapOption;
 /// This defines the dimensions of a truck in centimeters (cm). This parameter is effective only when the <code>profileIdentifier</code> is<code>NBNavigationMode6W</code>. Maximum dimensions are as follows:
 /// Height = 1000 cm
@@ -2840,7 +2847,7 @@ SWIFT_CLASS_NAMED("RouteOptions")
 @property (nonatomic) NBNavigationRouteType _Nullable routeType;
 /// Specify if crossing an international border is expected. When set to <code>false</code>, the API will place a penalty for crossing an international border through a checkpoint. Consequently, alternative routes will be preferred if they are feasible for the given set of destination or waypoints . A higher penalty is placed on a route crossing international border without a checkpoint, hence such routes will be preferred the least.
 /// When set to <code>true</code>, there will be no penalty for crossing an international border.
-/// Please note this parameter is effective only when  <code>mapOption</code> is<code>.valhalla</code>
+/// Please note this parameter is effective only when  <code>mapOption</code> is<code>.flexible</code>
 /// The default value is set to <code>false</code>
 @property (nonatomic) BOOL crossBorder;
 /// Specify the total load per axle (including the weight of trailers and shipped goods) of the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
@@ -2848,6 +2855,7 @@ SWIFT_CLASS_NAMED("RouteOptions")
 @property (nonatomic) double truckAxleLoad;
 /// Allowed Values:  <code>taxi</code> <code>hov</code>
 @property (nonatomic, copy) NSString * _Nonnull allow;
+@property (nonatomic) NBNavigationRoadInfo _Nullable roadInfo;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
