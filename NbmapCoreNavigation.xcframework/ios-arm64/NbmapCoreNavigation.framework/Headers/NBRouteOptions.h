@@ -15,10 +15,16 @@ extern NBNavigationMode const NBNavigationModeTruck;
 
 typedef NSString * NBMapOption NS_EXTENSIBLE_STRING_ENUM;
 
-extern NBMapOption const NBMapOptionValhalla;
+extern NBMapOption const NBMapOptionValhalla __attribute__((deprecated("Use NBMapOptionFlexible instead.")));
+extern NBMapOption const NBMapOptionFlexible;
 extern NBMapOption const NBMapOptionNone;
 
 typedef NSString * NBNavigationRouteType NS_EXTENSIBLE_STRING_ENUM;
 
 extern NBNavigationRouteType const NBNavigationRouteTypeFastest;
 extern NBNavigationRouteType const NBNavigationRouteTypeShortest;
+
+
+typedef NSString * NBNavigationRoadInfo NS_EXTENSIBLE_STRING_ENUM;
+
+extern NBNavigationRoadInfo const NBNavigationRoadInfoMaxSpeed;
